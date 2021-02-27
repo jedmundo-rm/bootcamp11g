@@ -1,0 +1,37 @@
+.cuadrado {
+  width: 10vw;
+  /*width: 200px;*/
+  height: 10vw;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+.rectangulo {
+  width: 25vw;
+  height: calc(25vw / 2);
+  background-image: url("https://picsum.photos/id/237/200/300");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: lightpink;
+  background-position: center;
+}
+
+.cuadrado-circulo {
+  width: 500px;
+  height: 500px;
+  background-color: lightskyblue;
+}
+
+.circulo {
+  width: calc((500px / 5) * 3 * 2);
+  /*width: 600px;*/
+  /*height: 600px;*/
+  height: calc((500px / 5) * 3 * 2);
+  background-color: lime;
+  border-radius: 50%;
+}
