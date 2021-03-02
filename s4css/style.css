@@ -1,0 +1,129 @@
+div:first-of-type,
+span:first-of-type {
+  background-color: red;
+}
+div:nth-child(2),
+span:nth-child(2) {
+  background-color: aqua;
+}
+div:nth-child(3),
+span:nth-child(3) {
+  background-color: peru;
+}
+
+.pt-1 {
+  padding-top: 1rem;
+}
+.pt-2 {
+  padding-top: 2rem;
+}
+.pt-3 {
+  padding-top: 3rem;
+}
+
+.pb-1 {
+  padding-bottom: 1rem;
+}
+.pb-2 {
+  padding-bottom: 2rem;
+}
+.pb-3 {
+  padding-bottom: 3rem;
+}
+
+.square {
+  width: 75px;
+  height: 75px;
+}
+
+.bg-red {
+  background-color: red;
+}
+
+.center-by-margin {
+  margin-left: calc(50% - 37.5px);
+}
+
+.bg-peru {
+  background-color: peru;
+}
+
+.margin-left {
+  margin-left: calc(100% - 75px);
+}
+
+.mx-auto {
+  background-color: navy;
+  margin: 0 auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.square-wrapper {
+  width: 100%;
+  border: 1px solid #444;
+  padding: 10px;
+  margin-bottom: 10px;
+
+  height: 200px;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+
+.d-flex {
+  display: flex;
+}
+.justify-flex-start {
+  justify-content: flex-start;
+}
+
+.justify-flex-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-stretch {
+  align-items: stretch;
+}
+
+.align-baseline {
+  align-items: baseline;
+}
