@@ -1,0 +1,50 @@
+body {
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.item {
+  width: 100px;
+}
+
+.square {
+  width: 60px;
+  height: 60px;
+  background-color: deepskyblue;
+}
+
+.item:nth-child(1) {
+  background-color: aquamarine;
+}
+.item:nth-child(2) {
+  background-color: blueviolet;
+}
+.item:nth-child(3) {
+  background-color: crimson;
+}
+
+.pos1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pos2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pos3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

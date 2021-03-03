@@ -1,0 +1,47 @@
+body {
+  width: 100vw;
+  height: 50vh;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: flex-start;
+  justify-content: space-between;
+}
+
+.item {
+  height: 250px;
+  margin: 2%;
+}
+
+.pos1 {
+  background-color: aqua;
+  width: 20%;
+}
+
+.pos2 {
+  background-color: purple;
+  width: 60%;
+}
+
+.pos3 {
+  background-color: red;
+  width: 20%;
+}
+
+.pos4 {
+  background-color: sandybrown;
+  width: 50%;
+}
+
+.pos5 {
+  background-color: rosybrown;
+  width: 50%;
+}
+
+.pos6 {
+  background-color: slategrey;
+  width: 100%;
+}

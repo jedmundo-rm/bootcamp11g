@@ -1,0 +1,38 @@
+body {
+  width: 100vw;
+  height: 50vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wrapper1 {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.wrapper2 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.square {
+  background-color: aqua;
+  width: 60px;
+  height: 60px;
+}
+
+.pos1 {
+}
+
+.pos2 {
+  margin-left: auto;
+}
+
+.pos3 {
+}
+
+.pos4 {
+  margin-left: auto;
+}
