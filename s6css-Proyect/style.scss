@@ -63,7 +63,7 @@ header {
 #section-principal {
   text-align: center;
   color: $color-grayish-blue;
-  background-color: $color-very-light-gray;;
+  background-color: $color-very-light-gray;
   &:first-of-type {
     background-image: url("images/bg-intro-mobile.svg");
     background-size: cover;
@@ -93,6 +93,12 @@ footer {
     align-items: center;
     img {
       padding: 10px 0;
+    }
+    span{
+      color:$color-White;
+      font-weight: bold;
+      font-size: 25px;
+
     }
   }
   .col2 {
@@ -126,6 +132,11 @@ footer {
   .col4 {
     display: flex;
     justify-content: center;
+  }
+  .col5 {
+    display: flex;
+    justify-content: center;
+    color: $color-grayish-blue;
   }
 }
 

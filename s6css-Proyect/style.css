@@ -103,6 +103,12 @@ footer .col1 img {
   padding: 10px 0;
 }
 
+footer .col1 span {
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+}
+
 footer .col2 {
   color: #fff;
   display: -webkit-box;
@@ -152,6 +158,16 @@ footer .col4 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+footer .col5 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #9698a6;
 }
 
 #section-dos {
