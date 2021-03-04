@@ -7,6 +7,12 @@ $color-light-grayish-blue: hsl(220, 16%, 96%);
 $color-very-light-gray: hsl(0, 0%, 98%);
 $color-White: hsl(0, 0%, 100%);
 
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Public Sans", sans-serif;
 }
@@ -108,5 +114,22 @@ footer {
   .col4 {
     display: flex;
     justify-content: center;
+  }
+}
+
+#section-dos{
+  background-color: $color-light-grayish-blue;
+  text-align: center;
+  font-size: 1.2rem;
+  div{
+      /*border:1px solid white;*/
+      padding: 30px 10px;    
+  }
+  h2,h3{
+      margin: 20px 0;
+      color:$color-dark-blue;
+  }
+  p{
+      color:$color-grayish-blue;
   }
 }
