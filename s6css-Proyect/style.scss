@@ -43,6 +43,11 @@ button {
   border: none;
   font-size: 12pt;
   cursor: pointer;
+  margin: 0 auto;
+  width: 280px;
+  @media screen and (min-width: 1024px) {
+    margin: inherit;
+  }
 }
 
 section {
@@ -95,17 +100,56 @@ header {
 }
 
 #section-principal {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  background-image: url(" ");
+  background-position: 600px center;
+  background-repeat: no-repeat;
   color: $color-grayish-blue;
   background-color: $color-very-light-gray;
-  &:first-of-type {
+  @media only screen and (min-width: 1024px) {
+    background-image: url("images/bg-intro-desktop.svg");
+    flex-direction: row-reverse;
+    text-align: left;
+  }
+  .elem-img {
     background-image: url("images/bg-intro-mobile.svg");
     background-size: cover;
     background-repeat: no-repeat;
+    height: auto;
+    @media only screen and (min-width: 1024px) {
+      height: 600px;
+      width: 100%;
+      background-image: url(" ");
+
+      &:before {
+        content: "";
+        background-image: url("images/image-mockups.png");
+        height: 100%;
+        width: 572px;
+        position: absolute;
+        background-size: contain;
+        background-repeat: no-repeat;
+        right: 0;
+      }
+    }
+
+    img {
+      display: inherit;
+      width: 100%;
+      @media only screen and (min-width: 1024px) {
+        display: none;
+      }
+    }
   }
-  img {
-    width: 100%;
+  .elem-txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5%;
   }
+
   button {
     margin-top: 20px;
   }

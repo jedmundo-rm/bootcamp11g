@@ -34,6 +34,14 @@ button {
   border: none;
   font-size: 12pt;
   cursor: pointer;
+  margin: 0 auto;
+  width: 280px;
+}
+
+@media screen and (min-width: 1024px) {
+  button {
+    margin: inherit;
+  }
 }
 
 section {
@@ -107,19 +115,80 @@ header .button {
 }
 
 #section-principal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   text-align: center;
+  background-image: url(" ");
+  background-position: 600px center;
+  background-repeat: no-repeat;
   color: #9698a6;
   background-color: #fafafa;
 }
 
-#section-principal:first-of-type {
+@media only screen and (min-width: 1024px) {
+  #section-principal {
+    background-image: url("images/bg-intro-desktop.svg");
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    text-align: left;
+  }
+}
+
+#section-principal .elem-img {
   background-image: url("images/bg-intro-mobile.svg");
   background-size: cover;
   background-repeat: no-repeat;
+  height: auto;
 }
 
-#section-principal img {
+@media only screen and (min-width: 1024px) {
+  #section-principal .elem-img {
+    height: 600px;
+    width: 100%;
+    background-image: url(" ");
+  }
+  #section-principal .elem-img:before {
+    content: "";
+    background-image: url("images/image-mockups.png");
+    height: 100%;
+    width: 572px;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    right: 0;
+  }
+}
+
+#section-principal .elem-img img {
+  display: inherit;
   width: 100%;
+}
+
+@media only screen and (min-width: 1024px) {
+  #section-principal .elem-img img {
+    display: none;
+  }
+}
+
+#section-principal .elem-txt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 5%;
 }
 
 #section-principal button {
