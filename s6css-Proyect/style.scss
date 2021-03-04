@@ -9,24 +9,27 @@ $color-White: hsl(0, 0%, 100%);
 $size-title: 35px;
 $size-title-second: 32px;
 
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
   font-family: "Public Sans", sans-serif;
 }
-h1{
+h1 {
   font-size: $size-title;
   color: $color-dark-blue;
-  
+  margin: 20px 0;
 }
-h2{
+h2 {
   font-size: $size-title-second;
   color: $color-dark-blue;
-  
+  margin: 20px 0;
+}
+h3 {
+  margin: 20px 0;
 }
 button {
   background: linear-gradient(
@@ -49,14 +52,45 @@ section {
 header {
   display: flex;
   justify-content: space-between;
-  padding: 30px 0;
+  padding: 30px 30px;
   align-items: center;
+  @media only screen and (min-width: 1024px) {
+    padding: 30px 0;
+    justify-content: space-around;
+  }
 
-  nav {
-    width: 50px;
-    height: 50px;
-    border: 1px solid #444;
-    cursor: pointer;
+  ul {
+    list-style: none;
+    height: 30px;
+    li {
+      float: left;
+      padding: 0 10px;
+      cursor: pointer;
+      &:hover {
+        border-bottom: 5px solid $color-lime-green;
+      }
+    }
+  }
+
+  .menu-mobile {
+    display: inherit;
+    @media only screen and (min-width: 1024px) {
+      display: none;
+    }
+  }
+
+  .menu-desktop {
+    display: none;
+    @media only screen and (min-width: 1024px) {
+      display: inherit;
+    }
+  }
+
+  .button {
+    display: none;
+    @media only screen and (min-width: 1024px) {
+      display: inherit;
+    }
   }
 }
 
@@ -71,6 +105,65 @@ header {
   }
   img {
     width: 100%;
+  }
+  button {
+    margin-top: 20px;
+  }
+  @media only screen and (min-width: 1024px) {
+  }
+}
+
+#section-dos {
+  background-color: $color-light-grayish-blue;
+  text-align: center;
+  font-size: 1.2rem;
+  div {
+    /*border:1px solid white;*/
+    padding: 30px 10px;
+  }
+  h2,
+  h3 {
+    color: $color-dark-blue;
+  }
+  p {
+    color: $color-grayish-blue;
+  }
+}
+
+#section-tres {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: space-evenly;
+  background-color: $color-very-light-gray;
+  h2 {
+    text-align: center;
+  }
+  h4,
+  p,
+  figure figcaption {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  div {
+    background-color: $color-White;
+    margin: 25px;
+    border-radius: 15px 15px 0px 0px;
+  }
+  figure img {
+    width: 100%;
+    border-radius: 15px 15px 0px 0px;
+  }
+  figure figcaption {
+    color: $color-grayish-blue;
+    font-size: 11px;
+    margin: 28px 0px;
+  }
+  p {
+    color: $color-grayish-blue;
+    margin: 15px 0px 25px;
+    font-size: 13px;
   }
 }
 
@@ -94,11 +187,10 @@ footer {
     img {
       padding: 10px 0;
     }
-    span{
-      color:$color-White;
+    span {
+      color: $color-White;
       font-weight: bold;
       font-size: 25px;
-
     }
   }
   .col2 {
@@ -137,61 +229,5 @@ footer {
     display: flex;
     justify-content: center;
     color: $color-grayish-blue;
-  }
-}
-
-#section-dos{
-  background-color: $color-light-grayish-blue;
-  text-align: center;
-  font-size: 1.2rem;
-  div{
-      /*border:1px solid white;*/
-      padding: 30px 10px;    
-  }
-  h2,h3{
-      margin: 20px 0;
-      color:$color-dark-blue;
-  }
-  p{
-      color:$color-grayish-blue;
-  }
-}
-
-#section-tres{
-  display: flex;
-  flex-direction: column;
-  justify-content:flex-start;
-  align-items: space-evenly;
-  background-color: $color-very-light-gray;
-  h2{
-    
-    text-align: center;
-    
-  }
-  h4, p, figure figcaption{
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-
-  div{
-    background-color: $color-White;
-    margin: 25px;
-    border-radius: 15px 15px 0px 0px;
-  }
-  figure img{
-    width: 100%;
-    border-radius: 15px 15px 0px 0px;
-  }
-  figure figcaption{
-    color: $color-grayish-blue;
-    font-size: 11px;
-    margin: 28px 0px;
-    
-  }
-  p{
-    color: $color-grayish-blue;
-    margin: 15px 0px 25px;
-    font-size: 13px;
-    
   }
 }
