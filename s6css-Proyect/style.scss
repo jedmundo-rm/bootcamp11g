@@ -6,6 +6,8 @@ $color-grayish-blue: hsl(233, 8%, 62%);
 $color-light-grayish-blue: hsl(220, 16%, 96%);
 $color-very-light-gray: hsl(0, 0%, 98%);
 $color-White: hsl(0, 0%, 100%);
+$size-title: 35px;
+$size-title-second: 32px;
 
 *{
   margin:0;
@@ -16,7 +18,16 @@ $color-White: hsl(0, 0%, 100%);
 body {
   font-family: "Public Sans", sans-serif;
 }
-
+h1{
+  font-size: $size-title;
+  color: $color-dark-blue;
+  
+}
+h2{
+  font-size: $size-title-second;
+  color: $color-dark-blue;
+  
+}
 button {
   background: linear-gradient(
     90deg,
@@ -51,7 +62,8 @@ header {
 
 #section-principal {
   text-align: center;
-  background-color: $color-very-light-gray;
+  color: $color-grayish-blue;
+  background-color: $color-very-light-gray;;
   &:first-of-type {
     background-image: url("images/bg-intro-mobile.svg");
     background-size: cover;
@@ -131,5 +143,44 @@ footer {
   }
   p{
       color:$color-grayish-blue;
+  }
+}
+
+#section-tres{
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items: space-evenly;
+  background-color: $color-very-light-gray;
+  h2{
+    
+    text-align: center;
+    
+  }
+  h4, p, figure figcaption{
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  div{
+    background-color: $color-White;
+    margin: 25px;
+    border-radius: 15px 15px 0px 0px;
+  }
+  figure img{
+    width: 100%;
+    border-radius: 15px 15px 0px 0px;
+  }
+  figure figcaption{
+    color: $color-grayish-blue;
+    font-size: 11px;
+    margin: 28px 0px;
+    
+  }
+  p{
+    color: $color-grayish-blue;
+    margin: 15px 0px 25px;
+    font-size: 13px;
+    
   }
 }
