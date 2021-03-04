@@ -395,5 +395,56 @@ footer .col5 {
   #section-dos .wrapper p {
     width: 90%;
   }
+  #section-tres {
+    text-align: left;
+  }
+  #section-tres h4:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#31d35c), to(#2bb7da));
+    background: linear-gradient(#31d35c, #2bb7da);
+    -webkit-background-clip: text;
+    color: transparent;
+    cursor: pointer;
+  }
+  #section-tres h2 {
+    text-align: left;
+    padding: 0 80px;
+  }
+  #section-tres h4, #section-tres p, #section-tres figure figcaption {
+    padding: none;
+  }
+  #section-tres div {
+    background-color: #fafafa;
+    margin: 30px;
+  }
+  #section-tres p {
+    padding: 20px;
+  }
+  #section-tres .cards-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: space-between;
+        -ms-flex-align: space-between;
+            align-items: space-between;
+    padding: 30px;
+  }
+  #section-tres .cards-wrapper div figure img {
+    height: 25vh;
+  }
+  footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  footer li:hover, footer img:hover {
+    cursor: pointer;
+    color: #31d35c;
+  }
+  footer button:hover {
+    opacity: .50;
+  }
 }
 /*# sourceMappingURL=style.css.map */

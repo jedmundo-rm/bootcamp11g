@@ -277,7 +277,7 @@ footer {
 }
 
 @media only screen and (min-width: 1024px) {
-  #section-dos {
+   #section-dos {
     display:flex;
     flex-direction: column;
     text-align: left;
@@ -295,5 +295,53 @@ footer {
         width: 90%;
       }
     }
-  }  
+  }
+  
+  #section-tres{
+    text-align: left;
+    h4:hover{
+     
+      background: linear-gradient($color-lime-green,$color-bright-cyan);
+   -webkit-background-clip: text;
+     color: transparent;
+      cursor: pointer;
+    }
+    h2{
+      text-align: left;
+      padding: 0 80px;
+    }
+    h4,p,figure figcaption {
+      padding:none;
+    }
+    div{
+      background-color: $color-very-light-gray;
+      margin:30px;
+    }
+    p{
+      padding:20px;
+    }
+    .cards-wrapper{
+      display: flex;
+      align-items: space-between;
+      
+      padding:30px;
+      div figure img{
+         height: 25vh;
+      }
+
+    }
+    
+  }
+  footer{
+    display: flex;
+    justify-content: space-between;
+    
+    li:hover,img:hover{
+      cursor: pointer;
+      color: $color-lime-green;
+    }
+    button:hover{
+      opacity:.50;
+    }
+  }
 }
