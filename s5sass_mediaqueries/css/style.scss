@@ -108,7 +108,7 @@ body {
   .card-wrapper {
     display: flex;
     justify-content: center;
-    width: 992px;
+    width: auto;
 
     & :nth-child(2) {
       display: none;
@@ -132,9 +132,7 @@ body {
   .card-wrapper {
     display: flex;
     justify-content: center;
-
     flex-direction: row-reverse;
-
     width: 992px;
   }
   .card {
