@@ -274,11 +274,8 @@ main {
   #post-list {
     &.post-wrapper {
       width: 100%;
-      display: flex;
       margin-left: auto;
       margin-right: auto;
-      flex-direction: column;
-      justify-content: space-evenly;
 
       .section-title {
         display: flex;
