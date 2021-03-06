@@ -70,13 +70,67 @@
       </section>
 
       <section id="post-list" class="post-wrapper">
-        <h1>Post</h1>
+        <div class="section-title">
+          <div>
+            <h1>Post</h1>
+          </div>
+          <div>
+            <nav class="filter-desktop">
+              <a href="/" class="crayons-tabs__item crayons-tabs__item--current">Feed</a>
+              <a href="/top/week" class="crayons-tabs__item ">Week</a>
+              <a href="/top/month" class="crayons-tabs__item ">Month</a>
+              <a href="/top/year" class="crayons-tabs__item ">Year</a>
+              <a href="/top/infinity" class="crayons-tabs__item ">Infinity</a>
+              <a href="/latest" class="crayons-tabs__item ">Latest</a>
+            </nav>
+    
+            <select class="filter-movil" id="feed-filter-select" aria-label="feed-filter-select">
+              <option value="" selected="">Feed</option>
+              <option value="/top/week">Week</option>
+              <option value="/top/month">Month</option>
+              <option value="/top/year">Year</option>
+              <option value="/top/infinity">Infinity</option>
+              <option value="/latest">Latest</option>
+            </select>
+          </div>
+        </div>
+         
+        
         <article>
           <div
             class="img-wrapper"
             style="background-image: url('images/single/photo-main.jpeg')"
           ></div>
 
+          <div class="article-body">
+            <div>
+              <img class="ico-profile" src="images/single/photo-profile.jpeg" />
+            </div>
+            <div>
+              <h2>
+                Embracing risk and uncertainty: how I became an Indie Hacker
+              </h2>
+            </div>
+            <div class="tags">#startup #indiehacker</div>
+            <div class="reacts">
+              <div class="react-left">
+                <span
+                  ><img src="images/single/icon-heart.svg" /> 1 reactions</span
+                >
+                <span
+                  ><img src="images/single/comentario.svg" /> 2 comments</span
+                >
+              </div>
+
+              <div class="react-right">
+                <span>4 min read</span>
+                <button>Save</button>
+              </div>
+            </div>
+            <div></div>
+          </div>
+        </article>
+        <article>
           <div class="article-body">
             <div>
               <img class="ico-profile" src="images/single/photo-profile.jpeg" />

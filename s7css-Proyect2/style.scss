@@ -276,6 +276,22 @@ main {
       flex-direction: column;
       justify-content: space-evenly;
 
+      
+      .section-title{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 0 20px;
+        .filter-desktop{
+          display: none;
+        }
+        select {
+          padding: 10px;
+          border-radius: 5px;
+        }
+      }
+      
+
       .img-wrapper {
         width: 100%;
         padding-top: 43%;
@@ -324,6 +340,19 @@ main {
   main {
     #side-left {
       display: block;
+    }
+    #post-list{
+      .section-title{
+        .filter-movil{
+          display: none;
+        }
+        
+        .filter-desktop{
+          display: inherit;
+          display: flex;
+          justify-content: space-evenly;
+        }
+      }
     }
   }
 }
