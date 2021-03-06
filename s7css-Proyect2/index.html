@@ -8,6 +8,81 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="icon1"></div>
+    <header>
+      <div class="menu-left">
+        <!-- Logo -->
+        <img class="logo" src="images/dev-black.png" />
+      </div>
+      <div class="menu-right">
+        <img src="images/single/icon-search.svg" alt="" srcset="" />
+        <img src="images/single/icon-connect.svg" alt="" srcset="" />
+        <img src="images/single/icon-notification.svg" alt="" srcset="" />
+        <img
+          class="profile"
+          src="images/single/photo-profile.jpeg"
+          alt=""
+          srcset=""
+        />
+      </div>
+    </header>
+
+    <main>
+      <section id="menu">
+        <!-- Menu Hamburguesa -->
+        <div class="hamburger-wrapper">
+          <label for="check" class="hamb-button"> </label>
+          <input id="check" type="checkbox" />
+          <ul>
+            <li>Home</li>
+            <li>Reading List</li>
+            <li>Listings</li>
+            <li>Podcasts</li>
+            <li>Videos</li>
+            <li>Tags</li>
+            <li>More...</li>
+          </ul>
+        </div>
+
+        <img class="banner-side" src="images/content/banner-side.jpg" />
+        <h2>Get The Daisy DEV Fall Jacket</h2>
+      </section>
+
+      <section id="post-list" class="post-wrapper">
+        <article>
+          <div
+            class="img-wrapper"
+            style="background-image: url('images/single/photo-main.jpeg')"
+          ></div>
+
+          <div class="article-body">
+            <div>
+              <img class="profile" src="images/single/photo-profile.jpeg" />
+            </div>
+            <div>
+              <h2>
+                Embracing risk and uncertainty: how I became an Indie Hacker
+              </h2>
+            </div>
+            <div class="tags">#startup #indiehacker</div>
+            <div class="reacts">
+              <div class="react-left">
+                <span
+                  ><img src="images/single/icon-heart.svg" /> 1 reactions</span
+                >
+                <span
+                  ><img src="images/single/comentario.svg" /> 2 comments</span
+                >
+              </div>
+
+              <div class="react-right">
+                <span>4 min read</span>
+                <button>Save</button>
+              </div>
+            </div>
+            <div></div>
+          </div>
+        </article>
+      </section>
+    </main>
   </body>
 </html>

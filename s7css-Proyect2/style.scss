@@ -1,0 +1,130 @@
+/*
+
+CSS - background-color:#2965F1;color:#ffffff
+
+#webdev - background-color:#562765;color:#ffffff
+#beginners - background-color:#008335;color:#FFFFFF
+#tutorial - background-color:#FEFFA5;color:#b30047
+
+transition
+cubic-bezier(0.17, 0.67, 0.5, 0.71);
+
+#3b49df
+#f9fafa
+#08090a 
+#eef0f1
+#323ebe
+#d2d6db
+#b5bdc4 (hover)
+#4d5760
+*/
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #eef0f1;
+}
+
+.profile {
+  border-radius: 50%;
+  width: 34px;
+}
+
+/************* HEADER *****************/
+
+header {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+
+  .menu-left {
+    display: flex;
+    align-items: center;
+
+    .logo {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  .menu-right {
+  }
+}
+
+/************* CONTENIDO INTERNO *****************/
+
+main {
+  display: flex;
+
+  /*SECTION MENU*/
+  #menu {
+    .hamb-button {
+      width: 50px;
+      height: 50px;
+      display: block;
+      border: 1px solid #333;
+      border-radius: 5px;
+      &:hover {
+        cursor: pointer;
+      }
+      &:before {
+        content: "";
+        width: 60%;
+        display: block;
+        height: 2px;
+        background-color: #333;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 14px;
+        box-shadow: 0px 10px 0 0 #333, 0px 20px 0 0 #333;
+      }
+    }
+
+    input[type="checkbox"] {
+      display: none;
+      &:checked + ul {
+        display: none;
+      }
+    }
+
+    .banner-side {
+      width: 100%;
+      max-width: 270px;
+    }
+  }
+
+  /*SECTION POST LIST*/
+  #post-list {
+    &.post-wrapper {
+      width: 100%;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      .img-wrapper {
+        width: 100%;
+        padding-top: 43%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      article {
+        border: 1px solid #acacac;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 5px 0;
+        .reacts {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+
+  /*SECTION SIDEBAR*/
+}
