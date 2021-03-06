@@ -30,6 +30,10 @@ input:focus {
   outline: none;
 }
 
+b {
+  color: $color-black;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -276,13 +280,12 @@ main {
       flex-direction: column;
       justify-content: space-evenly;
 
-      
-      .section-title{
+      .section-title {
         display: flex;
         justify-content: space-between;
         align-items: baseline;
         padding: 0 20px;
-        .filter-desktop{
+        .filter-desktop {
           display: none;
         }
         select {
@@ -290,7 +293,6 @@ main {
           border-radius: 5px;
         }
       }
-      
 
       .img-wrapper {
         width: 100%;
@@ -341,13 +343,13 @@ main {
     #side-left {
       display: block;
     }
-    #post-list{
-      .section-title{
-        .filter-movil{
+    #post-list {
+      .section-title {
+        .filter-movil {
           display: none;
         }
-        
-        .filter-desktop{
+
+        .filter-desktop {
           display: inherit;
           display: flex;
           justify-content: space-evenly;
@@ -362,6 +364,83 @@ main {
   main {
     #side-right {
       display: block;
+    }
+  }
+}
+
+/*FOOTER*/
+footer {
+  padding: 30px 0;
+  background-color: $color-grey;
+  position: relative;
+  width: 100%;
+  .mono {
+    position: absolute;
+    right: 30px;
+    top: 0;
+    width: 60px;
+
+    transition: 0.5s ease-in-out;
+    transform-origin: top center;
+    transform: all;
+
+    &:hover {
+      transform: rotate(10deg);
+    }
+  }
+  .footer-wrapper {
+    margin: 0 auto;
+    width: 92%;
+    @media screen and (min-width: 768px) {
+      width: 50%;
+    }
+    // ROW 1
+    .footer-menu {
+      display: flex;
+      justify-content: center;
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+        text-align: center;
+        li {
+          padding: 12px 16px;
+          cursor: pointer;
+          &:hover {
+            color: $color-blue;
+          }
+        }
+      }
+    }
+    // ROW 2
+    .footer-redes {
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 20px;
+      width: 24%;
+      margin: auto;
+      @media screen and (min-width: 1024px) {
+        width: 20%;
+      }
+      img {
+        padding: 0px 6px;
+        cursor: pointer;
+      }
+    }
+
+    // Row 3
+    .footer-txt1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 10pt;
+      text-align: center;
+      p:nth-child(2) {
+        margin-bottom: 0;
+      }
     }
   }
 }
