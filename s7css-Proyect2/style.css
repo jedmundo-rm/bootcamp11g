@@ -472,6 +472,13 @@ footer .mono {
           transform-origin: top center;
   -webkit-transform: all;
           transform: all;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  footer .mono {
+    display: inherit;
+  }
 }
 
 footer .mono:hover {
