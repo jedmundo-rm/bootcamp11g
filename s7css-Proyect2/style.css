@@ -25,6 +25,15 @@ cubic-bezier(0.17, 0.67, 0.5, 0.71);
   padding: 0;
 }
 
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+b {
+  color: #08090a;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -41,7 +50,7 @@ h3 {
   margin: 4px 0 16px 0;
 }
 
-.profile {
+.ico-profile {
   border-radius: 50%;
   width: 34px;
 }
@@ -111,6 +120,7 @@ header .header-wrapper .menu-left {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
   /* BOTON HAMBURGUESA */
 }
 
@@ -223,6 +233,60 @@ header .header-wrapper .menu-left .menu .menu-wrapper ul {
 header .header-wrapper .menu-left .logo {
   width: 40px;
   height: 40px;
+}
+
+header .header-wrapper .menu-left .search {
+  font-size: 12pt;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 0 6px;
+  height: 100%;
+  margin: 0 20px;
+  width: 100%;
+  max-width: 400px;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  header .header-wrapper .menu-left .search {
+    display: inherit;
+  }
+}
+
+header .header-wrapper .menu-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 210px;
+}
+
+header .header-wrapper .menu-right img {
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+header .header-wrapper .menu-right img.ico-search {
+  display: inherit;
+}
+
+@media screen and (min-width: 768px) {
+  header .header-wrapper .menu-right img.ico-search {
+    display: none;
+  }
+}
+
+header .header-wrapper .menu-right img:last-of-type {
+  padding: 0;
+}
+
+header .header-wrapper .menu-right img:hover {
+  background-color: #d2d6db;
 }
 
 /************* CONTENIDO INTERNO *****************/
@@ -429,5 +493,124 @@ main #side-right .list div:nth-child(2) {
   main #side-right {
     display: block;
   }
+}
+
+/*FOOTER*/
+footer {
+  padding: 30px 0;
+  background-color: #d2d6db;
+  position: relative;
+  width: 100%;
+}
+
+footer .mono {
+  position: absolute;
+  right: 30px;
+  top: 0;
+  width: 60px;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+  -webkit-transform: all;
+          transform: all;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  footer .mono {
+    display: inherit;
+  }
+}
+
+footer .mono:hover {
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+}
+
+footer .footer-wrapper {
+  margin: 0 auto;
+  width: 92%;
+}
+
+@media screen and (min-width: 768px) {
+  footer .footer-wrapper {
+    width: 50%;
+  }
+}
+
+footer .footer-wrapper .footer-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer .footer-wrapper .footer-menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+footer .footer-wrapper .footer-menu ul li {
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+footer .footer-wrapper .footer-menu ul li:hover {
+  color: #323ebe;
+}
+
+footer .footer-wrapper .footer-redes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 20px;
+  width: 24%;
+  margin: auto;
+}
+
+@media screen and (min-width: 1024px) {
+  footer .footer-wrapper .footer-redes {
+    width: 20%;
+  }
+}
+
+footer .footer-wrapper .footer-redes img {
+  padding: 0px 6px;
+  cursor: pointer;
+}
+
+footer .footer-wrapper .footer-txt1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 10pt;
+  text-align: center;
+}
+
+footer .footer-wrapper .footer-txt1 p:nth-child(2) {
+  margin-bottom: 0;
 }
 /*# sourceMappingURL=style.css.map */
