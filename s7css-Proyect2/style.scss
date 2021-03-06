@@ -24,6 +24,8 @@ $color-grey-middle: #76808c;
 $color-grey-dark: #4d5760;
 $color-black: #08090a;
 $color-blue: #323ebe;
+$color-blue-boton-list: #3b49df;
+$color-white:#f9fafa;
 * {
   box-sizing: border-box;
   margin: 0;
@@ -326,22 +328,89 @@ main {
 
   /*SECTION SIDE RIGHT*/
   #side-right {
-    background-color: #f9fafa;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
     display: none;
-    h1 {
+    margin-bottom: 15px;
+    
+    aside{
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      background-color: #f9fafa;
+      .blue-hover:hover{
+        color: $color-blue;
+        cursor: pointer;
+      }
     }
+    span{
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 12px 16px;
+      div{
+        color: #4749df;
+        font-weight: bold;
+        font-size: 14px;
+      }
+      div:hover{
+        color: $color-blue;
+        cursor: pointer;
+      }
+    }
+    
     .list {
       border-top: 1px solid #ccc;
-      padding: 17px 0;
+      padding: 16px;
+      color: $color-black;
       cursor: pointer;
       & div:nth-child(2) {
         padding-top: 10px;
         font-size: 12px;
       }
+      
+      &:hover{
+        cursor: pointer;
+        background-color: white;
+        
+      }
+      &>div:hover:first-of-type{
+        color: $color-blue;
+      }
+
     }
+    .list-txtmicro{
+      font-size: 14px;
+      color: $color-grey-light;
+    }
+    .list-new{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 11px;
+      background-color:$color-blue-boton-list;
+      color: $color-white;
+      width: 33px;
+      border-radius: 5px;
+      padding: 4px 0px;
+      //padding-top: 2px;
+      //padding: 3px 3px;
+      //margin: 3px;
+      //height: 25px;
+      //text-align: center;
+    }  
+    .footer-list{
+      display: block;
+      text-align: center;
+      font-weight: bold;
+      
+      &:hover{
+        color: $color-blue;
+        background-color: #f9fafa;
+      }
+      
+    }
+    
   }
 }
 @media only screen and (min-width: 640px) {
