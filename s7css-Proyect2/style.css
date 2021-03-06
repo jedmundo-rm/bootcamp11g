@@ -23,6 +23,14 @@ body {
   margin: 0;
   padding: 0;
   background-color: #eef0f1;
+  color: #4d5760;
+}
+
+h1,
+h2,
+h3 {
+  color: #08090a;
+  margin: 4px 0 16px 0;
 }
 
 .profile {
@@ -39,9 +47,23 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  border: 1px solid #ccc;
+  padding: 10px 0;
 }
 
-header .menu-left {
+header .header-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+header .header-wrapper .menu-left {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -50,7 +72,7 @@ header .menu-left {
           align-items: center;
 }
 
-header .menu-left .logo {
+header .header-wrapper .menu-left .logo {
   width: 40px;
   height: 40px;
 }
@@ -60,12 +82,19 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  /*SECTION MENU*/
+  width: 100%;
+  max-width: 1400px;
+  margin: 20px auto 0 auto;
+  /*SECTION SIDE LEFT*/
   /*SECTION POST LIST*/
-  /*SECTION SIDEBAR*/
+  /*SECTION SIDE RIGHT*/
 }
 
-main #menu .hamb-button {
+main section {
+  margin: 0 15px;
+}
+
+main #side-left .hamb-button {
   width: 50px;
   height: 50px;
   display: block;
@@ -73,11 +102,11 @@ main #menu .hamb-button {
   border-radius: 5px;
 }
 
-main #menu .hamb-button:hover {
+main #side-left .hamb-button:hover {
   cursor: pointer;
 }
 
-main #menu .hamb-button:before {
+main #side-left .hamb-button:before {
   content: "";
   width: 60%;
   display: block;
@@ -90,15 +119,15 @@ main #menu .hamb-button:before {
           box-shadow: 0px 10px 0 0 #333, 0px 20px 0 0 #333;
 }
 
-main #menu input[type="checkbox"] {
+main #side-left input[type="checkbox"] {
   display: none;
 }
 
-main #menu input[type="checkbox"]:checked + ul {
+main #side-left input[type="checkbox"]:checked + ul {
   display: none;
 }
 
-main #menu .banner-side {
+main #side-left .banner-side {
   width: 100%;
   max-width: 270px;
 }
@@ -148,5 +177,22 @@ main #post-list.post-wrapper article .reacts {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+main #side-right {
+  background-color: #f9fafa;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+main #side-right .list {
+  border-top: 1px solid #ccc;
+  padding: 17px 0;
+}
+
+main #side-right .list div:nth-child(2) {
+  padding-top: 10px;
+  font-size: 12px;
 }
 /*# sourceMappingURL=style.css.map */
