@@ -24,6 +24,11 @@ $color-grey-middle: #76808c;
 $color-grey-dark: #4d5760;
 $color-black: #08090a;
 $color-blue: #323ebe;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -227,7 +232,7 @@ main {
 
   /*SECTION POST LIST*/
   #post-list {
-    &.post-wrapper {
+
       width: 100%;
       display: flex;
       margin-left: auto;
@@ -240,17 +245,17 @@ main {
         display: flex;
         justify-content: space-between;
         align-items: baseline;
-        padding: 0 20px;
+        padding: 0 1.5rem;
         .filter-desktop{
           display: none;
         }
         select {
           padding: 10px;
           border-radius: 5px;
+          width: 87px;
         }
       }
       
-
       .img-wrapper {
         width: 100%;
         padding-top: 43%;
@@ -270,7 +275,14 @@ main {
           justify-content: space-between;
         }
       }
-    }
+
+      .article-body{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin: .5rem;
+      }
+
   }
 
   /*SECTION SIDE RIGHT*/
@@ -293,15 +305,13 @@ main {
     }
   }
 }
-
-/*TABLET*/
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 640px) {
   main {
-    #side-left {
-      display: block;
-    }
     #post-list{
       .section-title{
+        div:last-of-type{
+          width: 60%;
+        }
         .filter-movil{
           display: none;
         }
@@ -309,10 +319,37 @@ main {
         .filter-desktop{
           display: inherit;
           display: flex;
-          justify-content: space-evenly;
+          justify-content: flex-end;
+          li{
+            margin: 0  0.25rem;
+            padding: 0.5rem;
+            list-style: none;
+            border-radius: 5px;
+            &:hover{
+              background: rgba(59, 73, 223, 0.1);
+              color: rgb(59, 73, 223);
+              cursor: pointer;
+            }
+            &.active{
+              border-bottom: 5px solid rgb(59, 73, 223);
+            }
+          }
+          
+          
         }
       }
     }
+  }
+}  
+
+
+/*TABLET*/
+@media only screen and (min-width: 768px) {
+  main {
+    #side-left {
+      display: block;
+    }
+    
   }
 }
 
