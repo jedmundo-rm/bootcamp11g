@@ -24,6 +24,7 @@ body {
   padding: 0;
   background-color: #eef0f1;
   color: #4d5760;
+  position: relative;
 }
 
 h1,
@@ -38,6 +39,33 @@ h3 {
   width: 34px;
 }
 
+.menu {
+  list-style: none;
+  padding: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.menu li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.menu li:last-of-type {
+  padding: 10px 0 10px 36px;
+  font-size: 11pt;
+  color: #76808c;
+}
+
+.menu li:hover {
+  background-color: #d2d6db;
+  color: #323ebe;
+}
+
 /************* HEADER *****************/
 header {
   background-color: white;
@@ -48,7 +76,13 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
   border: 1px solid #ccc;
-  padding: 10px 0;
+  padding: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    padding: 20px;
+  }
 }
 
 header .header-wrapper {
@@ -70,14 +104,19 @@ header .header-wrapper .menu-left {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  /* BOTON HAMBURGUESA */
 }
 
 header .header-wrapper .menu-left .hamb-button {
   width: 50px;
   height: 50px;
-  display: block;
-  border: 1px solid #333;
-  border-radius: 5px;
+  display: inherit;
+}
+
+@media screen and (min-width: 768px) {
+  header .header-wrapper .menu-left .hamb-button {
+    display: none;
+  }
 }
 
 header .header-wrapper .menu-left .hamb-button:hover {
@@ -101,8 +140,77 @@ header .header-wrapper .menu-left input[type="checkbox"] {
   display: none;
 }
 
-header .header-wrapper .menu-left input[type="checkbox"]:checked + ul {
+header .header-wrapper .menu-left input[type="checkbox"]:checked + div {
   display: none;
+}
+
+header .header-wrapper .menu-left .menu {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  display: inherit;
+}
+
+@media screen and (min-width: 768px) {
+  header .header-wrapper .menu-left .menu {
+    display: none;
+  }
+}
+
+header .header-wrapper .menu-left .menu .menu-wrapper {
+  background-color: white;
+  height: 100%;
+  width: 50vw;
+  max-width: 300px;
+  margin: 0;
+}
+
+header .header-wrapper .menu-left .menu .menu-wrapper .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding: 16px;
+}
+
+header .header-wrapper .menu-left .menu .menu-wrapper .title h2 {
+  margin: 0;
+  font-size: 14pt;
+}
+
+header .header-wrapper .menu-left .menu .menu-wrapper .title .close-button {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 35px;
+  height: 35px;
+  font-weight: bold;
+  font-size: 22px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 50%;
+}
+
+header .header-wrapper .menu-left .menu .menu-wrapper .title .close-button:hover {
+  background-color: #d2d6db;
+}
+
+header .header-wrapper .menu-left .menu .menu-wrapper ul {
+  padding: 0 10px;
 }
 
 header .header-wrapper .menu-left .logo {
@@ -163,6 +271,11 @@ main #side-left .banner-side {
   max-width: 270px;
 }
 
+main #side-left h2 {
+  color: #323ebe;
+  text-align: center;
+}
+
 main #post-list.post-wrapper {
   width: 100%;
   display: -webkit-box;
@@ -197,7 +310,6 @@ main #post-list.post-wrapper article {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 100%;
   margin: 5px 0;
 }
 

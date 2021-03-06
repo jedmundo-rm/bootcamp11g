@@ -18,10 +18,12 @@ cubic-bezier(0.17, 0.67, 0.5, 0.71);
 #b5bdc4 (hover)
 #4d5760
 */
-
+$color-grey: #d2d6db;
 $color-grey-light: #d2d6db;
+$color-grey-middle: #76808c;
 $color-grey-dark: #4d5760;
 $color-black: #08090a;
+$color-blue: #323ebe;
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -29,6 +31,7 @@ body {
   padding: 0;
   background-color: #eef0f1;
   color: $color-grey-dark;
+  position: relative;
 }
 
 h1,
@@ -43,6 +46,26 @@ h3 {
   width: 34px;
 }
 
+.menu {
+  list-style: none;
+  padding: 0;
+  border-bottom: 1px solid #ccc;
+  li {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &:last-of-type {
+      padding: 10px 0 10px 36px;
+      font-size: 11pt;
+      color: $color-grey-middle;
+    }
+    &:hover {
+      background-color: $color-grey;
+      color: $color-blue;
+    }
+  }
+}
+
 /************* HEADER *****************/
 
 header {
@@ -50,7 +73,10 @@ header {
   display: flex;
   justify-content: space-between;
   border: 1px solid #ccc;
-  padding: 10px 0;
+  padding: 10px;
+  @media screen and (min-width: 768px) {
+    padding: 20px;
+  }
 
   .header-wrapper {
     display: flex;
@@ -61,13 +87,14 @@ header {
     .menu-left {
       display: flex;
       align-items: center;
-
+      /* BOTON HAMBURGUESA */
       .hamb-button {
         width: 50px;
         height: 50px;
-        display: block;
-        border: 1px solid #333;
-        border-radius: 5px;
+        display: inherit;
+        @media screen and (min-width: 768px) {
+          display: none;
+        }
         &:hover {
           cursor: pointer;
         }
@@ -85,8 +112,56 @@ header {
       }
       input[type="checkbox"] {
         display: none;
-        &:checked + ul {
+        &:checked + div {
           display: none;
+        }
+      }
+      .menu {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.3);
+        height: 100%;
+        width: 100vw;
+        top: 0;
+        left: 0;
+        display: inherit;
+        @media screen and (min-width: 768px) {
+          display: none;
+        }
+        .menu-wrapper {
+          background-color: white;
+          height: 100%;
+          width: 50vw;
+          max-width: 300px;
+          margin: 0;
+          .title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #ccc;
+            padding: 16px;
+            h2 {
+              margin: 0;
+              font-size: 14pt;
+            }
+            .close-button {
+              justify-content: center;
+              align-items: center;
+              width: 35px;
+              height: 35px;
+              font-weight: bold;
+              font-size: 22px;
+              cursor: pointer;
+              display: flex;
+              border-radius: 50%;
+              &:hover {
+                background-color: $color-grey-light;
+              }
+            }
+          }
+
+          ul {
+            padding: 0 10px;
+          }
         }
       }
 
@@ -144,6 +219,10 @@ main {
       width: 100%;
       max-width: 270px;
     }
+    h2 {
+      color: $color-blue;
+      text-align: center;
+    }
   }
 
   /*SECTION POST LIST*/
@@ -169,7 +248,6 @@ main {
         background-color: white;
         display: flex;
         flex-direction: column;
-        width: 100%;
         margin: 5px 0;
         .reacts {
           display: flex;
