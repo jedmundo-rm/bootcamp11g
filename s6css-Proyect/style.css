@@ -376,7 +376,7 @@ footer .col5 {
         -ms-flex-direction: column;
             flex-direction: column;
     text-align: left;
-    padding: 0 40px;
+    padding: 0 5%;
   }
   #section-dos h2 ~ p {
     max-width: 60%;
@@ -385,6 +385,7 @@ footer .col5 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    width: 100%;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -392,8 +393,83 @@ footer .col5 {
         -ms-flex-align: center;
             align-items: center;
   }
-  #section-dos .wrapper p {
-    width: 90%;
+  #section-dos .wrapper div {
+    margin: 0 30px 0 0;
+    width: 222px;
+    padding: 0;
+  }
+  #section-tres {
+    text-align: left;
+  }
+  #section-tres h4:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#31d35c), to(#2bb7da));
+    background: linear-gradient(#31d35c, #2bb7da);
+    -webkit-background-clip: text;
+    color: transparent;
+    cursor: pointer;
+  }
+  #section-tres h2 {
+    text-align: left;
+    padding: 0 80px;
+  }
+  #section-tres h4, #section-tres p, #section-tres figure figcaption {
+    padding: none;
+  }
+  #section-tres div {
+    background-color: #fafafa;
+    margin: 30px;
+  }
+  #section-tres p {
+    padding: 20px;
+  }
+  #section-tres .cards-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: space-between;
+        -ms-flex-align: space-between;
+            align-items: space-between;
+    padding: 30px;
+  }
+  #section-tres .cards-wrapper div figure img {
+    height: 25vh;
+  }
+  footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 5%;
+  }
+  footer .wrapper1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 50%;
+  }
+  footer .wrapper2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  footer li:hover, footer img:hover {
+    cursor: pointer;
+    color: #31d35c;
+  }
+  footer button:hover {
+    opacity: .50;
   }
 }
 /*# sourceMappingURL=style.css.map */
