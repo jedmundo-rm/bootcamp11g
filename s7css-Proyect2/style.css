@@ -184,15 +184,25 @@ main #side-right {
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  display: none;
 }
 
 main #side-right .list {
   border-top: 1px solid #ccc;
   padding: 17px 0;
+  cursor: pointer;
 }
 
 main #side-right .list div:nth-child(2) {
   padding-top: 10px;
   font-size: 12px;
+}
+
+/*TABLET*/
+/*DESKTOP*/
+@media only screen and (min-width: 1024px) {
+  #side-right {
+    display: block;
+  }
 }
 /*# sourceMappingURL=style.css.map */
