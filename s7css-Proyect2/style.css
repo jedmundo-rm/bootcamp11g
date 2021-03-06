@@ -179,6 +179,28 @@ main #post-list.post-wrapper {
           justify-content: space-evenly;
 }
 
+main #post-list.post-wrapper .section-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  padding: 0 20px;
+}
+
+main #post-list.post-wrapper .section-title .filter-desktop {
+  display: none;
+}
+
+main #post-list.post-wrapper .section-title select {
+  padding: 10px;
+  border-radius: 5px;
+}
+
 main #post-list.post-wrapper .img-wrapper {
   width: 100%;
   padding-top: 43%;
@@ -233,6 +255,18 @@ main #side-right .list div:nth-child(2) {
 @media only screen and (min-width: 768px) {
   main #side-left {
     display: block;
+  }
+  main #post-list .section-title .filter-movil {
+    display: none;
+  }
+  main #post-list .section-title .filter-desktop {
+    display: inherit;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
 }
 
