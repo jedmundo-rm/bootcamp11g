@@ -417,9 +417,6 @@ main {
         color: #4749df;
         font-weight: bold;
         font-size: 14px;
-      }
-      div:hover {
-        color: $color-blue;
         cursor: pointer;
       }
     }
@@ -437,6 +434,7 @@ main {
       &:hover {
         cursor: pointer;
         background-color: white;
+        color: $color-blue;
       }
       & > div:hover:first-of-type {
         color: $color-blue;

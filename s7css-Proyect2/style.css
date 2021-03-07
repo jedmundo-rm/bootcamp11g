@@ -549,10 +549,6 @@ main #side-right span div {
   color: #4749df;
   font-weight: bold;
   font-size: 14px;
-}
-
-main #side-right span div:hover {
-  color: #323ebe;
   cursor: pointer;
 }
 
@@ -571,6 +567,7 @@ main #side-right .list div:nth-child(2) {
 main #side-right .list:hover {
   cursor: pointer;
   background-color: white;
+  color: #323ebe;
 }
 
 main #side-right .list > div:hover:first-of-type {
