@@ -477,6 +477,7 @@ main #post-list article .autor {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 10px;
 }
 
 main #post-list article .autor .autor-name {
@@ -507,6 +508,18 @@ main #post-list .article-body {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   margin: 0.5rem;
+}
+
+main #post-list .article-body h2 {
+  padding: 0 54px;
+}
+
+main #post-list .article-body .tags {
+  padding: 0 54px;
+}
+
+main #post-list .article-body .reacts {
+  padding: 0 10px 0 54px;
 }
 
 main #side-right {

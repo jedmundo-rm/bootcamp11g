@@ -367,6 +367,7 @@ main {
       }
       .autor {
         display: flex;
+        padding: 10px;
         .autor-name {
           padding: 0 0.5rem;
           margin: auto 0;
@@ -388,6 +389,15 @@ main {
       flex-direction: column;
       justify-content: space-evenly;
       margin: 0.5rem;
+      h2 {
+        padding: 0 54px;
+      }
+      .tags {
+        padding: 0 54px;
+      }
+      .reacts {
+        padding: 0 10px 0 54px;
+      }
     }
   }
 
