@@ -99,8 +99,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  border: 1px solid #ccc;
-  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  padding: 4px;
   
   @media screen and (min-width: 768px) {
     //padding: 20px;

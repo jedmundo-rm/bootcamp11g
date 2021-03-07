@@ -103,8 +103,8 @@ header {
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
-  border: 1px solid #ccc;
-  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  padding: 4px;
 }
 
 header .header-wrapper {
