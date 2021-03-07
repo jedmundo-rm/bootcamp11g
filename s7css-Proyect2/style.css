@@ -89,6 +89,9 @@ h3 {
 
 /************* HEADER *****************/
 header {
+  /*position: -webkit-sticky;
+  position: sticky;
+  top: 0;*/
   background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -96,14 +99,11 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
   border: 1px solid #ccc;
   padding: 10px;
-}
-
-@media screen and (min-width: 768px) {
-  header {
-    padding: 20px;
-  }
 }
 
 header .header-wrapper {
@@ -127,6 +127,18 @@ header .header-wrapper .menu-left {
           align-items: center;
   width: 100%;
   /* BOTON HAMBURGUESA */
+}
+
+header .header-wrapper .menu-left .hamburger-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header .header-wrapper .menu-left .hamb-button {
@@ -236,8 +248,9 @@ header .header-wrapper .menu-left .menu .menu-wrapper ul {
 }
 
 header .header-wrapper .menu-left .logo {
-  width: 40px;
+  width: 50px;
   height: 40px;
+  border-radius: 3px;
 }
 
 header .header-wrapper .menu-left .search {
@@ -267,7 +280,35 @@ header .header-wrapper .menu-right {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 210px;
+  width: 240px;
+}
+
+header .header-wrapper .menu-right .button-post {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  header .header-wrapper .menu-right .button-post {
+    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #3b49df;
+    color: #f9fafa;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 180px;
+    height: 40px;
+  }
+  header .header-wrapper .menu-right .button-post:hover {
+    cursor: pointer;
+  }
 }
 
 header .header-wrapper .menu-right img {
@@ -400,6 +441,7 @@ main #post-list article {
       -ms-flex-direction: column;
           flex-direction: column;
   margin: 0.5rem 0;
+  cursor: pointer;
 }
 
 main #post-list article .reacts {
@@ -435,6 +477,11 @@ main #post-list article .reacts .react-left a {
   color: #4d5760;
 }
 
+main #post-list article .reacts .react-left a:hover {
+  background-color: #EEF0F1;
+  border-radius: 2px;
+}
+
 main #post-list article .reacts .react-text {
   display: none;
 }
@@ -449,7 +496,8 @@ main #post-list article .reacts button {
 }
 
 main #post-list article .reacts button:hover {
-  background-color: #76808c;
+  background-color: #b5bdc4;
+  cursor: pointer;
 }
 
 main #post-list article .tags {
@@ -534,7 +582,7 @@ main #side-right {
 }
 
 main #side-right aside {
-  border: 1px solid #ccc;
+  border: 1px solid #f9fafa;
   border-radius: 5px;
   margin-bottom: 15px;
   background-color: #f9fafa;
@@ -589,7 +637,7 @@ main #side-right .list > div:hover:first-of-type {
 
 main #side-right .list-txtmicro {
   font-size: 14px;
-  color: #d2d6db;
+  color: #4d5760;
 }
 
 main #side-right .list-new {
@@ -661,6 +709,9 @@ main #side-right .footer-list:hover {
 @media only screen and (min-width: 768px) {
   main #side-left {
     display: block;
+  }
+  main article h2:hover {
+    color: #3b49df;
   }
 }
 
