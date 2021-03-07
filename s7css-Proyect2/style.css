@@ -385,7 +385,7 @@ main #post-list .img-wrapper {
 }
 
 main #post-list article {
-  border: 1px solid #acacac;
+  border: 1px solid #d2d6db;
   background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -394,7 +394,7 @@ main #post-list article {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 5px 0;
+  margin: 0.5rem 0;
 }
 
 main #post-list article .reacts {
@@ -404,6 +404,86 @@ main #post-list article .reacts {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: .75rem;
+  color: #76808c;
+  margin: 0.5rem 0;
+}
+
+main #post-list article .reacts .react-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main #post-list article .reacts .react-left a {
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto 1.5rem auto 0;
+  color: #4d5760;
+}
+
+main #post-list article .reacts .react-text {
+  display: none;
+}
+
+main #post-list article .reacts button {
+  padding: .5rem;
+  margin-left: .5rem;
+  border: 0;
+  background-color: #d2d6db;
+  border-radius: 5px;
+  color: #4d5760;
+}
+
+main #post-list article .reacts button:hover {
+  background-color: #76808c;
+}
+
+main #post-list article .tags {
+  font-size: 0.875rem;
+  display: inline-block;
+}
+
+main #post-list article .tags a:link, main #post-list article .tags a:visited, main #post-list article .tags a:active {
+  text-decoration: none;
+  color: #76808c;
+  line-height: 1.3;
+  border-radius: 5px;
+  padding: 0.5rem 0.3rem 0.5rem 0;
+}
+
+main #post-list article .tags a:link span, main #post-list article .tags a:visited span, main #post-list article .tags a:active span {
+  color: #d2d6db;
+}
+
+main #post-list article .autor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main #post-list article .autor .autor-name {
+  padding: 0 0.5rem;
+  margin: auto 0;
+}
+
+main #post-list article .autor .autor-name div:first-of-type {
+  font-weight: bold;
+  font-size: 0.875rem;
+  color: #4d5760;
+}
+
+main #post-list article .autor .autor-name div:last-of-type {
+  font-size: .75rem;
+  color: #76808c;
 }
 
 main #post-list .article-body {
@@ -439,6 +519,7 @@ main #side-right .list div:nth-child(2) {
   font-size: 12px;
 }
 
+/*filter post*/
 @media only screen and (min-width: 640px) {
   main #post-list .section-title div:last-of-type {
     width: 60%;
@@ -469,6 +550,9 @@ main #side-right .list div:nth-child(2) {
   main #post-list .section-title .filter-desktop li.active {
     border-bottom: 5px solid #3b49df;
   }
+  main #post-list article .reacts .react-text {
+    display: block;
+  }
 }
 
 /*TABLET*/
@@ -482,6 +566,12 @@ main #side-right .list div:nth-child(2) {
 @media only screen and (min-width: 1024px) {
   main #side-right {
     display: block;
+  }
+  main article {
+    border-radius: 5px;
+  }
+  main article .img-wrapper {
+    border-radius: 5px 5px 0 0;
   }
 }
 
