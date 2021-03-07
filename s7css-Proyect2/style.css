@@ -501,16 +501,56 @@ main #post-list .article-body {
 }
 
 main #side-right {
-  background-color: #f9fafa;
-  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: none;
+  margin-bottom: 15px;
+}
+
+main #side-right aside {
   border: 1px solid #ccc;
   border-radius: 5px;
-  display: none;
+  margin-bottom: 15px;
+  background-color: #f9fafa;
+}
+
+main #side-right aside .blue-hover:hover {
+  color: #323ebe;
+  cursor: pointer;
+}
+
+main #side-right span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  padding: 12px 16px;
+}
+
+main #side-right span div {
+  color: #4749df;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+main #side-right span div:hover {
+  color: #323ebe;
+  cursor: pointer;
 }
 
 main #side-right .list {
   border-top: 1px solid #ccc;
-  padding: 17px 0;
+  padding: 16px;
+  color: #08090a;
   cursor: pointer;
 }
 
@@ -519,7 +559,49 @@ main #side-right .list div:nth-child(2) {
   font-size: 12px;
 }
 
-/*filter post*/
+main #side-right .list:hover {
+  cursor: pointer;
+  background-color: white;
+}
+
+main #side-right .list > div:hover:first-of-type {
+  color: #323ebe;
+}
+
+main #side-right .list-txtmicro {
+  font-size: 14px;
+  color: #d2d6db;
+}
+
+main #side-right .list-new {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 11px;
+  background-color: #3b49df;
+  color: #f9fafa;
+  width: 33px;
+  border-radius: 5px;
+  padding: 4px 0px;
+}
+
+main #side-right .footer-list {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+
+main #side-right .footer-list:hover {
+  color: #323ebe;
+  background-color: #f9fafa;
+}
+
 @media only screen and (min-width: 640px) {
   main #post-list .section-title div:last-of-type {
     width: 60%;
