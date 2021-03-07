@@ -26,7 +26,8 @@ cubic-bezier(0.17, 0.67, 0.5, 0.71);
 }
 
 textarea:focus,
-input:focus {
+input:focus,
+select:focus {
   outline: none;
 }
 
@@ -342,7 +343,7 @@ main {
   display: flex;
   width: 100%;
   max-width: 1400px;
-  margin: 20px auto 0 auto;
+  margin: 8px auto 0 auto;
   /*SECTION SIDE LEFT*/
   /*SECTION POST LIST*/
   /*SECTION SIDE RIGHT*/
@@ -406,10 +407,18 @@ main #post-list .section-title {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-  padding: 0 1.5rem;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 0 1.5rem 0.25rem;
+}
+
+main #post-list .section-title h1 {
+  font-size: 1.14rem;
+}
+
+main #post-list .section-title ul {
+  margin: 0;
 }
 
 main #post-list .section-title .filter-desktop {
@@ -417,9 +426,20 @@ main #post-list .section-title .filter-desktop {
 }
 
 main #post-list .section-title select {
-  padding: 10px;
+  padding: 8px;
   border-radius: 5px;
-  width: 87px;
+  line-height: 1.5;
+  font-size: 1rem;
+  border-color: #76808c;
+  color: #76808c;
+}
+
+main #post-list .section-title select option {
+  font-weight: normal;
+  display: block;
+  white-space: pre;
+  min-height: 1em;
+  padding: 0px 2px 1px;
 }
 
 main #post-list .img-wrapper {
@@ -440,8 +460,25 @@ main #post-list article {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 0.5rem 0;
+  margin: 0 0 0.5rem 0;
   cursor: pointer;
+}
+
+main #post-list article h2 {
+  font-size: 1.25rem;
+}
+
+main #post-list article h2 a:link, main #post-list article h2 a:visited, main #post-list article h2 a:active {
+  text-decoration: none;
+  color: #08090a;
+}
+
+main #post-list article h2 a:link:hover, main #post-list article h2 a:visited:hover, main #post-list article h2 a:active:hover {
+  color: #3b49df;
+}
+
+main #post-list article .feature {
+  font-size: 1.5rem;
 }
 
 main #post-list article .reacts {
@@ -475,11 +512,13 @@ main #post-list article .reacts .react-left a {
           align-items: center;
   margin: auto 1.5rem auto 0;
   color: #4d5760;
+  padding: 5px;
 }
 
 main #post-list article .reacts .react-left a:hover {
   background-color: #EEF0F1;
   border-radius: 2px;
+  color: #08090a;
 }
 
 main #post-list article .reacts .react-text {
@@ -521,6 +560,10 @@ main #post-list article .tags a:active span {
   color: #d2d6db;
 }
 
+main #post-list article .tags a:hover {
+  color: #08090a;
+}
+
 main #post-list article .autor {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -530,7 +573,16 @@ main #post-list article .autor {
 
 main #post-list article .autor .autor-name {
   padding: 0 0.5rem;
-  margin: auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 main #post-list article .autor .autor-name div:first-of-type {
@@ -542,6 +594,10 @@ main #post-list article .autor .autor-name div:first-of-type {
 main #post-list article .autor .autor-name div:last-of-type {
   font-size: 0.75rem;
   color: #76808c;
+}
+
+main #post-list article .autor .autor-name div:hover {
+  color: #08090a;
 }
 
 main #post-list .article-body {
@@ -707,11 +763,20 @@ main #side-right .footer-list:hover {
 
 /*TABLET*/
 @media only screen and (min-width: 768px) {
+  main {
+    margin-top: 16px;
+  }
   main #side-left {
     display: block;
   }
-  main article h2:hover {
-    color: #3b49df;
+  main #post-list .section-title h1 {
+    font-size: 1.25rem;
+  }
+  main article h2 {
+    font-size: 1.5rem;
+  }
+  main article .feature {
+    font-size: 1.875rem;
   }
 }
 
