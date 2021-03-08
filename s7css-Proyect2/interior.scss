@@ -105,7 +105,55 @@ main{
             }
 
         }
-    
+        
+        article.section-read-next{
+            .article-body{
+                margin-top: 2rem;
+                h2{
+                    font-size: 1.5rem;
+                    padding-left: 0;
+                }
+                .list-next{
+                    a:link, a:visited, a:active {
+                        text-decoration:none;
+                        color:#64707D;
+                        margin:0 .5rem;
+                    }
+                    .next-article{
+                        display: flex;
+                        align-items: center;
+                        span{
+                            margin:0;
+                        }
+                        div{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            margin-left: 1rem;
+                            h3{
+                                margin: 0;
+                                font-size: 1.25rem;
+                            }
+                            p{
+                                margin: 0;
+                            }
+
+                            h3:hover,p:hover{
+                                color:#3b49df;
+                                
+                            }
+                            
+                                
+                            
+                        }
+                        .ico-profile{
+                            width: 4rem;
+                            height: 4rem;
+                        }
+                    }
+                }
+            }
+        }    
     }
 }
 

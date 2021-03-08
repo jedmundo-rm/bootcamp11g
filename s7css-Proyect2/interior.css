@@ -130,6 +130,66 @@ main #post-list .article-body .code-conduct a:link, main #post-list .article-bod
   margin: 0 .5rem;
 }
 
+main #post-list article.section-read-next .article-body {
+  margin-top: 2rem;
+}
+
+main #post-list article.section-read-next .article-body h2 {
+  font-size: 1.5rem;
+  padding-left: 0;
+}
+
+main #post-list article.section-read-next .article-body .list-next a:link, main #post-list article.section-read-next .article-body .list-next a:visited, main #post-list article.section-read-next .article-body .list-next a:active {
+  text-decoration: none;
+  color: #64707D;
+  margin: 0 .5rem;
+}
+
+main #post-list article.section-read-next .article-body .list-next .next-article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main #post-list article.section-read-next .article-body .list-next .next-article span {
+  margin: 0;
+}
+
+main #post-list article.section-read-next .article-body .list-next .next-article div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 1rem;
+}
+
+main #post-list article.section-read-next .article-body .list-next .next-article div h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+main #post-list article.section-read-next .article-body .list-next .next-article div p {
+  margin: 0;
+}
+
+main #post-list article.section-read-next .article-body .list-next .next-article div h3:hover, main #post-list article.section-read-next .article-body .list-next .next-article div p:hover {
+  color: #3b49df;
+}
+
+main #post-list article.section-read-next .article-body .list-next .next-article .ico-profile {
+  width: 4rem;
+  height: 4rem;
+}
+
 @media only screen and (min-width: 768px) {
   main #post-list article .article-body {
     margin: .5rem 4rem;
