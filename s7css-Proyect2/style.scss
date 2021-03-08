@@ -94,9 +94,9 @@ header {
   display: flex;
   justify-content: space-between;
   border: 1px solid #ccc;
-  padding: 10px;
+  padding: 0px;
   @media screen and (min-width: 768px) {
-    padding: 20px;
+    padding: 8px;
   }
 
   .header-wrapper {
@@ -210,7 +210,21 @@ header {
       display: flex;
       justify-content: space-around;
       align-items: center;
-      width: 210px;
+      width: 300px;
+      button {
+        background-color: $color-blue-boton-list;
+        color: white;
+        border: 0px;
+        padding: 14px 20px;
+        border-radius: 6px;
+        width: 134px;
+        font-size: 16px;
+        cursor: pointer;
+        display: none;
+        @media screen and (min-width: 768px) {
+          display: inherit;
+        }
+      }
       img {
         padding: 8px;
         border-radius: 50%;

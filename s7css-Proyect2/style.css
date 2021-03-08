@@ -97,12 +97,12 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
   border: 1px solid #ccc;
-  padding: 10px;
+  padding: 0px;
 }
 
 @media screen and (min-width: 768px) {
   header {
-    padding: 20px;
+    padding: 8px;
   }
 }
 
@@ -267,7 +267,25 @@ header .header-wrapper .menu-right {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 210px;
+  width: 300px;
+}
+
+header .header-wrapper .menu-right button {
+  background-color: #3b49df;
+  color: white;
+  border: 0px;
+  padding: 14px 20px;
+  border-radius: 6px;
+  width: 134px;
+  font-size: 16px;
+  cursor: pointer;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  header .header-wrapper .menu-right button {
+    display: inherit;
+  }
 }
 
 header .header-wrapper .menu-right img {
