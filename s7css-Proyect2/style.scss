@@ -26,6 +26,7 @@ $color-black: #08090a;
 $color-blue: #323ebe;
 $color-blue-boton-list: #3b49df;
 $color-white: #f9fafa;
+$color-fondo: #EEF0F1;
 * {
   box-sizing: border-box;
   margin: 0;
@@ -33,7 +34,8 @@ $color-white: #f9fafa;
 }
 
 textarea:focus,
-input:focus {
+input:focus,
+select:focus {
   outline: none;
 }
 
@@ -90,13 +92,25 @@ h3 {
 /************* HEADER *****************/
 
 header {
+  /*position: -webkit-sticky;
+  position: sticky;
+  top: 0;*/
   background-color: white;
   display: flex;
   justify-content: space-between;
+<<<<<<< HEAD
   border: 1px solid #ccc;
   padding: 0px;
   @media screen and (min-width: 768px) {
     padding: 8px;
+=======
+  align-items: baseline;
+  border-bottom: 1px solid #ccc;
+  padding: 4px;
+  
+  @media screen and (min-width: 768px) {
+    //padding: 20px;
+>>>>>>> c35a3fe42cfcc0fe1e45c2b084bf1ea069496431
   }
 
   .header-wrapper {
@@ -110,6 +124,11 @@ header {
       align-items: center;
       width: 100%;
       /* BOTON HAMBURGUESA */
+      .hamburger-wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
       .hamb-button {
         width: 50px;
         height: 50px;
@@ -183,13 +202,16 @@ header {
 
           ul {
             padding: 0 10px;
+            
           }
         }
       }
 
       .logo {
-        width: 40px;
+        width: 50px;
         height: 40px;
+        border-radius: 3px;
+        
       }
       .search {
         font-size: 12pt;
@@ -210,6 +232,7 @@ header {
       display: flex;
       justify-content: space-around;
       align-items: center;
+<<<<<<< HEAD
       width: 300px;
       button {
         background-color: $color-blue-boton-list;
@@ -223,6 +246,25 @@ header {
         display: none;
         @media screen and (min-width: 768px) {
           display: inherit;
+=======
+      width: 240px;
+      .button-post{
+        display: none;
+        @media screen and (min-width: 768px) {
+          display: block;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: $color-blue-boton-list;
+          color: $color-white;
+          font-weight: bold;
+          border-radius: 5px;
+          width: 180px;
+          height: 40px;
+          &:hover{
+            cursor: pointer;
+          }
+>>>>>>> c35a3fe42cfcc0fe1e45c2b084bf1ea069496431
         }
       }
       img {
@@ -252,7 +294,7 @@ main {
   display: flex;
   width: 100%;
   max-width: 1400px;
-  margin: 20px auto 0 auto;
+  margin: 8px auto 0 auto;
 
   section {
     margin: 0 15px;
@@ -305,15 +347,31 @@ main {
     .section-title {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
-      padding: 0 1.5rem;
+      align-items: flex-start;;
+      padding: 0 1.5rem 0.25rem;
+      h1{
+        font-size: 1.14rem;
+      }
+      ul{
+        margin:0;
+      }
       .filter-desktop {
         display: none;
       }
       select {
-        padding: 10px;
+        padding: 8px;
         border-radius: 5px;
-        width: 87px;
+        line-height: 1.5;
+        font-size: 1rem;
+        border-color: $color-grey-middle;
+        color: $color-grey-middle;
+        option {
+          font-weight: normal;
+          display: block;
+          white-space: pre;
+          min-height: 1.2em;
+          padding: 0px 2px 1px;
+        }
       }
     }
 
@@ -330,7 +388,25 @@ main {
       background-color: white;
       display: flex;
       flex-direction: column;
-      margin: 0.5rem 0;
+      margin: 0 0 0.5rem 0;
+      cursor: pointer;
+      
+      h2{
+        font-size: 1.25rem;  
+        a:link, a:visited, a:active {
+          text-decoration:none;
+          color: $color-black;
+          &:hover{
+            color: $color-blue-boton-list;
+          }  
+        }  
+      }
+
+      .feature{
+        font-size: 1.5rem;
+        
+      }  
+        
       .reacts {
         display: flex;
         justify-content: space-between;
@@ -347,6 +423,12 @@ main {
           align-items: center;
           margin: auto 1.5rem auto 0;
           color: $color-grey-dark;
+          padding: 5px;
+          &:hover{
+            background-color: $color-fondo;
+            border-radius: 2px;
+            color:$color-black;
+          }
         }
         .react-text {
           display: none;
@@ -359,7 +441,8 @@ main {
           border-radius: 5px;
           color: $color-grey-dark;
           &:hover {
-            background-color: $color-grey-middle;
+            background-color: #b5bdc4;
+            cursor: pointer;
           }
         }
       }
@@ -378,13 +461,18 @@ main {
             color: $color-grey-light;
           }
         }
+        a:hover{
+          color:$color-black;
+        }
       }
       .autor {
         display: flex;
         padding: 10px;
         .autor-name {
           padding: 0 0.5rem;
-          margin: auto 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
           div:first-of-type {
             font-weight: bold;
             font-size: 0.875rem;
@@ -393,6 +481,9 @@ main {
           div:last-of-type {
             font-size: 0.75rem;
             color: $color-grey-middle;
+          }
+          div:hover{
+            color:$color-black;
           }
         }
       }
@@ -423,7 +514,7 @@ main {
     margin-bottom: 15px;
 
     aside {
-      border: 1px solid #ccc;
+      border: 1px solid #f9fafa;
       border-radius: 5px;
       margin-bottom: 15px;
       background-color: #f9fafa;
@@ -466,7 +557,7 @@ main {
     }
     .list-txtmicro {
       font-size: 14px;
-      color: $color-grey-light;
+      color: $color-grey-dark;
     }
     .list-new {
       display: flex;
@@ -543,8 +634,24 @@ main {
 /*TABLET*/
 @media only screen and (min-width: 768px) {
   main {
+    margin-top: 16px;
     #side-left {
       display: block;
+    }
+    #post-list{
+      .section-title{
+        h1{
+          font-size: 1.25rem;
+        }
+      }
+    }
+    article{
+      h2{
+        font-size: 1.5rem;
+      }
+      .feature{
+        font-size: 1.875rem;
+      }  
     }
   }
 }
@@ -559,7 +666,9 @@ main {
       border-radius: 5px;
       .img-wrapper {
         border-radius: 5px 5px 0 0;
+        
       }
+      
     }
   }
 }

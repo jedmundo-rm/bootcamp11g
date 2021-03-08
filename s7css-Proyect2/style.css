@@ -26,7 +26,8 @@ cubic-bezier(0.17, 0.67, 0.5, 0.71);
 }
 
 textarea:focus,
-input:focus {
+input:focus,
+select:focus {
   outline: none;
 }
 
@@ -89,6 +90,9 @@ h3 {
 
 /************* HEADER *****************/
 header {
+  /*position: -webkit-sticky;
+  position: sticky;
+  top: 0;*/
   background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -96,6 +100,7 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+<<<<<<< HEAD
   border: 1px solid #ccc;
   padding: 0px;
 }
@@ -104,6 +109,13 @@ header {
   header {
     padding: 8px;
   }
+=======
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  border-bottom: 1px solid #ccc;
+  padding: 4px;
+>>>>>>> c35a3fe42cfcc0fe1e45c2b084bf1ea069496431
 }
 
 header .header-wrapper {
@@ -127,6 +139,18 @@ header .header-wrapper .menu-left {
           align-items: center;
   width: 100%;
   /* BOTON HAMBURGUESA */
+}
+
+header .header-wrapper .menu-left .hamburger-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header .header-wrapper .menu-left .hamb-button {
@@ -236,8 +260,9 @@ header .header-wrapper .menu-left .menu .menu-wrapper ul {
 }
 
 header .header-wrapper .menu-left .logo {
-  width: 40px;
+  width: 50px;
   height: 40px;
+  border-radius: 3px;
 }
 
 header .header-wrapper .menu-left .search {
@@ -267,6 +292,7 @@ header .header-wrapper .menu-right {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+<<<<<<< HEAD
   width: 300px;
 }
 
@@ -279,12 +305,41 @@ header .header-wrapper .menu-right button {
   width: 134px;
   font-size: 16px;
   cursor: pointer;
+=======
+  width: 240px;
+}
+
+header .header-wrapper .menu-right .button-post {
+>>>>>>> c35a3fe42cfcc0fe1e45c2b084bf1ea069496431
   display: none;
 }
 
 @media screen and (min-width: 768px) {
+<<<<<<< HEAD
   header .header-wrapper .menu-right button {
     display: inherit;
+=======
+  header .header-wrapper .menu-right .button-post {
+    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #3b49df;
+    color: #f9fafa;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 180px;
+    height: 40px;
+  }
+  header .header-wrapper .menu-right .button-post:hover {
+    cursor: pointer;
+>>>>>>> c35a3fe42cfcc0fe1e45c2b084bf1ea069496431
   }
 }
 
@@ -319,7 +374,7 @@ main {
   display: flex;
   width: 100%;
   max-width: 1400px;
-  margin: 20px auto 0 auto;
+  margin: 8px auto 0 auto;
   /*SECTION SIDE LEFT*/
   /*SECTION POST LIST*/
   /*SECTION SIDE RIGHT*/
@@ -383,10 +438,18 @@ main #post-list .section-title {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-  padding: 0 1.5rem;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 0 1.5rem 0.25rem;
+}
+
+main #post-list .section-title h1 {
+  font-size: 1.14rem;
+}
+
+main #post-list .section-title ul {
+  margin: 0;
 }
 
 main #post-list .section-title .filter-desktop {
@@ -394,9 +457,20 @@ main #post-list .section-title .filter-desktop {
 }
 
 main #post-list .section-title select {
-  padding: 10px;
+  padding: 8px;
   border-radius: 5px;
-  width: 87px;
+  line-height: 1.5;
+  font-size: 1rem;
+  border-color: #76808c;
+  color: #76808c;
+}
+
+main #post-list .section-title select option {
+  font-weight: normal;
+  display: block;
+  white-space: pre;
+  min-height: 1.2em;
+  padding: 0px 2px 1px;
 }
 
 main #post-list .img-wrapper {
@@ -417,7 +491,25 @@ main #post-list article {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 0.5rem 0;
+  margin: 0 0 0.5rem 0;
+  cursor: pointer;
+}
+
+main #post-list article h2 {
+  font-size: 1.25rem;
+}
+
+main #post-list article h2 a:link, main #post-list article h2 a:visited, main #post-list article h2 a:active {
+  text-decoration: none;
+  color: #08090a;
+}
+
+main #post-list article h2 a:link:hover, main #post-list article h2 a:visited:hover, main #post-list article h2 a:active:hover {
+  color: #3b49df;
+}
+
+main #post-list article .feature {
+  font-size: 1.5rem;
 }
 
 main #post-list article .reacts {
@@ -451,6 +543,13 @@ main #post-list article .reacts .react-left a {
           align-items: center;
   margin: auto 1.5rem auto 0;
   color: #4d5760;
+  padding: 5px;
+}
+
+main #post-list article .reacts .react-left a:hover {
+  background-color: #EEF0F1;
+  border-radius: 2px;
+  color: #08090a;
 }
 
 main #post-list article .reacts .react-text {
@@ -467,7 +566,8 @@ main #post-list article .reacts button {
 }
 
 main #post-list article .reacts button:hover {
-  background-color: #76808c;
+  background-color: #b5bdc4;
+  cursor: pointer;
 }
 
 main #post-list article .tags {
@@ -491,6 +591,10 @@ main #post-list article .tags a:active span {
   color: #d2d6db;
 }
 
+main #post-list article .tags a:hover {
+  color: #08090a;
+}
+
 main #post-list article .autor {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -500,7 +604,16 @@ main #post-list article .autor {
 
 main #post-list article .autor .autor-name {
   padding: 0 0.5rem;
-  margin: auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 main #post-list article .autor .autor-name div:first-of-type {
@@ -512,6 +625,10 @@ main #post-list article .autor .autor-name div:first-of-type {
 main #post-list article .autor .autor-name div:last-of-type {
   font-size: 0.75rem;
   color: #76808c;
+}
+
+main #post-list article .autor .autor-name div:hover {
+  color: #08090a;
 }
 
 main #post-list .article-body {
@@ -552,7 +669,7 @@ main #side-right {
 }
 
 main #side-right aside {
-  border: 1px solid #ccc;
+  border: 1px solid #f9fafa;
   border-radius: 5px;
   margin-bottom: 15px;
   background-color: #f9fafa;
@@ -607,7 +724,7 @@ main #side-right .list > div:hover:first-of-type {
 
 main #side-right .list-txtmicro {
   font-size: 14px;
-  color: #d2d6db;
+  color: #4d5760;
 }
 
 main #side-right .list-new {
@@ -677,8 +794,20 @@ main #side-right .footer-list:hover {
 
 /*TABLET*/
 @media only screen and (min-width: 768px) {
+  main {
+    margin-top: 16px;
+  }
   main #side-left {
     display: block;
+  }
+  main #post-list .section-title h1 {
+    font-size: 1.25rem;
+  }
+  main article h2 {
+    font-size: 1.5rem;
+  }
+  main article .feature {
+    font-size: 1.875rem;
   }
 }
 
