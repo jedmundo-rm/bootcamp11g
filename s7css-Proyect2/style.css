@@ -90,8 +90,7 @@ h3 {
 
 /************* HEADER *****************/
 header {
-  position: -webkit-sticky;
-  position: sticky;
+  position: initial;
   top: 0;
   width: 100%;
   background-color: white;
@@ -107,6 +106,8 @@ header {
 
 @media screen and (min-width: 768px) {
   header {
+    position: -webkit-sticky;
+    position: sticky;
     padding: 8px;
     -webkit-box-align: baseline;
         -ms-flex-align: baseline;
