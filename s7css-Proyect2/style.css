@@ -90,9 +90,10 @@ h3 {
 
 /************* HEADER *****************/
 header {
-  /*position: -webkit-sticky;
+  position: -webkit-sticky;
   position: sticky;
-  top: 0;*/
+  top: 0;
+  width: 100%;
   background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -398,6 +399,82 @@ main #side-left .banner-side {
 main #side-left h2 {
   color: #323ebe;
   text-align: center;
+}
+
+main #side-left .menu-inner-post {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style: none;
+  padding: 0 15px;
+}
+
+main #side-left .menu-inner-post li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+main #side-left .menu-inner-post li > div {
+  border-radius: 50%;
+  padding: 6px;
+  width: 40px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main #side-left .menu-inner-post li:hover:nth-child(1) div {
+  background-color: #eddadb;
+}
+
+main #side-left .menu-inner-post li:hover:nth-child(1) img {
+  -webkit-filter: invert(27%) sepia(55%) saturate(2394%) hue-rotate(338deg) brightness(89%) contrast(120%);
+          filter: invert(27%) sepia(55%) saturate(2394%) hue-rotate(338deg) brightness(89%) contrast(120%);
+}
+
+main #side-left .menu-inner-post li:hover:nth-child(2) div {
+  background-color: #daeeee;
+}
+
+main #side-left .menu-inner-post li:hover:nth-child(2) img {
+  -webkit-filter: invert(45%) sepia(75%) saturate(363%) hue-rotate(128deg) brightness(96%) contrast(91%);
+          filter: invert(45%) sepia(75%) saturate(363%) hue-rotate(128deg) brightness(96%) contrast(91%);
+}
+
+main #side-left .menu-inner-post li:hover:nth-child(3) div {
+  background-color: #dcdff0;
+}
+
+main #side-left .menu-inner-post li:hover:nth-child(3) img {
+  -webkit-filter: invert(21%) sepia(78%) saturate(2571%) hue-rotate(227deg) brightness(101%) contrast(87%);
+          filter: invert(21%) sepia(78%) saturate(2571%) hue-rotate(227deg) brightness(101%) contrast(87%);
+}
+
+main #side-left .menu-inner-post li:hover:nth-child(4) div {
+  background-color: #d2d6db;
 }
 
 main #post-list {
@@ -751,6 +828,9 @@ main #side-right .footer-list:hover {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   main #post-list .section-title .filter-desktop li {
     margin: 0 0.25rem;
@@ -767,6 +847,10 @@ main #side-right .footer-list:hover {
     border-bottom: 3.5px solid #3b49df;
     padding: 8px 0;
     margin: 0 8px;
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+    -webkit-transform: all;
+            transform: all;
   }
   main #post-list .section-title .filter-desktop li.active:hover {
     padding: 0.5rem;
