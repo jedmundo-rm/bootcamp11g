@@ -269,6 +269,90 @@ header {
   }
 }
 
+/************* BANNER *****************/
+
+.banner {
+  background-image: url("images/banner/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: middle center;
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    @media screen and (min-width: 550px) {
+      max-width: 490px;
+    }
+    @media screen and (min-width: 900px) {
+      max-width: 600px;
+    }
+  }
+  .banner-container {
+    display: flex;
+    padding: 50px;
+    position: relative;
+    background: linear-gradient(
+      111.57deg,
+      #3140e7 0%,
+      rgba(49, 64, 231, 0) 100%
+    );
+    .left {
+      width: 100%;
+      @media screen and (min-width: 550px) {
+        width: 100%;
+      }
+      @media screen and (min-width: 900px) {
+        width: 60%;
+      }
+      p {
+        color: #fff;
+        font-size: 18pt;
+      }
+      .btn {
+        border: 0px;
+        padding: 10px 40px;
+        color: #fff;
+        font-size: 14pt;
+        border-radius: 4px;
+        margin: 10px 0;
+        width: 220px;
+        cursor: pointer;
+        &#btn1 {
+          background: #22aa9c;
+          margin-right: 12px;
+        }
+        &#btn2 {
+          background: rgba(255, 255, 255, 0.2);
+        }
+      }
+    }
+    .right {
+      display: flex;
+      justify-content: flex-end;
+      width: 40%;
+      display: none;
+      @media screen and (min-width: 550px) {
+        width: 10%;
+        position: absolute;
+        top: 40px;
+        right: 25px;
+        display: inherit;
+      }
+      @media screen and (min-width: 900px) {
+        position: initial;
+        width: 40%;
+      }
+      img {
+        max-width: 300px;
+        height: max-content;
+      }
+    }
+  }
+}
+
 /************* CONTENIDO INTERNO *****************/
 
 main {

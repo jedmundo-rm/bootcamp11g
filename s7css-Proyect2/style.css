@@ -346,6 +346,120 @@ header .header-wrapper .menu-right img:hover {
   background-color: #d2d6db;
 }
 
+/************* BANNER *****************/
+.banner {
+  background-image: url("images/banner/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: middle center;
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.banner img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+@media screen and (min-width: 550px) {
+  .banner img {
+    max-width: 490px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .banner img {
+    max-width: 600px;
+  }
+}
+
+.banner .banner-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 50px;
+  position: relative;
+  background: linear-gradient(111.57deg, #3140e7 0%, rgba(49, 64, 231, 0) 100%);
+}
+
+.banner .banner-container .left {
+  width: 100%;
+}
+
+@media screen and (min-width: 550px) {
+  .banner .banner-container .left {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .banner .banner-container .left {
+    width: 60%;
+  }
+}
+
+.banner .banner-container .left p {
+  color: #fff;
+  font-size: 18pt;
+}
+
+.banner .banner-container .left .btn {
+  border: 0px;
+  padding: 10px 40px;
+  color: #fff;
+  font-size: 14pt;
+  border-radius: 4px;
+  margin: 10px 0;
+  width: 220px;
+  cursor: pointer;
+}
+
+.banner .banner-container .left .btn#btn1 {
+  background: #22aa9c;
+  margin-right: 12px;
+}
+
+.banner .banner-container .left .btn#btn2 {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.banner .banner-container .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 40%;
+  display: none;
+}
+
+@media screen and (min-width: 550px) {
+  .banner .banner-container .right {
+    width: 10%;
+    position: absolute;
+    top: 40px;
+    right: 25px;
+    display: inherit;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .banner .banner-container .right {
+    position: initial;
+    width: 40%;
+  }
+}
+
+.banner .banner-container .right img {
+  max-width: 300px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
 /************* CONTENIDO INTERNO *****************/
 main {
   display: -webkit-box;
