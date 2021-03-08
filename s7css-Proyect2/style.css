@@ -755,6 +755,11 @@ main #side-right .list > div:hover:first-of-type {
 main #side-right .list-txtmicro {
   font-size: 14px;
   color: #4d5760;
+  line-height: 24px;
+}
+
+main #side-right .list-txtmicro a {
+  margin-left: 6px;
 }
 
 main #side-right .list-new {

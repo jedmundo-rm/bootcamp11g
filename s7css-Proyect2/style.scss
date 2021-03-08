@@ -572,6 +572,10 @@ main {
     .list-txtmicro {
       font-size: 14px;
       color: $color-grey-dark;
+      line-height: 24px;
+      a {
+        margin-left: 6px;
+      }
     }
     .list-new {
       display: flex;
