@@ -100,11 +100,18 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-  border-bottom: 1px solid #ccc;
-  padding: 4px;
+  border: 1px solid #ccc;
+  padding: 0px;
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    padding: 8px;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    border-bottom: 1px solid #ccc;
+  }
 }
 
 header .header-wrapper {
@@ -281,40 +288,39 @@ header .header-wrapper .menu-right {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 240px;
+  width: 300px;
 }
 
 header .header-wrapper .menu-right .button-post {
+  background-color: #3b49df;
+  color: white;
+  border: 0px;
+  padding: 14px 20px;
+  border-radius: 6px;
+  width: 134px;
+  font-size: 16px;
+  cursor: pointer;
   display: none;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  -webkit-transform: all;
+          transform: all;
 }
 
 @media screen and (min-width: 768px) {
   header .header-wrapper .menu-right .button-post {
-    display: block;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    background-color: #3b49df;
-    color: #f9fafa;
-    font-weight: bold;
-    border-radius: 5px;
-    width: 180px;
-    height: 40px;
+    display: inherit;
   }
-  header .header-wrapper .menu-right .button-post:hover {
-    cursor: pointer;
-  }
+}
+
+header .header-wrapper .menu-right .button-post:hover {
+  background-color: #323ebe;
 }
 
 header .header-wrapper .menu-right img {
   padding: 8px;
   border-radius: 50%;
+  margin: 0 6px;
   cursor: pointer;
 }
 
@@ -468,12 +474,16 @@ main #post-list article h2 {
   font-size: 1.25rem;
 }
 
-main #post-list article h2 a:link, main #post-list article h2 a:visited, main #post-list article h2 a:active {
+main #post-list article h2 a:link,
+main #post-list article h2 a:visited,
+main #post-list article h2 a:active {
   text-decoration: none;
   color: #08090a;
 }
 
-main #post-list article h2 a:link:hover, main #post-list article h2 a:visited:hover, main #post-list article h2 a:active:hover {
+main #post-list article h2 a:link:hover,
+main #post-list article h2 a:visited:hover,
+main #post-list article h2 a:active:hover {
   color: #3b49df;
 }
 
@@ -516,7 +526,7 @@ main #post-list article .reacts .react-left a {
 }
 
 main #post-list article .reacts .react-left a:hover {
-  background-color: #EEF0F1;
+  background-color: #eef0f1;
   border-radius: 2px;
   color: #08090a;
 }
