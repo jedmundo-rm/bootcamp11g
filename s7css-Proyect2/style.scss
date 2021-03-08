@@ -234,13 +234,20 @@ header {
         font-size: 16px;
         cursor: pointer;
         display: none;
+        transition: 0.5s ease-in-out;
+        transform: all;
+
         @media screen and (min-width: 768px) {
           display: inherit;
+        }
+        &:hover {
+          background-color: $color-blue;
         }
       }
       img {
         padding: 8px;
         border-radius: 50%;
+        margin: 0 6px;
         cursor: pointer;
         &.ico-search {
           display: inherit;

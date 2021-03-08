@@ -301,6 +301,10 @@ header .header-wrapper .menu-right .button-post {
   font-size: 16px;
   cursor: pointer;
   display: none;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  -webkit-transform: all;
+          transform: all;
 }
 
 @media screen and (min-width: 768px) {
@@ -309,9 +313,14 @@ header .header-wrapper .menu-right .button-post {
   }
 }
 
+header .header-wrapper .menu-right .button-post:hover {
+  background-color: #323ebe;
+}
+
 header .header-wrapper .menu-right img {
   padding: 8px;
   border-radius: 50%;
+  margin: 0 6px;
   cursor: pointer;
 }
 
