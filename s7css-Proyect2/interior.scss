@@ -1,13 +1,59 @@
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
 main{
     #post-list{
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-        /*width: 60%;    <media query desktop*/
+        max-width: 1280px;
         article{
             cursor: inherit;
         }
         .article-body{
             margin: .5rem 3rem;
             font-size: 1.25rem;
+            a:link, a:visited, a:active {
+                color: #3b49df;
+            }
+            .tags {
+                padding: 0;
+                
+                a{
+                    margin-right: .5rem;
+                    &:nth-of-type(1){
+                        background-color: #562765;
+                        color:white;
+                        padding: 0.25rem 0.5rem;
+                    }
+                    &:nth-of-type(2){
+                        background-color: #f7df1e;
+                        color:#08090a;
+                        padding: 0.25rem 0.5rem;
+                    }
+                    &:nth-of-type(3){
+                        background-color: #2a0798;
+                        color:white;
+                        padding: 0.25rem 0.5rem;
+                    }
+                    &:nth-of-type(4){
+                        background-color: #008335;
+                        color:white;
+                        padding: 0.25rem 0.5rem;
+                    }
+                    
+                    
+                }
+            }
+            .autor{
+                .autor-name{
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: flex-start;
+                    div{ 
+                        margin-right: .5rem;
+                    }
+                }
+            }
+            
             p,ul{
                 margin: 0 0 1.25rem 0;
             }
@@ -56,3 +102,33 @@ main{
     
     }
 }
+
+@media only screen and (min-width: 768px) {
+    main{
+        #post-list{
+            article{
+                .article-body{    
+                    h1{
+                        font-size: 36px; 
+                    }
+                }
+            }
+            
+        }
+    }        
+}   
+
+@media only screen and (min-width: 1024px) {
+    main{
+        #post-list{
+            article{
+                .article-body{    
+                    h1{
+                        font-size: 44px; 
+                    }
+                }
+            }
+            
+        }
+    }  
+}    
