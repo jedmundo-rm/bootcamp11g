@@ -110,7 +110,7 @@ header {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 1400px;
+    max-width: 1240px;
     margin: 0 auto;
     .menu-left {
       display: flex;
@@ -214,6 +214,8 @@ header {
         margin: 0 20px;
         width: 100%;
         max-width: 400px;
+        background-color: #f9fafa;
+        color: #41484f;
         display: none;
         @media screen and (min-width: 768px) {
           display: inherit;
@@ -272,7 +274,7 @@ header {
 main {
   display: flex;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1240px;
   margin: 8px auto 0 auto;
 
   section {

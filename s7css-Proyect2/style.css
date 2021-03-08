@@ -123,7 +123,7 @@ header .header-wrapper {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1240px;
   margin: 0 auto;
 }
 
@@ -272,6 +272,8 @@ header .header-wrapper .menu-left .search {
   margin: 0 20px;
   width: 100%;
   max-width: 400px;
+  background-color: #f9fafa;
+  color: #41484f;
   display: none;
 }
 
@@ -350,7 +352,7 @@ main {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1240px;
   margin: 8px auto 0 auto;
   /*SECTION SIDE LEFT*/
   /*SECTION POST LIST*/
