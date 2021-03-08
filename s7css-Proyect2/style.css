@@ -103,6 +103,7 @@ header {
           justify-content: space-between;
   border: 1px solid #ccc;
   padding: 0px;
+  z-index: 1;
 }
 
 @media screen and (min-width: 768px) {
@@ -123,7 +124,7 @@ header .header-wrapper {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1240px;
   margin: 0 auto;
 }
 
@@ -168,15 +169,15 @@ header .header-wrapper .menu-left .hamb-button:hover {
 
 header .header-wrapper .menu-left .hamb-button:before {
   content: "";
-  width: 60%;
+  width: 35%;
   display: block;
   height: 2px;
   background-color: #333;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 14px;
-  -webkit-box-shadow: 0px 10px 0 0 #333, 0px 20px 0 0 #333;
-          box-shadow: 0px 10px 0 0 #333, 0px 20px 0 0 #333;
+  margin-top: 18px;
+  -webkit-box-shadow: 0px 7px 0 0 #333, 0px 14px 0 0 #333;
+          box-shadow: 0px 7px 0 0 #333, 0px 14px 0 0 #333;
 }
 
 header .header-wrapper .menu-left input[type="checkbox"] {
@@ -188,13 +189,14 @@ header .header-wrapper .menu-left input[type="checkbox"]:checked + div {
 }
 
 header .header-wrapper .menu-left .menu {
-  position: absolute;
+  position: fixed;
   background: rgba(0, 0, 0, 0.3);
   height: 100%;
-  width: 100vw;
+  width: 100%;
   top: 0;
   left: 0;
   display: inherit;
+  z-index: 2;
 }
 
 @media screen and (min-width: 768px) {
@@ -271,6 +273,8 @@ header .header-wrapper .menu-left .search {
   margin: 0 20px;
   width: 100%;
   max-width: 400px;
+  background-color: #f9fafa;
+  color: #41484f;
   display: none;
 }
 
@@ -343,13 +347,127 @@ header .header-wrapper .menu-right img:hover {
   background-color: #d2d6db;
 }
 
+/************* BANNER *****************/
+.banner {
+  background-image: url("images/banner/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: middle center;
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.banner img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+@media screen and (min-width: 550px) {
+  .banner img {
+    max-width: 490px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .banner img {
+    max-width: 600px;
+  }
+}
+
+.banner .banner-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 50px;
+  position: relative;
+  background: linear-gradient(111.57deg, #3140e7 0%, rgba(49, 64, 231, 0) 100%);
+}
+
+.banner .banner-container .left {
+  width: 100%;
+}
+
+@media screen and (min-width: 550px) {
+  .banner .banner-container .left {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .banner .banner-container .left {
+    width: 60%;
+  }
+}
+
+.banner .banner-container .left p {
+  color: #fff;
+  font-size: 18pt;
+}
+
+.banner .banner-container .left .btn {
+  border: 0px;
+  padding: 10px 40px;
+  color: #fff;
+  font-size: 14pt;
+  border-radius: 4px;
+  margin: 10px 0;
+  width: 220px;
+  cursor: pointer;
+}
+
+.banner .banner-container .left .btn#btn1 {
+  background: #22aa9c;
+  margin-right: 12px;
+}
+
+.banner .banner-container .left .btn#btn2 {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.banner .banner-container .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 40%;
+  display: none;
+}
+
+@media screen and (min-width: 550px) {
+  .banner .banner-container .right {
+    width: 10%;
+    position: absolute;
+    top: 40px;
+    right: 25px;
+    display: inherit;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .banner .banner-container .right {
+    position: initial;
+    width: 40%;
+  }
+}
+
+.banner .banner-container .right img {
+  max-width: 300px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
 /************* CONTENIDO INTERNO *****************/
 main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1240px;
   margin: 8px auto 0 auto;
   /*SECTION SIDE LEFT*/
   /*SECTION POST LIST*/
@@ -362,33 +480,6 @@ main section {
 
 main #side-left {
   display: none;
-}
-
-main #side-left .hamb-button {
-  width: 50px;
-  height: 50px;
-  display: block;
-  border: 1px solid #333;
-  border-radius: 5px;
-  position: absolute;
-  top: 0;
-}
-
-main #side-left .hamb-button:hover {
-  cursor: pointer;
-}
-
-main #side-left .hamb-button:before {
-  content: "";
-  width: 60%;
-  display: block;
-  height: 2px;
-  background-color: #333;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 14px;
-  -webkit-box-shadow: 0px 10px 0 0 #333, 0px 20px 0 0 #333;
-          box-shadow: 0px 10px 0 0 #333, 0px 20px 0 0 #333;
 }
 
 main #side-left .banner-side {
@@ -781,6 +872,11 @@ main #side-right .list > div:hover:first-of-type {
 main #side-right .list-txtmicro {
   font-size: 14px;
   color: #4d5760;
+  line-height: 24px;
+}
+
+main #side-right .list-txtmicro a {
+  margin-left: 6px;
 }
 
 main #side-right .list-new {
