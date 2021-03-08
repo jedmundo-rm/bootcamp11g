@@ -1,1 +1,68 @@
-/* No CSS *//*# sourceMappingURL=interior.css.map */
+main #post-list {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  /*width: 60%;    <media query desktop*/
+}
+
+main #post-list article {
+  cursor: inherit;
+}
+
+main #post-list .article-body {
+  margin: .5rem 3rem;
+  font-size: 1.25rem;
+}
+
+main #post-list .article-body p, main #post-list .article-body ul {
+  margin: 0 0 1.25rem 0;
+}
+
+main #post-list .article-body .article-content img {
+  width: 100%;
+}
+
+main #post-list .article-body .discussion-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main #post-list .article-body .discussion-title button {
+  padding: .5rem;
+}
+
+main #post-list .article-body .discussion-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main #post-list .article-body .discussion-body .discussion-comment {
+  border: 1px solid #ccc;
+  border-radius: .25rem;
+  padding: 1rem;
+}
+
+main #post-list .article-body .discussion-body .discussion-comment a:link, main #post-list .article-body .discussion-body .discussion-comment a:visited, main #post-list .article-body .discussion-body .discussion-comment a:active {
+  text-decoration: none;
+  color: #64707D;
+}
+
+main #post-list .article-body .code-conduct {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: .85rem;
+}
+
+main #post-list .article-body .code-conduct a:link, main #post-list .article-body .code-conduct a:visited, main #post-list .article-body .code-conduct a:active {
+  text-decoration: none;
+  color: #64707D;
+  margin: 0 .5rem;
+}
+/*# sourceMappingURL=interior.css.map */

@@ -1,0 +1,58 @@
+main{
+    #post-list{
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+        /*width: 60%;    <media query desktop*/
+        article{
+            cursor: inherit;
+        }
+        .article-body{
+            margin: .5rem 3rem;
+            font-size: 1.25rem;
+            p,ul{
+                margin: 0 0 1.25rem 0;
+            }
+            .article-content{
+                img{
+                    width: 100%;
+                }
+                
+            }
+            .discussion-title{
+                display: flex;
+                justify-content: space-between;
+               
+                button{
+                    padding: .5rem;
+                }
+            }
+            .discussion-body{
+                display: flex;
+                .discussion-comment{
+                    a:link, a:visited, a:active {
+                        text-decoration:none;
+                        color:#64707D;
+                        
+                    }
+                    border:1px solid #ccc;
+                    border-radius: .25rem;
+                    padding: 1rem;
+                }
+
+            }
+            .code-conduct{
+                display: flex;
+                justify-content: center;
+                font-size: .85rem;
+                
+                
+                a:link, a:visited, a:active {
+                    text-decoration:none;
+                    color:#64707D;
+                    margin:0 .5rem;
+                }
+            }
+
+        }
+    
+    }
+}

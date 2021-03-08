@@ -98,11 +98,12 @@
         
         <article>
           <div class="img-wrapper" style="background-image: url('images/single/photo-main.jpeg')"></div>
+          
           <div class="article-body">
             
             <div>
-              <h1 class="feature">
-                <a href="post.html">Diagnosing Performance Issues 💻</a>  
+              <h1>
+                Diagnosing Performance Issues 💻  
               </h1>
             </div>
             <div class="tags">
@@ -118,7 +119,7 @@
                   <div>Mar 8 (2 hours ago)</div>
                 </div>
             </div>
-            
+            <!---->
             <div class="article-content">
                 <p>We've talked about <a href="#">performance tools</a> and <a href="#">web vitals</a>. So you know how to measure performance and what the metrics are telling you. Now comes the hard part, how do you improve them?</p>
         
@@ -134,11 +135,11 @@
                 
                 <p>To access the calculator run a Lighthouse audit and scroll to the Performance section.</p>
                 
-                <p><a href="#" class=""><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--d7t_ujKf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lvt3qlyo2cp7i9qj7mgh.png" alt="Screenshot showing the link to the calculator in the text under the performance section of the Lighthouse run." loading="lazy"></a></p>
+                <p><a href="#" class=""><img src="images/single/content-image1.png" alt="Screenshot showing the link to the calculator in the text under the performance section of the Lighthouse run." loading="lazy"></a></p>
                 
                 <p>It will open up the calculator so you can start moving metrics around and get an idea of what to balance in order to improve your performance score.</p>
                 
-                <p><a href="#" class=""><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--QKTBT05J--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4xwlt5k4lbpa0kylze8y.png" alt="Screenshot of Lighthouse calculator page." loading="lazy"></a></p>
+                <p><a href="#" class=""><img src="images/single/content-image2.png" alt="Screenshot of Lighthouse calculator page." loading="lazy"></a></p>
                 
                 <p>You'll notice in this calculator that some of the metrics have little impact -- something like speed index for example. Others can only be optimized so much. But it's a great starting point to help direct you to your biggest performance challenges.</p>
                 
@@ -150,7 +151,7 @@
                 
                 <p>The next thing you want to do is record performance. You can do this in devtools.</p>
                 
-                <p><a href="#" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--_G0DFCcp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/skjiweuhql5k31v4nh0f.png" alt="Performance tab in devtools noting the record button." loading="lazy"></a></p>
+                <p><a href="#" class="article-body-image-wrapper"><img src="images/single/content-image3.png" alt="Performance tab in devtools noting the record button." loading="lazy"></a></p>
                 
                 <p>Some recommendations:</p>
                 
@@ -162,7 +163,7 @@
                 
                 <p>After pressing record, be sure to refresh your site to get an example of the page load experience and the metrics you're looking for.</p>
                 
-                <p><a href="#" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--PO2nd1tI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v7zn8o68ga1y8fflsdnw.png" alt="Perfomance tab displaying a recording." loading="lazy"></a></p>
+                <p><a href="#" class="article-body-image-wrapper"><img src="images/single/content-image4.png" alt="Perfomance tab displaying a recording." loading="lazy"></a></p>
                 
                 <p>Once you've got your recording you can see how the page render changes in milliseconds. You're going to look for long-running tasks, or tasks that trigger reloads, etc.</p>
                 
@@ -295,26 +296,68 @@
                 <p>You're probably thinking, what do you mean "that's it"?!? That was a lot! And you're absolutely right.</p>
                 
                 <p>It's worth noting that many of these optimizations won't apply to your page. But for the ones that do, you aren't looking to eliminate every re-calc or prevent the need to download your large assets. These behaviors are necessary for an awesome, dynamic site. The goal is to minimize their impact on user experience and handle them in the most performant way.</p>
-        
+            </div>
+            <!---->
+            <div class="discussion-title">
+                <h2>Discussion <span >(1)</span> </h2>
+                <button>Suscribe</button>
+            </div>
+            <div class="discussion-body">
+                <div> 
+                    <img class="ico-profile" src="images/single/user3.webp" />
+                </div>
+                <div class="discussion-comment">
+                    <div class="">
+                        <a href="#" >
+                            <span>InHuOfficial</span>
+                        </a>
+                        
+                        <span>•</span>
+                        
+                        <a href="#">
+                        <time datetime="2021-03-01T17:42:24Z" title="lunes, 1 de marzo de 2021 11:42:24">
+                            Mar  1
+                        </time>
+                        
+                            • Edited
+                            <span >
+                            on <time datetime="2021-03-01T17:47:50Z" title="lunes, 1 de marzo de 2021 11:47:50">
+                            Mar 1</time>
+                            </span>
+                        </a>
+                    </div>
 
+                    
+                    <p> great article, this time I made sure I read it properly instead of skim reading so I don't repeat what you said lol 😋</p>
+
+                    <p>I am intrigued by the "inline SVGs can be expensive", my old site is about as heavy as you can get on SVG (all inline) and doesn't suffer on initial render even with a 4x CPU slowdown (although all my floating squares and the "train smoke" do kill performance 🤣), obviously if there is something I am missing here I would love to know to add it to my bag of "avoid doing this" tricks, is it particular filters or something that are best avoided? (it could be that because I ran them all through SVG OMG to optimise them i don't see issues?)</p>
+
+                    </p>The only other thing is to add that when running a performance trace you should set the network to "Fast 3G" and the CPU to "4x Slowdown" in the settings (cog top right below the "menu 3 dots" to show settings) in order to catch long running tasks, layout shifts, LCP times etc. that Lighthouse would pick up for mobile audits as those are pretty similar to the settings Lighthouse uses to throttle your connection and CPU for the mobile test).</p> 
+                </div>    
             </div>
             <div class="reacts">
               <div class="react-left">
                 <a href="#">
                   <img src="images/single/reaction-heart.svg" />
-                  <span> 10 </span><span class="react-text"> &nbsp;reactions</span>                   
+                  <span> 10 </span><span class="react-text"> &nbsp;likes</span>                   
                 </a>
                 <a href="#">
                   <img src="images/single/comentario.svg" />
-                  <span> 2 </span><span class="react-text"> &nbsp;comments</span>
+                  <span></span><span class="react-text"> &nbsp;Reply</span>
                 </a>  
               </div>
               <div class="react-right">
-                <span>4 min read</span>
-                <button>Save</button>
+                <!--<span>4 min read</span>
+                <button>Save</button>--->
               </div>
             </div>
-            <div></div>
+            <div class="code-conduct">
+               
+                <a href="#" class="">Code of Conduct</a>
+                <span class="" role="presentation">•</span>
+                <a href="" class="">Report abuse</a>
+              
+            </div>  
           </div>
         </article>
         <article>
@@ -352,7 +395,9 @@
                 <span>9 min read</span>
                 <button>Save</button>
               </div>
+
             </div>
+         
             <div></div>
           </div>
           <!---->
