@@ -92,7 +92,7 @@ h3 {
 /************* HEADER *****************/
 
 header {
-  position: initial;
+  position: sticky;
   top: 0;
   width: 100%;
   background-color: white;
@@ -101,7 +101,6 @@ header {
   border: 1px solid #ccc;
   padding: 0px;
   @media screen and (min-width: 768px) {
-    position: sticky;
     padding: 8px;
     align-items: baseline;
     border-bottom: 1px solid #ccc;
@@ -152,13 +151,14 @@ header {
         }
       }
       .menu {
-        position: absolute;
+        position: fixed;
         background: rgba(0, 0, 0, 0.3);
         height: 100%;
         width: 100%;
         top: 0;
         left: 0;
         display: inherit;
+        z-index: 1;
         @media screen and (min-width: 768px) {
           display: none;
         }
