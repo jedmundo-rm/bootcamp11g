@@ -5,11 +5,14 @@ body{
 main{
     #post-list{
         max-width: 1280px;
+        h1{
+            margin:0 0 1rem;
+        }
         article{
             cursor: inherit;
         }
         .article-body{
-            margin: .5rem 3rem;
+            margin: .5rem 1.25rem;
             font-size: 1.25rem;
             a:link, a:visited, a:active {
                 color: #3b49df;
@@ -56,6 +59,9 @@ main{
             
             p,ul{
                 margin: 0 0 1.25rem 0;
+            }
+            ul{
+                padding-left: 1.5rem;     
             }
             .article-content{
                 img{
@@ -107,7 +113,8 @@ main{
     main{
         #post-list{
             article{
-                .article-body{    
+                .article-body{
+                    margin: .5rem 4rem;    
                     h1{
                         font-size: 36px; 
                     }
@@ -124,7 +131,7 @@ main{
             article{
                 .article-body{    
                     h1{
-                        font-size: 44px; 
+                        font-size: 48px; 
                     }
                 }
             }

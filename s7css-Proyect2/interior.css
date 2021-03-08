@@ -6,12 +6,16 @@ main #post-list {
   max-width: 1280px;
 }
 
+main #post-list h1 {
+  margin: 0 0 1rem;
+}
+
 main #post-list article {
   cursor: inherit;
 }
 
 main #post-list .article-body {
-  margin: .5rem 3rem;
+  margin: .5rem 1.25rem;
   font-size: 1.25rem;
 }
 
@@ -72,6 +76,10 @@ main #post-list .article-body p, main #post-list .article-body ul {
   margin: 0 0 1.25rem 0;
 }
 
+main #post-list .article-body ul {
+  padding-left: 1.5rem;
+}
+
 main #post-list .article-body .article-content img {
   width: 100%;
 }
@@ -123,6 +131,9 @@ main #post-list .article-body .code-conduct a:link, main #post-list .article-bod
 }
 
 @media only screen and (min-width: 768px) {
+  main #post-list article .article-body {
+    margin: .5rem 4rem;
+  }
   main #post-list article .article-body h1 {
     font-size: 36px;
   }
@@ -130,7 +141,7 @@ main #post-list .article-body .code-conduct a:link, main #post-list .article-bod
 
 @media only screen and (min-width: 1024px) {
   main #post-list article .article-body h1 {
-    font-size: 44px;
+    font-size: 48px;
   }
 }
 /*# sourceMappingURL=interior.css.map */
