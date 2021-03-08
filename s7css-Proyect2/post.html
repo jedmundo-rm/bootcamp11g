@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DEV Community 👩‍💻👨‍💻</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-wrapper">
+        <div class="menu-left">
+          <!-- Menu Hamburguesa -->
+          <div class="hamburger-wrapper">
+            <label for="check" class="hamb-button"> </label>
+            <input id="check" type="checkbox" />
+            <div class="menu">
+              <div class="menu-wrapper">
+                <div class="title">
+                  <h2>DEV Community</h2>
+                  <label for="check" class="close-button"><div>X</div></label>
+                </div>
+                <ul>
+                  <li><img src="images/sidebar/ico1.png" /> Home</li>
+                  <li><img src="images/sidebar/ico2.png" /> Reading List</li>
+                  <li><img src="images/sidebar/ico3.png" /> Listings</li>
+                  <li><img src="images/sidebar/ico4.png" /> Podcasts</li>
+                  <li><img src="images/sidebar/ico5.png" /> Videos</li>
+                  <li><img src="images/sidebar/ico6.png" /> Tags</li>
+                  <li>More...</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Logo -->
+          <img class="logo" src="images/dev-black.png" />
+          <!-- Search -->
+          <input class="search" type="search" name="Search..." id="" placeholder="Search..."/>
+        </div>
+
+
+        <div class="menu-right">
+            <span class="button-post">Write a post</span>
+            <img class="ico-search" src="images/single/icon-search.svg" alt="" srcset="" />
+            <img src="images/single/icon-connect.svg" alt="" srcset="" />
+            <img src="images/single/icon-notification.svg" alt="" srcset="" />
+            <img
+              class="ico-profile"
+              src="images/single/photo-profile.jpeg"
+              alt=""
+              srcset=""
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="side-left">
+        <ul class="menu">
+          <li><img src="images/sidebar/ico1.png" /> Home</li>
+          <li><img src="images/sidebar/ico2.png" /> Reading List</li>
+          <li><img src="images/sidebar/ico3.png" /> Listings</li>
+          <li><img src="images/sidebar/ico4.png" /> Podcasts</li>
+          <li><img src="images/sidebar/ico5.png" /> Videos</li>
+          <li><img src="images/sidebar/ico6.png" /> Tags</li>
+          <li>More...</li>
+        </ul>
+
+        <img class="banner-side" src="images/content/banner-side.jpg" />
+        <h2>Get The Daisy DEV Fall Jacket</h2>
+      </section>
+
+      <section id="post-list" class="post-wrapper">
+        <div class="section-title">
+          <div>
+            <h1>Posts</h1>
+          </div>
+          <div>
+            <ul class="filter-desktop">
+              <li class="active">Feed</li>
+              <li>Week</li>
+              <li>Month</li>
+              <li>Year</li>
+              <li>Infinity</li>
+              <li>Latest</li>
+            </ul>
+    
+            <select class="filter-movil" id="feed-filter-select" aria-label="feed-filter-select">
+              <option value="" selected="" >Feed</option>
+              <option value="/top/week">Week</option>
+              <option value="/top/month">Month</option>
+              <option value="/top/year">Year</option>
+              <option value="/top/infinity">Infinity</option>
+              <option value="/latest">Latest</option>
+            </select>
+          </div>
+        </div>
+         
+        
+        <article>
+          <div class="img-wrapper" style="background-image: url('images/single/photo-main.jpeg')"></div>
+          <div class="article-body">
+            
+            <div>
+              <h2 class="feature">
+                <a href="post.html">Diagnosing Performance Issues 💻</a>  
+              </h2>
+            </div>
+            <div class="tags">
+              <a href="#"><span>#</span>beginners</a>
+              <a href="#"><span>#</span>productivity</a>
+              <a href="#"><span>#</span>javascript</a>
+              <a href="#"><span>#</span>webdev</a>
+            </div>
+            <div class="autor">
+                <img class="ico-profile" src="images/single/photo-profile.jpeg" /> 
+                <div class="autor-name">
+                  <div>Laurie</div>  
+                  <div>Mar 8 (2 hours ago)</div>
+                </div>
+              </div>
+            <div>
+                <p>
+                    We've talked about performance tools and web vitals. So you know how to measure performance and what the metrics are telling you. Now comes the hard part, how do you improve them?
+                </p>
+            </div>
+            <div class="reacts">
+              <div class="react-left">
+                <a href="#">
+                  <img src="images/single/reaction-heart.svg" />
+                  <span> 10 </span><span class="react-text"> &nbsp;reactions</span>                   
+                </a>
+                <a href="#">
+                  <img src="images/single/comentario.svg" />
+                  <span> 2 </span><span class="react-text"> &nbsp;comments</span>
+                </a>  
+              </div>
+              <div class="react-right">
+                <span>4 min read</span>
+                <button>Save</button>
+              </div>
+            </div>
+            <div></div>
+          </div>
+        </article>
+        <article>
+          <div class="article-body">
+            <div>
+                <h2>
+                  <a href="#">Read next</a> 
+                </h2>
+            </div>  
+            <div class="autor">
+              <img class="ico-profile" src="images/single/user3.webp" /> 
+              <div class="autor-name">
+                <div>George Lucas</div>  
+                <div>Mar 7 (23 hours ago)</div>
+              </div>
+            </div>
+            
+            <div class="tags">
+              <a href="#"><span>#</span>startup</a>
+              <a href="#"><span>#</span>indiehacker</a>
+            </div>
+            <div class="reacts">
+              <div class="react-left">
+                <a href="#">
+                  <img src="images/single/reaction-heart.svg" />
+                  <span> 13 </span><span class="react-text"> &nbsp;reactions</span>                   
+                </a>
+                <a href="#">
+                  <img src="images/single/comentario.svg" />
+                  <span> 28 </span><span class="react-text"> &nbsp;comments</span>
+                </a>  
+              </div>
+
+              <div class="react-right">
+                <span>9 min read</span>
+                <button>Save</button>
+              </div>
+            </div>
+            <div></div>
+          </div>
+        </article>
+        <!--
+        <article>
+          <div class="article-body">
+            <div class="autor">
+              <img class="ico-profile" src="images/single/user2.webp" /> 
+              <div class="autor-name">
+                <div>Katherine Peterson</div>  
+                <div>Mar 7 (19 hours ago)</div>
+              </div>
+            </div>
+            <div>
+              <h2>
+                <a href="#">Best design 🎨 resources websites every developer should bookmark🔖</a> 
+              </h2>
+            </div>
+            <div class="tags">
+              <a href="#"><span>#</span>design</a>
+              <a href="#"><span>#</span>css</a>
+              <a href="#"><span>#</span>javascript</a>
+            </div>
+            <div class="reacts">
+              <div class="react-left">
+                <a href="#">
+                  <img src="images/single/reaction-heart.svg" />
+                  <span> 91 </span><span class="react-text"> &nbsp;reactions</span>                   
+                </a>
+                <a href="#">
+                  <img src="images/single/comentario.svg" />
+                  <span> 14 </span><span class="react-text"> &nbsp;comments</span>
+                </a>  
+              </div>
+
+              <div class="react-right">
+                <span>5 min read</span>
+                <button>Save</button>
+              </div>
+            </div>
+            <div></div>
+          </div>
+        </article>
+        <article>
+          <div class="article-body">
+            <div class="autor">
+              <img class="ico-profile" src="images/single/user4.webp" /> 
+              <div class="autor-name">
+                <div>Troy McClure</div>  
+                <div>Mar 5 </div>
+              </div>
+            </div>
+            <div>
+              <h2>
+                <a href="#">Object Oriented JavaScript</a> 
+              </h2>
+            </div>
+            <div class="tags">              
+              <a href="#"><span>#</span>javascript</a>
+              <a href="#"><span>#</span>webdev</a>
+            </div>
+            <div class="reacts">
+              <div class="react-left">
+                <a href="#">
+                  <img src="images/single/reaction-heart.svg" />
+                  <span> 15 </span><span class="react-text"> &nbsp;reactions</span>                   
+                </a>
+                <a href="#">
+                  <img src="images/single/comentario.svg" />
+                  <span> 32 </span><span class="react-text"> &nbsp;comments</span>
+                </a>  
+              </div>
+
+              <div class="react-right">
+                <span>20 min read</span>
+                <button>Save</button>
+              </div>
+            </div>
+            <div></div>
+          </div>
+        </article>
+        <article>
+          <div class="article-body">
+            <div class="autor">
+              <img class="ico-profile" src="images/single/user2.webp" /> 
+              <div class="autor-name">
+                <div>Johnny Lawrence</div>  
+                <div>Mar 5 </div>
+              </div>
+            </div>
+            <div>
+              <h2>
+                <a href="#">🚀10 Trending projects on GitHub for web developers - 5th March 2021</a> 
+              </h2>
+            </div>
+            <div class="tags">
+              <a href="#"><span>#</span>css</a>
+              <a href="#"><span>#</span>javascript</a>
+              <a href="#"><span>#</span>react</a>
+            </div>
+            <div class="reacts">
+              <div class="react-left">
+                <a href="#">
+                  <img src="images/single/reaction-heart.svg" />
+                  <span> 21 </span><span class="react-text"> &nbsp;reactions</span>                   
+                </a>
+                <a href="#">
+                  <img src="images/single/comentario.svg" />
+                  <span> 5 </span><span class="react-text"> &nbsp;comments</span>
+                </a>  
+              </div>
+
+              <div class="react-right">
+                <span>5 min read</span>
+                <button>Save</button>
+              </div>
+            </div>
+            <div></div>
+          </div>
+        </article>
+        <article>
+          <div class="article-body">
+            <div class="autor">
+              <img class="ico-profile" src="images/single/user5.webp" /> 
+              <div class="autor-name">
+                <div>Axl Rose</div>  
+                <div>Mar 4</div>
+              </div>
+            </div>
+            <div>
+              <h2>
+                <a href="#">Music for coding: 50 Spotify playlists for developers 🎧</a> 
+              </h2>
+            </div>
+            <div class="tags">
+              <a href="#"><span>#</span>code</a>
+              <a href="#"><span>#</span>music</a>
+            </div>
+            <div class="reacts">
+              <div class="react-left">
+                <a href="#">
+                  <img src="images/single/reaction-heart.svg" />
+                  <span> 41 </span><span class="react-text"> &nbsp;reactions</span>                   
+                </a>
+                <a href="#">
+                  <img src="images/single/comentario.svg" />
+                  <span> 7 </span><span class="react-text"> &nbsp;comments</span>
+                </a>  
+              </div>
+
+              <div class="react-right">
+                <span>59 min read</span>
+                <button>Save</button>
+              </div>
+            </div>
+            <div></div>
+          </div>
+        </article>
+        -->
+      </section>
+
+      <section id="side-right">
+        <aside>
+          <span>
+            <h3>Listings</h3>
+            <div>See all</div>
+        </span>
+          <div class="list">
+            <div>Meet iOS community with informal interviews</div>
+            <div class="list-txtmicro">misc</div>
+         </div>
+        
+          <div class="list">
+            <div>Frontend Engineer for OSS project</div>
+            <div class="list-txtmicro">jobs</div>
+          </div>
+          <div class="list">
+            <div>The ultimate compilation of Cheat sheets (200+) - 🎁 / Roadmap to dev 🚀 -Free!</div>
+            <div class="list-txtmicro">collabs</div>
+          </div>
+          <div class="list">
+            <div>[Mar 18th] ⚙️ React x REST API Workshop ⚙️</div>
+            <div class="list-txtmicro">events</div>
+          </div>
+          <div class="list">
+            <div>Developer Evangelist - Computer Vision & Robotics</div>
+            <div class="list-txtmicro">jobs</div>
+          </div>
+          <div class="footer-list list">
+            Create a Listing
+          </div>
+        </aside>
+        <aside>
+          <span>
+            <h3 class="blue-hover">#news</h3>
+          </span>
+          <div class="list">
+            <div>Game Dev Digest — Issue #84 - Learning, Tips, and Free Courses</div>
+            <div><span class="list-new">New</span></div>
+          </div>
+          <div class="list">
+            <div>Continuous Feedback for Developers</div>
+            <div><span class="list-new">New</span></div>
+          </div>
+          <div class="list">
+            <div>You can now get voice and video calls with Whatsapp Desktop</div>
+            <div><span class="list-new">New</span></div>
+          </div>
+          <div class="list">
+            <div>PyScaffold 4.0 is here 🔥</div>
+            <div><span class="list-new">New</span></div>
+          </div>
+          <div class="list">
+            <div>I've Joined Forem as a Principal SRE</div>
+            <div><span class="list-new">New</span></div>
+          </div>
+        </aside>
+        <aside>
+          <span>
+            <h3 class="blue-hover">#help</h3>
+          </span>
+          <div class="list">
+            <div>Application Design for Multi-Tenancy Apps</div>
+            <div class="list-txtmicro">2 comments</div>
+          </div>
+          <div class="list">
+            <div>Linux from Scratch on WSL2?</div>
+            <div><span class="list-new">New</span></div>
+          </div>
+          <div class="list">
+            <div>The Odin Project still worth to go through in 2021?</div>
+            <div class="list-txtmicro">3 comments</div>
+          </div>
+          <div class="list">
+            <div>How to install ImageMagick?</div>
+            <div class="list-txtmicro">3 comments</div>
+          </div>
+          <div class="list">
+            <div>How do I create a Player for a Podcast using RSS Feed?</div>
+            <div><span class="list-new">New</span></div>
+          </div>
+        </aside>
+      </section>
+    </main>
+    <footer>
+        <img class="mono" src="images/single/footer-image.png" alt="" srcset="">
+        <div class="footer-wrapper">
+            <div class="footer-menu">
+                <ul>
+                    <li>Home </li>
+                    <li>Reading List </li>
+                    <li>Listings </li>
+                    <li>Podcasts </li>
+                    <li>Videos </li>
+                    <li>Tags </li>
+                    <li>Code of Conduct </li>
+                    <li>FAQ </li>
+                    <li>DEV Shop </li>
+                    <li>Sponsors </li>
+                    <li>About </li>
+                    <li>Privacy </li>
+                    <li>Policy </li>
+                    <li>Terms of use </li>
+                    <li>Contact </li>
+                    <li><b>Write a post</b></li>
+                </ul>
+            </div>
+            <div class="footer-redes">
+                <img src="images/single/footer-icon-twitter.svg" alt="" srcset="">
+                <img src="images/single/footer-icon-facebook.svg" alt="" srcset="">
+                <img src="images/single/footer-icon-twitch.svg" alt="" srcset="">
+                <img src="images/single/footer-icon-instagram.svg" alt="" srcset="">
+                <img src="images/single/footer-icon-git.svg" alt="" srcset="">
+            </div>
+            <div class="footer-txt1">
+                <p><b>DEV Community</b> – A constructive and inclusive social network for software developers. With you every step of your journey.</p>
+                <p>Built on <b>Forem</b> — the <b>open source</b> software that powers <b>DEV</b> and other inclusive communities.</p>
+                <p>Made with love and <b>Ruby on Rails</b>. DEV Community © 2016 - 2021.</p>
+                <img src="images/single/footer-plant.svg" alt="" srcset="">
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </footer>
+  </body>
+</html>
