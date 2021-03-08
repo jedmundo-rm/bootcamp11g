@@ -92,9 +92,10 @@ h3 {
 /************* HEADER *****************/
 
 header {
-  /*position: -webkit-sticky;
+  position: -webkit-sticky;
   position: sticky;
-  top: 0;*/
+  top: 0;
+  width: 100%;
   background-color: white;
   display: flex;
   justify-content: space-between;
@@ -582,6 +583,7 @@ main {
           display: inherit;
           display: flex;
           justify-content: flex-end;
+          align-items: center;
           li {
             margin: 0 0.25rem;
             padding: 0.5rem;
@@ -596,8 +598,11 @@ main {
               border-bottom: 3.5px solid rgb(59, 73, 223);
               padding: 8px 0;
               margin: 0 8px;
-              &:hover{
-                padding:0.5rem; 
+
+              transition: 0.2s ease-in-out;
+              transform: all;
+              &:hover {
+                padding: 0.5rem;
                 margin: 0;
               }
             }
@@ -671,6 +676,7 @@ footer {
     transition: 0.5s ease-in-out;
     transform-origin: top center;
     transform: all;
+
     display: none;
     @media screen and (min-width: 768px) {
       display: inherit;
