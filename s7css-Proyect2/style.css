@@ -746,7 +746,7 @@ main #side-right .footer-list:hover {
     margin: 0 0.25rem;
     padding: 0.5rem;
     list-style: none;
-    border-radius: 5px;
+    border-radius: 3px;
   }
   main #post-list .section-title .filter-desktop li:hover {
     background: rgba(59, 73, 223, 0.1);
@@ -754,7 +754,13 @@ main #side-right .footer-list:hover {
     cursor: pointer;
   }
   main #post-list .section-title .filter-desktop li.active {
-    border-bottom: 5px solid #3b49df;
+    border-bottom: 3.5px solid #3b49df;
+    padding: 8px 0;
+    margin: 0 8px;
+  }
+  main #post-list .section-title .filter-desktop li.active:hover {
+    padding: 0.5rem;
+    margin: 0;
   }
   main #post-list article .reacts .react-text {
     display: block;
