@@ -160,6 +160,7 @@ main{
 @media only screen and (min-width: 768px) {
     main{
         #post-list{
+            width: 300%;
             article{
                 .article-body{
                     margin: .5rem 4rem;    
@@ -169,6 +170,88 @@ main{
                 }
             }
             
+        }
+        #side-right{
+            position: sticky;
+            top: 15px;
+            //z-index: 100;
+            ul{
+                .flex-min{
+                    display: flex;
+                    justify-content: baseline;
+                    align-items: center;
+                }
+            }
+            &>div{
+                //margin-top: 1rem;
+                //border-top-color: #922180;
+            }
+            
+            .ico-profile2{
+                width: 50px;
+                height: 50px;
+                border-radius: 100%;
+            }
+            .card-work{
+                display: flex;
+                justify-content: left;
+                align-items: baseline;
+                .work-hover{
+                    color: #3b49df;
+                    cursor: pointer; 
+                }
+                .opacity{
+                    opacity:  0.5;
+                };
+            }
+            .card-flex{
+                
+                display: flex;
+                justify-content: left;
+                align-items: baseline;
+                font-weight: bold;
+                font-size: 20px;
+                & > :last-of-type:hover{
+                    color: #3b49df;
+                    cursor: pointer;
+                }
+                & >{
+                    color: #08090a;
+                }
+              }
+                .side-right-profile{
+                    padding: 16px;
+                    ul{
+                        list-style:none;
+                    }
+                    .card-content{
+                        padding-bottom: 14px;
+                    }
+                    .card-title-sec{
+                        font-weight: bold;
+                        font-size: 12px;
+                        color: #4d5760;  
+                    }
+                    button{
+                        background-color: #3b49df;
+                        color: white;
+                        border: 0px;
+                        padding: 14px 20px;
+                        border-radius: 6px;
+                        width: 100%;
+                        font-size: 16px;
+                        cursor: pointer;
+                    }
+                    button:hover{
+                        background-color: #323ebe
+                    }
+                    button:active{
+                        content: "Following";
+                        background-color: #EEF0F1;
+                        border: 1px solid #b5bdc4;
+                    }
+                  //background: #922180;
+                }
         }
     }        
 }   
@@ -185,5 +268,7 @@ main{
             }
             
         }
+        
+        
     }  
 }    
