@@ -231,7 +231,6 @@ main #post-list article.section-read-next .article-body .list-next .next-article
     width: 50px;
     height: 50px;
     border-radius: 100%;
-    margin-top: -8px;
   }
   main #side-right .card-work {
     display: -webkit-box;
@@ -272,8 +271,11 @@ main #post-list article.section-read-next .article-body .list-next .next-article
     color: #08090a;
   }
   main #side-right .side-right-profile {
+    border-top: 33px solid #922180;
     padding: 16px;
-    border-top-color: #922180;
+  }
+  main #side-right .side-right-profile .top-profile {
+    margin-top: -45px;
   }
   main #side-right .side-right-profile ul {
     list-style: none;

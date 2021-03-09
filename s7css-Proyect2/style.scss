@@ -277,9 +277,10 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: middle center;
-  max-width: 1240px;
+  max-width: 1210px;
   width: 100%;
-  margin: 0 auto;
+  margin: 12px auto 0;
+  border-radius: 5px;
   img {
     width: 100%;
     max-width: 600px;
@@ -292,6 +293,7 @@ header {
     }
   }
   .banner-container {
+    border-radius: 5px;
     display: flex;
     padding: 50px;
     position: relative;
@@ -319,7 +321,7 @@ header {
         font-size: 14pt;
         border-radius: 4px;
         margin: 10px 0;
-        width: 220px;
+        //width: 220px;
         cursor: pointer;
         &#btn1 {
           background: #22aa9c;

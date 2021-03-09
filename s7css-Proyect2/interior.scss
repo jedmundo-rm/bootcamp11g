@@ -201,7 +201,7 @@ main{
                 width: 50px;
                 height: 50px;
                 border-radius: 100%;
-                margin-top: -8px;
+                
             }
             .card-work{
                 display: flex;
@@ -231,8 +231,11 @@ main{
                 }
               }
                 .side-right-profile{
+                    border-top: 33px solid #922180;
                     padding: 16px;
-                    border-top-color: #922180;
+                    .top-profile{
+                        margin-top: -45px;
+                    }
                     ul{
                         list-style:none;
                     }
