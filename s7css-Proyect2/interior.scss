@@ -181,13 +181,14 @@ main {
       position: sticky;
       /*top: 15px;*/
       /*z-index: 100;*/
-      bottom: 148px;
+      bottom: -150px;
       align-self: flex-end;
       a:link,
       a:visited,
       a:active {
         text-decoration: none;
       }
+
       ul {
         .flex-min {
           display: flex;
