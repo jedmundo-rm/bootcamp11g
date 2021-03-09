@@ -373,7 +373,7 @@ main {
     display: none;
     .banner-side {
       width: 100%;
-      max-width: 270px;
+      max-width: 236px;
     }
     h2 {
       color: $color-blue;
@@ -383,7 +383,7 @@ main {
 
   /*SECTION POST LIST*/
   #post-list {
-    width: 100%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
 
@@ -391,7 +391,7 @@ main {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      padding: 0 1.5rem 0.25rem;
+      padding: 0.6rem 0;
       h1 {
         font-size: 1.14rem;
       }
@@ -556,6 +556,8 @@ main {
     justify-content: space-between;
     display: none;
     margin-bottom: 15px;
+    max-width: 324px;
+    width: 38%;
 
     aside {
       border: 1px solid #f9fafa;

@@ -311,7 +311,6 @@ main #post-list article.section-read-next .article-body .list-next .next-article
     top: 80px;
     -ms-flex-item-align: start;
         align-self: flex-start;
-    max-width: 346px;
   }
   main #side-right a:link,
   main #side-right a:visited,
