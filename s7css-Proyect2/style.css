@@ -415,6 +415,7 @@ header .header-wrapper .menu-right img:hover {
   font-size: 14pt;
   border-radius: 4px;
   margin: 10px 0;
+  width: 220px;
   cursor: pointer;
 }
 
@@ -494,9 +495,15 @@ main #side-left h2 {
 }
 
 main #post-list {
-  width: 80%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media screen and (min-width: 1024px) {
+  main #post-list {
+    width: 80%;
+  }
 }
 
 main #post-list .section-title {
