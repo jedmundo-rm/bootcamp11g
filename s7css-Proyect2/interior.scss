@@ -1,9 +1,73 @@
+$color-grey: #d2d6db;
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 main {
+  #side-left {
+    .menu-inner-post {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      padding: 0 15px;
+      li {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px 0;
+        cursor: pointer;
+        & > div {
+          border-radius: 50%;
+          padding: 6px;
+          height: 40px;
+          width: 40px;
+          text-align: center;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        &:hover {
+          &:nth-child(1) {
+            div {
+              background-color: #eddadb;
+            }
+            img {
+              filter: invert(27%) sepia(55%) saturate(2394%) hue-rotate(338deg)
+                brightness(89%) contrast(120%);
+            }
+          }
+          &:nth-child(2) {
+            div {
+              background-color: #daeeee;
+            }
+            img {
+              filter: invert(45%) sepia(75%) saturate(363%) hue-rotate(128deg)
+                brightness(96%) contrast(91%);
+            }
+          }
+          &:nth-child(3) {
+            div {
+              background-color: #dcdff0;
+            }
+            img {
+              filter: invert(21%) sepia(78%) saturate(2571%) hue-rotate(227deg)
+                brightness(101%) contrast(87%);
+            }
+          }
+          &:nth-child(4) {
+            div {
+              background-color: $color-grey;
+            }
+          }
+        }
+      }
+    }
+  }
   #post-list {
     max-width: 1280px;
     h1 {
@@ -48,6 +112,7 @@ main {
         }
       }
       .autor {
+        padding: 24px 0 30px 0;
         .autor-name {
           flex-direction: row;
           align-items: center;
@@ -61,6 +126,9 @@ main {
       p,
       ul {
         margin: 0 0 1.25rem 0;
+      }
+      h2 {
+        padding: 0;
       }
       ul {
         padding-left: 1.5rem;
@@ -167,7 +235,7 @@ main {
 @media only screen and (min-width: 768px) {
   main {
     #post-list {
-      width: 300%;
+      width: 100%;
       article {
         .article-body {
           margin: 0.5rem 4rem;
@@ -181,8 +249,10 @@ main {
       position: sticky;
       /*top: 15px;*/
       /*z-index: 100;*/
-      bottom: -150px;
-      align-self: flex-end;
+      top: 80px;
+      align-self: flex-start;
+      max-width: 346px;
+
       a:link,
       a:visited,
       a:active {
@@ -195,10 +265,6 @@ main {
           justify-content: baseline;
           align-items: center;
         }
-      }
-      & > div {
-        //margin-top: 1rem;
-        //border-top-color: #922180;
       }
 
       .ico-profile2 {
