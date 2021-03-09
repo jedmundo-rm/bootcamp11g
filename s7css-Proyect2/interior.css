@@ -1,5 +1,5 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 main #post-list {
@@ -15,11 +15,13 @@ main #post-list article {
 }
 
 main #post-list .article-body {
-  margin: .5rem 1.25rem;
+  margin: 0.5rem 1.25rem;
   font-size: 1.25rem;
 }
 
-main #post-list .article-body a:link, main #post-list .article-body a:visited, main #post-list .article-body a:active {
+main #post-list .article-body a:link,
+main #post-list .article-body a:visited,
+main #post-list .article-body a:active {
   color: #3b49df;
 }
 
@@ -28,7 +30,7 @@ main #post-list .article-body .tags {
 }
 
 main #post-list .article-body .tags a {
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 
 main #post-list .article-body .tags a:nth-of-type(1) {
@@ -69,10 +71,11 @@ main #post-list .article-body .autor .autor-name {
 }
 
 main #post-list .article-body .autor .autor-name div {
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 
-main #post-list .article-body p, main #post-list .article-body ul {
+main #post-list .article-body p,
+main #post-list .article-body ul {
   margin: 0 0 1.25rem 0;
 }
 
@@ -95,7 +98,7 @@ main #post-list .article-body .discussion-title {
 }
 
 main #post-list .article-body .discussion-title button {
-  padding: .5rem;
+  padding: 0.5rem;
   color: #363d44;
   border: 1px solid #d2d6db;
   background-color: white;
@@ -112,14 +115,16 @@ main #post-list .article-body .discussion-body {
 
 main #post-list .article-body .discussion-body .discussion-comment {
   border: 1px solid #ccc;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   padding: 1rem;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 }
 
-main #post-list .article-body .discussion-body .discussion-comment a:link, main #post-list .article-body .discussion-body .discussion-comment a:visited, main #post-list .article-body .discussion-body .discussion-comment a:active {
+main #post-list .article-body .discussion-body .discussion-comment a:link,
+main #post-list .article-body .discussion-body .discussion-comment a:visited,
+main #post-list .article-body .discussion-body .discussion-comment a:active {
   text-decoration: none;
-  color: #64707D;
+  color: #64707d;
 }
 
 main #post-list .article-body .code-conduct {
@@ -129,13 +134,15 @@ main #post-list .article-body .code-conduct {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: .85rem;
+  font-size: 0.85rem;
 }
 
-main #post-list .article-body .code-conduct a:link, main #post-list .article-body .code-conduct a:visited, main #post-list .article-body .code-conduct a:active {
+main #post-list .article-body .code-conduct a:link,
+main #post-list .article-body .code-conduct a:visited,
+main #post-list .article-body .code-conduct a:active {
   text-decoration: none;
-  color: #64707D;
-  margin: 0 .5rem;
+  color: #64707d;
+  margin: 0 0.5rem;
 }
 
 main #post-list article.section-read-next .article-body {
@@ -147,10 +154,12 @@ main #post-list article.section-read-next .article-body h2 {
   padding-left: 0;
 }
 
-main #post-list article.section-read-next .article-body .list-next a:link, main #post-list article.section-read-next .article-body .list-next a:visited, main #post-list article.section-read-next .article-body .list-next a:active {
+main #post-list article.section-read-next .article-body .list-next a:link,
+main #post-list article.section-read-next .article-body .list-next a:visited,
+main #post-list article.section-read-next .article-body .list-next a:active {
   text-decoration: none;
-  color: #64707D;
-  margin: 0 .5rem;
+  color: #64707d;
+  margin: 0 0.5rem;
 }
 
 main #post-list article.section-read-next .article-body .list-next .next-article {
@@ -189,7 +198,8 @@ main #post-list article.section-read-next .article-body .list-next .next-article
   margin: 0;
 }
 
-main #post-list article.section-read-next .article-body .list-next .next-article div h3:hover, main #post-list article.section-read-next .article-body .list-next .next-article div p:hover {
+main #post-list article.section-read-next .article-body .list-next .next-article div h3:hover,
+main #post-list article.section-read-next .article-body .list-next .next-article div p:hover {
   color: #3b49df;
 }
 
@@ -203,7 +213,7 @@ main #post-list article.section-read-next .article-body .list-next .next-article
     width: 300%;
   }
   main #post-list article .article-body {
-    margin: .5rem 4rem;
+    margin: 0.5rem 4rem;
   }
   main #post-list article .article-body h1 {
     font-size: 36px;
@@ -211,9 +221,15 @@ main #post-list article.section-read-next .article-body .list-next .next-article
   main #side-right {
     position: -webkit-sticky;
     position: sticky;
-    top: 15px;
+    /*top: 15px;*/
+    /*z-index: 100;*/
+    bottom: 148px;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
-  main #side-right a:link, main #side-right a:visited, main #side-right a:active {
+  main #side-right a:link,
+  main #side-right a:visited,
+  main #side-right a:active {
     text-decoration: none;
   }
   main #side-right ul .flex-min {
@@ -303,7 +319,7 @@ main #post-list article.section-read-next .article-body .list-next .next-article
   }
   main #side-right .side-right-profile button:active {
     content: "Following";
-    background-color: #EEF0F1;
+    background-color: #eef0f1;
     border: 1px solid #b5bdc4;
   }
 }
