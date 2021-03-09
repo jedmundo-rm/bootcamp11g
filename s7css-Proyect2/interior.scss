@@ -175,6 +175,9 @@ main{
             position: sticky;
             top: 15px;
             //z-index: 100;
+            a:link, a:visited, a:active{
+                text-decoration:none;
+            }
             ul{
                 .flex-min{
                     display: flex;
@@ -191,6 +194,7 @@ main{
                 width: 50px;
                 height: 50px;
                 border-radius: 100%;
+                margin-top: -8px;
             }
             .card-work{
                 display: flex;
@@ -221,6 +225,7 @@ main{
               }
                 .side-right-profile{
                     padding: 16px;
+                    border-top-color: #922180;
                     ul{
                         list-style:none;
                     }
@@ -250,7 +255,7 @@ main{
                         background-color: #EEF0F1;
                         border: 1px solid #b5bdc4;
                     }
-                  //background: #922180;
+                  
                 }
         }
     }        
