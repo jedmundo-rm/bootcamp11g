@@ -1,0 +1,93 @@
+.img-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+body {
+  background-image: url(../images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .container {
+  background-color: white;
+  border: 1px solid grey;
+}
+
+body .container .title {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+body .container .title h1 {
+  font-size: 22pt;
+}
+
+body .container #main {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .container #main .card {
+  margin-bottom: 1rem;
+}
+
+body .container #main .card img {
+  width: 35px;
+}
+
+body .container #main #col1 .card {
+  border-top: 2px solid cyan;
+}
+
+body .container #main #col2 .card:first-of-type {
+  border-top: 2px solid red;
+}
+
+body .container #main #col2 .card:last-of-type {
+  border-top: 2px solid yellow;
+}
+
+body .container #main #col3 .card {
+  border-top: 2px solid blue;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    height: 100vh;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  body .container {
+    padding: 2rem;
+  }
+  body .container .title {
+    margin: 0.5rem 0;
+  }
+  body .container .title p {
+    width: 50%;
+    margin: 0 auto 2rem;
+  }
+  body .container .title h1 {
+    font-size: 36pt;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
