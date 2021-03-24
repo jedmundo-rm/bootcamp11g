@@ -9,7 +9,7 @@ function ejercicio1() {
   
     switch(true){
         // Peso Inferior
-        case myIMC <= 18.5:
+        case myIMC = 18.5:
           alert("Tu peso es inferior al normal");
         break;
         // Peso Normal
