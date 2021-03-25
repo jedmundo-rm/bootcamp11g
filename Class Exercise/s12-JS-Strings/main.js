@@ -68,3 +68,45 @@ for(var i = 0; i < fraseLenght; i++){
 }
 console.log(`la nueva frase con nones es: ${oddPhrase}`);
 
+/*
+1.- Mostrar la misma frase en snake_case
+2.- Mostrar la misma frase en kebab-case
+3.- Mostrar la misma frase con todas las vocales en mayúscula
+4.- Mostrar los primeros 10 caracteres de la frase
+5.- Mostrar los últimos 10 caracteres de la frase 
+*/
+
+
+//------ NUEVA FRASE EN SNAKE CASE ------------
+
+//var frase = "La mejor forma de predecir el futuro es creandolo";
+//var fraseLenght = frase.length;
+
+var res = frase.toLowerCase();
+console.log(res);
+
+var guion = res.replace(/ /g, "_");
+console.log(guion);
+
+//------ NUEVA FRASE EN KEBAB CASE ------------
+
+var guion2 = res.replace(/ /g, "-");
+console.log(guion2);
+
+//------ NUEVA FRASE VOCALES MAYUSCULA ------------
+
+var mayus = frase.replace(/a/g, "A").replace(/á/g, "Á").replace(/e/g, "E").replace(/i/g, "I").replace(/o/g, "O").replace(/u/g, "U");
+console.log(mayus);
+
+
+
+var primeros = frase.slice(0, 10);
+console.log(primeros);
+
+
+//var fraseLenght = frase.length;
+console.log(fraseLenght);
+
+
+var ultimos = frase.slice(fraseLenght - 10, fraseLenght);
+console.log(ultimos);
