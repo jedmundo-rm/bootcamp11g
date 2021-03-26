@@ -24,3 +24,18 @@ function registro(){
         alert(nombre + " " + apellido);      
     }
 }
+
+
+
+
+let someArray = [
+    "a",
+    "b",
+    "c"
+]
+
+someArray.splice(1,1)
+
+conmsole.log(someArray)
+
+someArray.filter(item => item != "b")
