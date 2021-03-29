@@ -24,7 +24,7 @@ const myArrowFunction = (a, b) => {
 
 var someResult2 = myArrowFunction(8, 3);
 
-console.log(`Suma de dos numeros pasados por variables en funcion semiflecha = ${someResult2}`);
+console.log(`Semiflecha: Suma de dos numeros pasados por variables en funcion semiflecha = ${someResult2}`);
 
 
 /******** Funcion flecha - Return Implicito *********/
@@ -33,7 +33,7 @@ const myArrowFunction2 = (a, b) => a + b;
 
 var someResult3 = myArrowFunction(10, 2);
 
-console.log(`Suma de dos numeros pasados por variables en funcion flecha = ${someResult3}`);
+console.log(`Flecha: Suma de dos numeros pasados por variables en funcion flecha = ${someResult3}`);
 
 
 /******** Arrays *********/
