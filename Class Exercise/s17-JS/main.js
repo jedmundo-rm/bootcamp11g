@@ -202,15 +202,13 @@ const koders = kodersCollection.map((current, index) => {
 console.log(koders)
 
 
-console.log('********** Mostrar Promedio ***********')
+console.log('********** Mostrar Edad ***********')
 
 kodersArray.map((item, index) => {
     console.log(`la edad de ${item.name} es ${item.getAge()}`);
     //console.log(item);
 
 })
-
-
 
 console.log('********** filter() con if ***********')
 
