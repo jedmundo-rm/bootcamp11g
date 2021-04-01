@@ -159,9 +159,6 @@ const getBestMentors = () => {
 //getBestMentors() 
 
 
-
-
-
 /*
 someArray.forEach( (item,index) => {
     console.log(`el item número ${index} es: ${item}`)
@@ -180,42 +177,89 @@ let fruits = [
 
 console.log("*********** MAP ************")
 
+/*Funcion Larga*/
 let result = fruits.map(listMap)
 
 function listMap (fruit, index ) {
     return `${index} ${fruit}`;
 }
 
-
-/*let result = fruits.map( function(fruit, index ) {
+/*Funcion Semilarga*/
+/*
+let result = fruits.map( function(fruit, index ) {
     return `${index} ${fruit}`;
-})*/
+})
+*/
 
-
-//let result = fruits.map( (fruit, index ) => `${index} ${fruit}`)
+/*Funcion Corta*/
+/*
+let result = fruits.map( (fruit, index ) => `${index} ${fruit}`)
+*/
 
 console.log( result )
 
+
 console.log("*********** MAP con REDUCE ************")
 
+/*Funcion Larga*/
+let resultR = fruits.reduce(showObjects,[])
 
+function showObjects (accum, current, index ) {
+    return [...accum, `${index} ${current}`];
+}
+
+/*Funcion Semilarga*/
+/*
 let resultR = fruits.reduce( function(accum, current, index ) {
-    return [`${accum} ${index} ${current}`];
+    return [...accum, `${index} ${current}`];
 },[])
+*/
 
-//let resultR = fruits.reduce( (accum, current, index ) => [...accum, `${index} ${current}`], [])
+/*Funcion Corta*/
+/*
+let resultR = fruits.reduce( (accum, current, index ) => [...accum, `${index} ${current}`], [])
+*/
 
 console.log( resultR )
 
+
 console.log("*********** FILTER ************")
 
+/*Funcion Larga*/
+let filtered = fruits.filter(filterFruit)
+
+function filterFruit(fruit, index){
+    return fruit.charAt(0) === "p" 
+}
+
+/*Funcion Semilarga*/
+/*
+let filtered = fruits.filter(function(fruit, index) {
+    return fruit.charAt(0) === "p" 
+})
+*/
+
+/*Funcion Corta*/
+/*
 let filtered = fruits.filter( (fruit, index) => fruit.charAt(0) === "p" )
+*/
 
 console.log( filtered )
 
+
 console.log("*********** FILTER con REDUCE ************")
 
+
+/*Funcion Semilarga*/
+let filteredR = fruits.reduce( function (accum, current, index){
+    return current.charAt(0) === "m" ? [...accum, current] : accum
+}, [])
+
+
+/*Funcion Corta*/
+/*
 let filteredR = fruits.reduce( (accum, current, index) => current.charAt(0) === "p" ? [...accum, current] : accum, [])
+*/
 
 console.log( filteredR)
 
