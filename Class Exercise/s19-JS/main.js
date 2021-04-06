@@ -44,8 +44,8 @@ arrayKoders = [
 		["name", "Ruben"],
 		["lastName", "Alvarez"],
 		["generation", 1],
-        	["bootcamp", "python"],
-        	["score", 90]
+        ["bootcamp", "python"],
+        ["score", 90]
 	],
 	[
 		["name", "Andre"],
