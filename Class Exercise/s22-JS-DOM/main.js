@@ -62,7 +62,7 @@ var mentorsArray = [
             },
             {
                 signature:"ReactJS",
-                score:8
+                score:5
             }
         ]
     },
@@ -83,7 +83,7 @@ var mentorsArray = [
             },
             {
                 signature:"ReactJS",
-                score:10
+                score:6
             }
         ]
     },
@@ -104,7 +104,7 @@ var mentorsArray = [
             },
             {
                 signature:"ReactJS",
-                score:9
+                score:7
             }
         ]
     },
@@ -125,7 +125,7 @@ var mentorsArray = [
             },
             {
                 signature:"ReactJS",
-                score:10
+                score:8
             }
         ]
     }
@@ -137,7 +137,7 @@ var mentorsArray = [
 const prinTable = () => {
 
     //******* Inicio del tHead *******
-    
+
     let mentorTable = document.createElement("table")
     let mentorHeader = document.createElement("thead")
 
@@ -160,17 +160,69 @@ const prinTable = () => {
     //******* Inicio del tBody *******
 
     let mentorBody = document.createElement("tbody")
-
+    
     mentorsArray.forEach((array) => {
+        let mentorRow = document.createElement("tr")
+        let mentorCol = document.createElement("td")
 
+        let htmlScoreCol = document.createElement("td")
+        let cssScoreCol = document.createElement("td")
+        let jsScoreCol = document.createElement("td")
+        let reactScoreCol = document.createElement("td")
+
+        let mentorName = document.createTextNode(array.name)
+        mentorCol.appendChild(mentorName)
+        mentorRow.appendChild(mentorCol)
+
+        const getScore = (curso) => {
+            let puntuaciones = array.scores.reduce((accum, current) => {
+                
+                if(current.signature !== curso){
+                    return current.score
+                }
+            }, 0)
+            return puntuaciones
+            //console.log(puntuaciones)  
+        }
+        
+        let htmlScore = document.createTextNode(getScore("HTML"))
+        let cssScore = document.createTextNode(getScore("CSS"))
+        let jsScore = document.createTextNode(getScore("JS"))
+        let reactScore = document.createTextNode(getScore("REACT"))
+
+
+        htmlScoreCol.appendChild(htmlScore)
+        mentorRow.appendChild(htmlScoreCol)
+
+        cssScoreCol.appendChild(cssScore)
+        mentorRow.appendChild(cssScoreCol)
+
+        jsScoreCol.appendChild(jsScore)
+        mentorRow.appendChild(jsScoreCol)
+
+        reactScoreCol.appendChild(reactScore)
+        mentorRow.appendChild(reactScoreCol)
+
+        mentorBody.appendChild(mentorRow)  
     })
 
-    let mentorRow = document.createElement("tr")
-    let mentorCol = document.createElement("td")
+    // mentorsArray.forEach((array) => {
+    //     let scoresRow = document.createElement("tr")
+    //     let scoresCol = document.createElement("td")
 
-    
+    //     let mentorScores = document.createTextNode(array.score)
 
+    //     console.log(mentorScores)
 
+    //     scoresCol.appendChild(mentorScores)
+    //     scoresRow.appendChild(scoresCol)
+    //     mentorBody.appendChild(scoresRow)
+    // })
+
+        // Metemos el tBody dentro del table
+        mentorTable.appendChild(mentorBody)
+
+        document.body.appendChild(mentorTable)
 }
 
 prinTable();
