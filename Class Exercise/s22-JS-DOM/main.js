@@ -40,6 +40,73 @@ const printList = () =>{
 
 printList()
 
+/*******************************************************/
+
+let testArray = [
+    {
+        name:"Israel",
+        phone:"5543788096",
+        mail:"israel@kodemia.mx"
+      },
+      {
+        name:"Hagen",
+        phone:"N/A",
+        mail:"hagen@kodemia.mx"
+      }
+]
+
+const printTable = () => {
+    let headersArray =[
+        "Nombre",
+        "Teléfono",
+        "Mail"
+    ]
+
+    let dataTable = document.createElement("table")
+    let dataHeader = document.createElement("thead")
+    let headerRow = document.createElement("tr")
+
+    headersArray.forEach( header => {
+        let head = document.createElement("th")
+        let headText = document.createTextNode(header)
+        head.appendChild( headText )
+        headerRow.appendChild(head)
+    })
+
+    dataHeader.appendChild( headerRow )
+    dataTable.appendChild( dataHeader )
+    document.body.appendChild( dataTable )
+
+    let dataTableBody = document.createElement("tbody")
+
+    testArray.forEach( item => {
+        let itemRow = document.createElement( "tr" )
+        
+        let nameTd = document.createElement( "td" )
+        let phoneTd = document.createElement( "td" )
+        let mailTd = document.createElement( "td" )
+
+        let nameText = document.createTextNode( item.name )
+        let phoneText = document.createTextNode( item.phone )
+        let mailText = document.createTextNode( item.mail )
+
+        nameTd.appendChild( nameText )
+        phoneTd.appendChild( phoneText )
+        mailTd.appendChild( mailText )
+
+        itemRow.appendChild(nameTd)
+        itemRow.appendChild(phoneTd)
+        itemRow.appendChild(mailTd)
+
+        dataTableBody.appendChild( itemRow )
+    })
+
+    dataTable.appendChild(dataTableBody)
+    // Para separar
+    document.body.appendChild( document.createElement("br") )
+}
+
+printTable()
 
 
 /*******************************************************/
@@ -134,7 +201,7 @@ var mentorsArray = [
 
 
 
-const prinTable = () => {
+const prinTableMentors = () => {
 
     //******* Inicio del tHead *******
 
@@ -144,7 +211,7 @@ const prinTable = () => {
     let headArray = ["Mentor", "Html", "CSS", "JS", "Promedio"]
 
     headArray.forEach((array) => {
-        let headCol = document.createElement("td")
+        let headCol = document.createElement("th")
         let headText = document.createTextNode(array)
 
         headCol.appendChild(headText)
@@ -153,81 +220,69 @@ const prinTable = () => {
 
     mentorTable.appendChild(mentorHeader)
 
-    // Mandamos a llamar el Head al body
-    document.body.appendChild(mentorTable)
-
-
     //******* Inicio del tBody *******
 
     let mentorBody = document.createElement("tbody")
-    
+
     mentorsArray.forEach((array) => {
-        let mentorRow = document.createElement("tr")
-        let mentorCol = document.createElement("td")
 
-        let htmlScoreCol = document.createElement("td")
-        let cssScoreCol = document.createElement("td")
-        let jsScoreCol = document.createElement("td")
-        let reactScoreCol = document.createElement("td")
-
-        let mentorName = document.createTextNode(array.name)
-        mentorCol.appendChild(mentorName)
-        mentorRow.appendChild(mentorCol)
-
-        const getScore = (curso) => {
-            let puntuaciones = array.scores.reduce((accum, current) => {
-                
-                if(current.signature !== curso){
-                    return current.score
+        // Creamos una funcion donde pasaremos el parametro de Signature (html, css, js)
+        const getResults = (curso) =>{
+            let puntuaciones = array.scores.reduce((accum,current) =>{
+                if(current.signature === curso){
+                    console.log(current.score)
+                    accum = current.score
                 }
-            }, 0)
+                return accum
+            }  ,0)
             return puntuaciones
-            //console.log(puntuaciones)  
         }
-        
-        let htmlScore = document.createTextNode(getScore("HTML"))
-        let cssScore = document.createTextNode(getScore("CSS"))
-        let jsScore = document.createTextNode(getScore("JS"))
-        let reactScore = document.createTextNode(getScore("REACT"))
 
+        // Con esto sacamos el promedio
+        let avg = array.scores.reduce((accum,current) => {
+            let avgTotal = accum + current.score
+            return avgTotal
+        },0)
 
-        htmlScoreCol.appendChild(htmlScore)
-        mentorRow.appendChild(htmlScoreCol)
+ 
+        // Mandamos a llamar la funcion con los Parametros
+        let HTMLVal = getResults("HTML")
+        let CSSVal = getResults("CSS")
+        let JSVal = getResults("JS")
 
-        cssScoreCol.appendChild(cssScore)
-        mentorRow.appendChild(cssScoreCol)
+        // Creamos el row que se creara para cada mentor
+        let mentorRow = document.createElement("tr")
 
-        jsScoreCol.appendChild(jsScore)
-        mentorRow.appendChild(jsScoreCol)
+        // Obtenemos los valores en el DOM
+        mentorCol.appendChild(document.createTextNode(array.name))
+        HTMLCol.appendChild(document.createTextNode(HTMLVal))
+        CSSCol.appendChild(document.createTextNode(CSSVal))
+        JSCol.appendChild(document.createTextNode(JSVal))
+        avgCol.appendChild(document.createTextNode(avg))
 
-        reactScoreCol.appendChild(reactScore)
-        mentorRow.appendChild(reactScoreCol)
+        // Creamos las columnas para cada score
+        let mentorCol = document.createElement("td")
+        let HTMLCol = document.createElement("td")
+        let CSSCol = document.createElement("td")
+        let JSCol = document.createElement("td")
+        let avgCol = document.createElement("td")
 
-        mentorBody.appendChild(mentorRow)  
+        // Asignamos cada col al row
+        mentorRow.appendChild(mentorCol)
+        mentorRow.appendChild(HTMLCol)
+        mentorRow.appendChild(CSSCol)
+        mentorRow.appendChild(JSCol)
+        mentorRow.appendChild(avgCol)
+
+        mentorBody.appendChild(mentorRow)
     })
-
-    // mentorsArray.forEach((array) => {
-    //     let scoresRow = document.createElement("tr")
-    //     let scoresCol = document.createElement("td")
-
-    //     let mentorScores = document.createTextNode(array.score)
-
-    //     console.log(mentorScores)
-
-    //     scoresCol.appendChild(mentorScores)
-    //     scoresRow.appendChild(scoresCol)
-    //     mentorBody.appendChild(scoresRow)
-    // })
-
-        // Metemos el tBody dentro del table
-        mentorTable.appendChild(mentorBody)
-
-        document.body.appendChild(mentorTable)
+    
+    // Metemos el tBody dentro del table
+    mentorTable.appendChild(mentorBody)
+    // Mandamos a llamar el Head al body
+    document.body.appendChild(mentorTable)
 }
 
-prinTable();
-
-
-
+prinTableMentors();
 
 
