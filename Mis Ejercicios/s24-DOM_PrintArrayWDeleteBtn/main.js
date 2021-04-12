@@ -89,7 +89,7 @@ var mentorsArray = [
 
 // Para obtener los valores del objeto Scores creamos una funcion
 const getSignatureScore = (signature, scoresArray) => {
-    let score =  scoresArray.filter( score => score.signature === signature )[0].score
+    let score =  scoresArray.filter( scoreObj => scoreObj.signature === signature )[0].score
     return score
 }
 
@@ -114,20 +114,20 @@ const printTable = () => {
         let createdTdReact =  document.createElement("td")
         let createdTdBtn =  document.createElement("td")
 
-        // *********** OBTENEMOS VALORES ***********
+        // /////////////// OBTENEMOS VALORES //////////////////
 
         // Obtenemos le nombre del Mentor
         let getMentorName = document.createTextNode(mentor.name)
         console.log('getMentorName:', getMentorName)
 
         // Obtenemos los scores con la funcion
-
         let getIndex =  document.createTextNode(index + 1) // Le ponemos +1 pq el index inicia con 0
         let getHTMLscore = document.createTextNode(getSignatureScore("HTML", mentor.scores))
         let getCSSscore = document.createTextNode(getSignatureScore("CSS", mentor.scores))
         let getJSscore = document.createTextNode(getSignatureScore("JS", mentor.scores))
         let getReactJSscore = document.createTextNode(getSignatureScore("ReactJS", mentor.scores))
-        
+
+        // Creamos boton para borrar
         let getDeleteBtn = document.createElement("button")
         getDeleteBtn.className = "btn btn-danger btn-delete"
 
@@ -135,9 +135,7 @@ const printTable = () => {
         getDeleteBtn.appendChild(deleteBtnText)
 
 
-
-        // *********** METEMOS VALORES A SUS TD ***********
-
+        ////////////////// METEMOS VALORES A SUS TD /////////////////////
         createdTdIndex.appendChild(getIndex)
         createdTdName.appendChild(getMentorName)
 
@@ -146,6 +144,20 @@ const printTable = () => {
         createdTdJS.appendChild(getJSscore)
         createdTdReact.appendChild(getReactJSscore)
         createdTdBtn.appendChild(getDeleteBtn)
+
+                
+        // if(getReactJSscore > "8"){
+        //     createdTdHTML.classList.add("text-success")
+        //     createdTdCSS.classList.add("text-success")
+        //     createdTdJS.classList.add("text-success")
+        //     createdTdReact.classList.add("text-success")
+
+        // } else{
+        //     createdTdHTML.classList.add("text-danger")
+        //     createdTdCSS.classList.add("text-danger")
+        //     createdTdJS.classList.add("text-danger")
+        //     createdTdReact.classList.add("text-danger")
+        // }
 
         // Psamos los td con valores dentro del TR
         createdTr.appendChild(createdTdIndex)
