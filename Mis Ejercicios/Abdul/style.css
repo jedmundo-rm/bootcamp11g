@@ -1,0 +1,57 @@
+body {
+  padding: 10px;
+  background-color: #fafafa;
+}
+
+#exTab1 {
+  padding: 0;
+}
+
+#exTab1 ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#exTab1 li {
+  padding: 25px;
+  background-color: #fafafa;
+  text-align: center;
+}
+
+#exTab1 li.active {
+  border-top: 16px solid #0b63ff;
+  margin-top: -16px;
+  background-color: #fff;
+}
+
+#exTab1 li.active a {
+  color: #4d4d4d;
+}
+
+#exTab1 li.active span {
+  color: #0b63ff;
+}
+
+#exTab1 li span {
+  font-size: 14pt;
+}
+
+#exTab1 li a {
+  color: #969696;
+  font-weight: bold;
+  font-size: 10pt;
+  text-decoration: none;
+}
+
+#exTab1 .tab-content {
+  color: #4d4d4d;
+  background-color: #fff;
+  padding: 5px 15px;
+}
+
+/* remove border radius for the tab */
+#exTab1 .nav-pills > li > a {
+  border-radius: 0;
+}
+/*# sourceMappingURL=style.css.map */

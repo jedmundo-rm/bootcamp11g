@@ -1,0 +1,58 @@
+body {
+    padding : 10px ;
+    background-color: #fafafa;
+    
+  }
+  
+  #exTab1 {
+    padding: 0;
+    
+    ul{
+      display: flex;
+    }
+    li{
+      padding : 25px; 
+      background-color: #fafafa;
+      text-align: center;
+      &.active{
+        border-top: 16px solid #0b63ff;
+        margin-top: -16px;
+        background-color: #fff;
+        a{
+          color : #4d4d4d;
+        }
+        span{
+          color: #0b63ff;
+        }
+      }   
+      span{
+        font-size: 14pt;
+      }
+      a{
+        color: #969696;
+        font-weight:bold;  
+        font-size: 10pt;
+        text-decoration: none;
+      }
+
+    }
+    .tab-content{
+      color : #4d4d4d;
+        background-color: #fff;
+        padding : 5px 15px; 
+        
+    }
+
+  }
+  
+  /* remove border radius for the tab */
+  
+  #exTab1 .nav-pills > li > a {
+    border-radius: 0;
+  }
+  
+
+  
+  
+  
+  

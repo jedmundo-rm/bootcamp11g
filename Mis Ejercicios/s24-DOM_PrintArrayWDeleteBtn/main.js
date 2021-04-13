@@ -17,7 +17,7 @@ var mentorsArray = [
             },
             {
                 signature:"ReactJS",
-                score:5
+                score:8
             }
         ]
     },
@@ -38,7 +38,7 @@ var mentorsArray = [
             },
             {
                 signature:"ReactJS",
-                score:6
+                score:10
             }
         ]
     },
@@ -59,7 +59,7 @@ var mentorsArray = [
             },
             {
                 signature:"ReactJS",
-                score:7
+                score:9
             }
         ]
     },
@@ -80,7 +80,7 @@ var mentorsArray = [
             },
             {
                 signature:"ReactJS",
-                score:8
+                score:10
             }
         ]
     }
@@ -94,12 +94,34 @@ const getSignatureScore = (signature, scoresArray) => {
 }
 
 // Funcion apra borrar mentores
-const deleteMentor = () => {
-    mentorsArray.splice(0,1)
+// esta funcion la asignamos a todos los botones delte con un querySelectorAll
+// COn  event tenemos acceso al indice del boton
+const deleteMentor = (event) => {
+    console.log(event.target)
+
+    // obtenemos el valor personalizado del boton
+    let getMentorIndex = event.target.dataset.mentorIndex
+
+    //mentorsArray.splice(0,1) // con esto borrabamos un elemento del array
+    mentorsArray.splice(getMentorIndex,1) // con esto borramos el mentor 
     console.log('mentorsArray:', mentorsArray)
+
+    // volvemos a llaamar la funcion
+    printTable();
 }
 
+
 const printTable = () => {
+
+    // Esto es apra el Promedio
+    let globalAverage = 0;
+
+    let table = document.getElementById("tbody")
+
+    // mientras haya un ultimo elemento en un contenedor
+    while(table.lastElementChild){
+        table.removeChild( table.lastElementChild )
+    }
 
     mentorsArray.forEach((mentor, index) => {
         // creamos el tr donde staran contenidos los td
@@ -128,11 +150,12 @@ const printTable = () => {
         let getReactJSscore = document.createTextNode(getSignatureScore("ReactJS", mentor.scores))
 
         // Creamos boton para borrar
-        let getDeleteBtn = document.createElement("button")
-        getDeleteBtn.className = "btn btn-danger btn-delete"
+        let deleteBtn = document.createElement("button")
+        deleteBtn.className = "btn btn-danger btn-delete" // aqui le ponemos clase
+        deleteBtn.dataset.mentorIndex = index // aqui le asignamos el atributo personalizado al boton como en HTML: data-mentor-index = index
 
         let deleteBtnText = document.createTextNode("Delete")
-        getDeleteBtn.appendChild(deleteBtnText)
+        deleteBtn.appendChild(deleteBtnText)
 
 
         ////////////////// METEMOS VALORES A SUS TD /////////////////////
@@ -143,7 +166,7 @@ const printTable = () => {
         createdTdCSS.appendChild(getCSSscore)
         createdTdJS.appendChild(getJSscore)
         createdTdReact.appendChild(getReactJSscore)
-        createdTdBtn.appendChild(getDeleteBtn)
+        createdTdBtn.appendChild(deleteBtn)
 
                 
         // if(getReactJSscore > "8"){
@@ -180,6 +203,31 @@ const printTable = () => {
         buttons.forEach(( button) => {
             button.addEventListener("click", deleteMentor)
         })
+
+        // *********** PARA SACAR EL PROMEDIO ***********
+
+        let mentorAverage = mentor.scores.reduce((accum, current) => accum += current.score, 0) / mentor.scores.length
+
+        //let sumScores = mentor.scores.reduce((accum, current) => {
+            //let acumulador = (accum += current.score)
+            //let scoreAvg = acumulador / mentor.scores.length
+
+            //return acumulador
+        //}, 0)
+
+        //let avgScores = sumScores / mentor.scores.length
+        //console.log('avgScores:', avgScores)
+
+
+        // Hasta aqui tenemos la suma de las calificaciones
+        console.log("Este es el promedio de las calificaciones")
+        console.log(mentorAverage)
+
+        // Sacamos el promedio global en cada iteracion
+        globalAverage += mentorAverage / mentorsArray.length
+
+        console.log(`Este es el promedio global (es decir al suma de los promedios de cada mentor entre el Num. de mentores`)
+        console.log(globalAverage)
     })
 
 }
