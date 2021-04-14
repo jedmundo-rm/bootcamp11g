@@ -60,43 +60,114 @@ $(".radio-wrapper input[type='radio']").click( ()=> {
 
 //Ejercicio 2
 
+// var image = [
+//     "https://picsum.photos/id/237/500/500",
+//     "https://picsum.photos/seed/picsum/500/500",
+//     "https://picsum.photos/id/214/500/500",
+//     "https://picsum.photos/id/215/500/500",
+//     "https://picsum.photos/id/218/500/500",
+//     "https://picsum.photos/id/280/500/500"
+// ]
+// var contImg = 0
 
-//Ejercicio 2
+// $('#text2').html(`1/${image.length}`)
 
-var image = [
-    "https://picsum.photos/id/237/500/500",
-    "https://picsum.photos/seed/picsum/500/500",
-    "https://picsum.photos/id/214/500/500",
-    "https://picsum.photos/id/215/500/500",
-    "https://picsum.photos/id/218/500/500",
-    "https://picsum.photos/id/280/500/500"
+// $("#siguiente").click(()=>{
+//     if (contImg >= image.length-1){
+//          contImg = image.length-1
+//      }
+//     else{
+//         contImg += 1
+//     }
+//     let img1= $("#imagenAlt").attr("src",image[contImg])
+//     console.log(contImg)
+//     console.log(image.length-1)
+//     $('#text2').html(`${contImg+1}/${image.length}`)
+// })
+
+// $("#atras").click(()=>{
+//     if (contImg <= 0){
+//         contImg = 0
+//     }
+//     else{
+//         contImg -- 
+//     }
+//     let img1= $("#imagenAlt").attr("src",image[contImg])
+//     console.log(contImg)
+//     console.log(image.length-1)
+//     $('#text2').html(`${contImg+1}/${image.length}`)     
+// })
+
+
+
+// ISRA CODE
+
+let imgIndex = 0;
+
+let imgArray = [
+    "https://picsum.photos/id/169/500/300",
+    "https://picsum.photos/id/170/500/300",
+    "https://picsum.photos/id/171/500/300",
+    "https://picsum.photos/id/172/500/300",
+    "https://picsum.photos/id/173/500/300"
 ]
-var contImg = 0
 
-$('#text2').html(`1/${image.length}`)
+const setImgSrc = src => {
+    $(".gallery-wrapper img").fadeTo("slow",0, () => {
+        $(".gallery-wrapper img").attr("src",src)
+        setTimeout( function(){
+            $(".gallery-wrapper img").fadeTo("slow",1)
+        },300)
+    })
+}
 
-$("#siguiente").click(()=>{
-    if (contImg >= image.length-1){
-         contImg = image.length-1
-     }
-    else{
-        contImg += 1
+const setButtonsState = () => {
+    imgIndex === 0 
+        ? $(".backward").attr("disabled", true)
+        : $(".backward").attr("disabled", false)
+
+    imgIndex === imgArray.length - 1
+        ? ($(".forward").attr("disabled", true), $(".add-slides").removeClass("d-none"))
+        : ($(".forward").attr("disabled", false), $(".add-slides").addClass("d-none"))
+}
+
+setButtonsState()
+
+const forward = () => {
+    imgIndex++
+    let src = imgArray[imgIndex]
+    setImgSrc(src)
+    setButtonsState()
+
+    //console.log(src);
+    $("#img-caption").text(src)
+}
+
+const backward = () => {
+    imgIndex--
+    let src = imgArray[imgIndex]
+    setImgSrc(src)
+    setButtonsState()
+
+    //console.log(src);
+    $("#img-caption").text(src)
+}
+
+const addSlides = amount => {
+    for( let i = 0; i < amount; i++ ){
+        let randomId = Math.floor(Math.random() * ( 255 - 1) + 1)
+        console.log( randomId )
+        let url = `https://picsum.photos/id/${randomId}/500/300`
+        imgArray.push( url )
     }
-    let img1= $("#imagenAlt").attr("src",image[contImg])
-    console.log(contImg)
-    console.log(image.length-1)
-    $('#text2').html(`${contImg+1}/${image.length}`)
+    setButtonsState()
+}
+
+$(".forward").click( forward )
+$(".backward").click( backward )
+
+$(".add-slides").click(() => {
+    addSlides(5)
 })
 
-$("#atras").click(()=>{
-    if (contImg <= 0){
-        contImg = 0
-    }
-    else{
-        contImg -- 
-    }
-    let img1= $("#imagenAlt").attr("src",image[contImg])
-    console.log(contImg)
-    console.log(image.length-1)
-    $('#text2').html(`${contImg+1}/${image.length}`)     
-})
+

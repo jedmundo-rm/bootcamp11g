@@ -41,11 +41,22 @@
     
         <!-- Ejercicio 2 -->
 
-        <div class="img m-4">
+        <div class="img m-4 d-none">
             <img src="https://picsum.photos/id/237/500/500" class="rounded mx-auto d-block" id="imagenAlt" alt="imagen">
             <div class=" text-center " style="font-size: 20px;"><p id="text2"></p> </div>
             <button type="button" class="btn btn-outline-primary btn-lg" style="margin-left: 35%;" id="atras">Atras</button>
             <button type="button" class="btn btn-outline-danger btn-lg" style="margin-left: 20px;" id="siguiente">Siguiente</button>
+        </div>
+
+
+        <div class="w-50 gallery-wrapper mx-auto mt-3 border d-flex flex-column">
+            <img src="https://picsum.photos/id/169/500/300" alt="">
+            <h1 id="img-caption">Caption de la imagen</h1>
+            <div class="controls-wrapper d-flex justify-content-between border">
+                <button type="button" class="btn btn-primary backward">Atrás</button>
+                <button type="button" class="d-none add-slides btn btn-success">Agregar</button>
+                <button type="button" class="btn btn-primary forward">Adelante</button>
+            </div>
         </div>
 
     </div>

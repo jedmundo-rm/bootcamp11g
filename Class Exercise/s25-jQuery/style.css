@@ -1,3 +1,9 @@
 #figura{
     border: 1px solid #000;
 }
+
+
+
+.gallery-wrapper{
+    height: 50vh; 
+}
