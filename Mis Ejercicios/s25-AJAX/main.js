@@ -154,24 +154,8 @@ const saveKoder = (koder) => {
     xhttp.send( JSON.stringify(koder) );
 }
 
-////////// KODER DELETE /////////////
 
-const deleteKoder = koderKey => {
-    let xhttp = new XMLHttpRequest();
-    
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            let response = xhttp.responseText
-            console.log( response  )
-        }
-    }
-
-    xhttp.open("DELETE", `https://ajaxclass-1ca34.firebaseio.com/11g/jaime/koders/${koderKey}.json`, true);
-
-    xhttp.send( );
-}
-
-////////// KODER KODER DELETE /////////////
+////////// KODER OBJECT DELETE /////////////
 
 // esto de creo pq en un principio em guardaba en la DB paso pos paso de la creacion de Koder
 // entonces se creo esta funcion apra borrar todo el objeto y no koder por koder
@@ -223,6 +207,33 @@ const getKodersCollection = () => {
     
 }
 
+
+////////// DELETE KODER /////////////
+////////// Se pone antes de la funcion print pq si no no puede inicializar /////////////
+
+const deleteKoderPrinted = event => {
+    console.log(event.target)
+
+    let koderKey = event.target.dataset.koderKey
+    console.log('koderKey:', koderKey)
+
+    let xhttp = new XMLHttpRequest();
+    
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let response = xhttp.responseText
+            console.log( response  )
+
+            // mandamos a imprimir de nuevo al tabla para mostrar el resultado sin el koder borrado
+            printTable(getKodersCollection())
+        }
+    }
+
+    xhttp.open("DELETE", `https://ajaxclass-1ca34.firebaseio.com/11g/jaime/koders/${koderKey}.json`, true);
+    xhttp.send( );
+  }
+
+
 ////////// PRINT KODER /////////////
 
 const printTable = (dataPrint) => {
@@ -250,6 +261,8 @@ const printTable = (dataPrint) => {
         let ageTd = document.createElement("td")
         let genderTd = document.createElement("td")
 
+        let deleteTd = document.createElement("td")
+
         // En el input del apellido usamor last-name y aqui en la variable usamos lastName (esto no debe ser asi)
         // Deben ser iguales lastname en el name del input y en lastname en la variable
         let {name, lastname, phone, age, gender} = dataPrint[key]
@@ -261,12 +274,19 @@ const printTable = (dataPrint) => {
         let ageText = document.createTextNode(age)
         let genderText = document.createTextNode(gender)
 
+        let deleteBtn = document.createElement("button")
+        deleteBtn.classList = "btn btn-outline-danger delete-btn"
+        let buttonText = document.createTextNode("Delete")
+        deleteBtn.appendChild(buttonText)
+        deleteBtn.dataset.koderKey = key
+
         indexTd.appendChild(indextext)
         nameTd.appendChild(nameText)
         lastNameTd.append(lastNameText)
         phoneTd.appendChild(phoneText)
         ageTd.appendChild(ageText)
         genderTd.appendChild(genderText)
+        deleteTd.appendChild(deleteBtn)
 
         koderRow.appendChild(indexTd)
         koderRow.appendChild(nameTd)
@@ -274,10 +294,19 @@ const printTable = (dataPrint) => {
         koderRow.appendChild(phoneTd)
         koderRow.appendChild(ageTd)
         koderRow.appendChild(genderTd)
+        koderRow.appendChild(deleteTd)
 
         table.appendChild(koderRow)
         index++
     }
+
+    // Seleccionamos todos los botones de delete y por cada uno mandamos a llamar la funcion de delete
+    let buttons = document.querySelectorAll(".delete-btn")
+
+    buttons.forEach(button => {
+        button.addEventListener("click", deleteKoderPrinted)
+    })
 }
 
 printTable( getKodersCollection() )
+
