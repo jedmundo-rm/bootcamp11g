@@ -50,7 +50,7 @@ const getKoderName = () => {
     console.log('koderName:', koderName)
 
     // Con esto metemos el valor del input en un Array
-    // if(koderName === ""){
+    if(koderName === ""){
 
     }else{
        koderList.push(koderName) 
