@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX jQuery Mio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+
+</head>
+<body>
+    <div class="container mt-3">
+        <div class="row m-3">
+            <div class="col-12 border rounded p-5">
+                <h1 class="text-center">Agregar Carro</h1>
+                
+                <form class="m-3 p-3 text-muted" id="formNewMentor" >
+                    <div class="form-group">
+                        <label for="brand">Marca:</label>
+                        <input type="text" class="form-control" name="brand" value="">
+                    </div>
+                    <div class="form-group">
+                      <label for="name">Modelo:</label>
+                      <input type="text" class="form-control" name="model" value="">
+                    </div>
+
+                    <label for="name">Transmición:</label>
+                    <select name="" id="trans" class="custom-select">
+                        <option value="automatic" selected>Automatico</option>
+                        <option value="manual">Manual</option>
+                    </select>
+                    <button type="button" class="btn btn-success w-100 mt-3" id="guardar">Guardar</button>
+                </form>
+               
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="row cars-wrapper">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -40,7 +40,7 @@ const getMentors = () => {
     xhttp.send();
 }
 
-//getMentors();
+getMentors();
 
 
 ///////////// EJERCICIO SIMPLE QUE DEMUESTRA COMO SE PUEDEN PASAR
@@ -96,6 +96,7 @@ const getKoderData = () => {
 
     let koderObject = {}
 
+    // Seleccionamos todos los input apra sacarles el valor name
     let fields = document.querySelectorAll("form input[type='text']")
     console.log('fields:', fields)
 
@@ -129,7 +130,7 @@ const getKoderData = () => {
 document.getElementById("guardar").addEventListener("click", getKoderData)
 
 
-////////// KODER CREATION /////////////
+////////// KODER CREATION in DB /////////////
 
 // Creamos la funcion para mandar a la base de datos
 const saveKoder = (koder) => {
@@ -145,7 +146,7 @@ const saveKoder = (koder) => {
            // GUARDADO EXITOSO
            // Volvemos a imprimir la tabla para mostrar el nuevo valor guardado
            // pq en la funcion en si la limpiamos 
-           printTable( getKodersCollection() )
+           printTable( getKoders() )
         }
     };
 
@@ -177,9 +178,9 @@ const deleteKoderObj = () => {
 }
 
 
-////////// GET KODER FOR PRINT /////////////
+////////// GET KODER IN DB FOR PRINT /////////////
 
-const getKodersCollection = () => {
+const getKoders = () => {
 
     let kodersCollection;
 
@@ -225,7 +226,7 @@ const deleteKoderPrinted = event => {
             console.log( response  )
 
             // mandamos a imprimir de nuevo al tabla para mostrar el resultado sin el koder borrado
-            printTable(getKodersCollection())
+            printTable(getKoders())
         }
     }
 
@@ -248,6 +249,7 @@ const printTable = (dataPrint) => {
         table.removeChild(table.lastElementChild)
     }
 
+    // for / llave (key en el database) / objeto (el que creamos en el GET)
     for( key in dataPrint){
         console.log('key:', key)
         console.log('dataPrint:', dataPrint[key])
@@ -308,5 +310,5 @@ const printTable = (dataPrint) => {
     })
 }
 
-printTable( getKodersCollection() )
+printTable( getKoders() )
 
