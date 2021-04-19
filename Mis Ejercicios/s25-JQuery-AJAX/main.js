@@ -102,6 +102,7 @@ const deleteData = key => {
 
     console.log(key.target)
 
+    // Recordar obetener el data del boton delete
     let getCarKey = key.target.dataset.carkey
     console.log('koderKey:', getCarKey)
 
@@ -143,9 +144,17 @@ const updateData = key => {
 
 ////////// PRINT CAR /////////////
 
-const printCars = carsCollection => {
+// El parametro podemos llamarlo como sea, pero hace referencia a la coleccion guardada en el objeto creado en el GET (podemos llamarlo igual que el objeto)
+const printCars = (carsCollection) => {
 
-    // for / llave (key en el database) / objeto (el que creamos en el GET)
+    let table = $(".cars-wrapper")
+
+    // Para limpar la tabla
+    while(table.lastElementChild){
+        table.removeChild(table.lastElementChild)
+    }
+
+    // for / llave (key en el database) / objeto (que es el parametro asignado)
     for( key in carsCollection){
         let{ model, brand, trans } = carsCollection[key]
         let cardHTML = `                    

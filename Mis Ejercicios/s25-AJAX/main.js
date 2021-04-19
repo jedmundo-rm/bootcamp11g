@@ -215,6 +215,7 @@ const getKoders = () => {
 const deleteKoderPrinted = event => {
     console.log(event.target)
 
+    // Recordar obetener el data del boton delete
     let koderKey = event.target.dataset.koderKey
     console.log('koderKey:', koderKey)
 
@@ -237,6 +238,7 @@ const deleteKoderPrinted = event => {
 
 ////////// PRINT KODER /////////////
 
+// El parametro podemos llamarlo como sea, pero hace referencia a la coleccion guardada en el objeto creado en el GET (podemos llamarlo igual que el objeto)
 const printTable = (dataPrint) => {
 
     console.log('dataPrint:', dataPrint)
@@ -249,7 +251,7 @@ const printTable = (dataPrint) => {
         table.removeChild(table.lastElementChild)
     }
 
-    // for / llave (key en el database) / objeto (el que creamos en el GET)
+    // for / llave (key en el database) / objeto (que es el parametro asignado)
     for( key in dataPrint){
         console.log('key:', key)
         console.log('dataPrint:', dataPrint[key])
