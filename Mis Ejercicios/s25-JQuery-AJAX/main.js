@@ -39,6 +39,9 @@ const getCarData = () => {
 
     // Depues creamos la funcion para mandar a la base de datos y aqui es onde la ejecutamos
     saveCar( carObject )
+
+    // Imprimimos de nuevo las cards
+    //printCars( getCars() )
 }
 
 $('#guardar').click(getCarData)
@@ -99,12 +102,12 @@ const deleteData = key => {
 
     console.log(key.target)
 
-    let carKey = key.target.dataset.carKey
-    console.log('koderKey:', carKey)
+    let getCarKey = key.target.dataset.carkey
+    console.log('koderKey:', getCarKey)
 
     $.ajax({
         method:"DELETE",
-        url:`https://ajaxclass-1ca34.firebaseio.com/11g/jaime/cars/${key}.json`,
+        url:`https://ajaxclass-1ca34.firebaseio.com/11g/jaime/cars/${getCarKey}.json`,
         success: response => {
             console.log( response)
         },
@@ -143,8 +146,8 @@ const updateData = key => {
 const printCars = carsCollection => {
 
     // for / llave (key en el database) / objeto (el que creamos en el GET)
-    for( car in carsCollection){
-        let{ model, brand, trans } = carsCollection[car]
+    for( key in carsCollection){
+        let{ model, brand, trans } = carsCollection[key]
         let cardHTML = `                    
         <div class="col-6">
             <div class=" card bg-dark text-white m-2">
@@ -153,7 +156,7 @@ const printCars = carsCollection => {
                     <div class="card-text">Modelo: ${model}</div>
                     <div class="card-text">Transmicion: ${trans}</div>
                     <div class="d-flex justify-content-between my-2">
-                        <div class="btn btn-danger delete-btn" data-carkey="fg">Eliminar</div>
+                        <div class="btn btn-danger delete-btn" data-carkey="${key}">Eliminar</div>
                         <div class="btn btn-warning">Editar</div>
                     </div>
                 </div>
@@ -170,7 +173,11 @@ const printCars = carsCollection => {
     
 }
 
+// Imprimimos las cards
 printCars( getCars() )
+
+// ejecutamos la funcion deleteData a traves de cada boton delete
+$(".delete-btn").click(deleteData)
 
 
 
