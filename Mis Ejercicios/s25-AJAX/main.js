@@ -227,7 +227,7 @@ const deleteKoderPrinted = event => {
             console.log( response  )
 
             // mandamos a imprimir de nuevo al tabla para mostrar el resultado sin el koder borrado
-            printTable(getKoders())
+           printTable(getKoders())
         }
     }
 
@@ -313,4 +313,11 @@ const printTable = (dataPrint) => {
 }
 
 printTable( getKoders() )
+
+// si llegamos a llamar la funcion deleteData() desde aqui, solo va a borrar una vez el objeto al que demos click a su boton delete
+// let buttons = document.querySelectorAll(".delete-btn")
+
+// buttons.forEach(button => {
+//     button.addEventListener("click", deleteKoderPrinted)
+// })
 

@@ -39,9 +39,6 @@ const getCarData = () => {
 
     // Depues creamos la funcion para mandar a la base de datos y aqui es onde la ejecutamos
     saveCar( carObject )
-
-    // Imprimimos de nuevo las cards
-    //printCars( getCars() )
 }
 
 $('#guardar').click(getCarData)
@@ -62,6 +59,12 @@ const saveCar = (car) => {
         // }),
         data: JSON.stringify(car),
         success : response => {
+
+            // GUARDADO EXITOSO
+            // Volvemos a imprimir la tabla para mostrar el nuevo valor guardado
+            // pq en la funcion en si la limpiamos 
+            printCars( getCars() )
+
             console.log(response)
         },
         error : error => {
@@ -110,6 +113,12 @@ const deleteData = key => {
         method:"DELETE",
         url:`https://ajaxclass-1ca34.firebaseio.com/11g/jaime/cars/${getCarKey}.json`,
         success: response => {
+
+            // GUARDADO EXITOSO
+            // Volvemos a imprimir la tabla para mostrar el nuevo valor guardado
+            // pq en la funcion en si la limpiamos 
+            printCars( getCars() )
+
             console.log( response)
         },
         error: error => {
@@ -150,9 +159,12 @@ const printCars = (carsCollection) => {
     let table = $(".cars-wrapper")
 
     // Para limpar la tabla
-    while(table.lastElementChild){
-        table.removeChild(table.lastElementChild)
-    }
+    // while(table.lastElementChild){
+    //     table.removeChild(table.lastElementChild)
+    // }
+
+    // vaciamos la tabla
+    $(table).children('.col-6').remove();
 
     // for / llave (key en el database) / objeto (que es el parametro asignado)
     for( key in carsCollection){
@@ -177,16 +189,20 @@ const printCars = (carsCollection) => {
     }
 
     // Seleccionamos todos los botones de delete y por cada uno mandamos a llamar la funcion de delete
-    //$(".delete-btn").click(deleteData)
-    //$('.delete-btn').data('carkey') = key
-    
+    // la funcion PrintCars() obtiene sus valores al ejecutar getCars() por lo tanto al llegar al deleteData obtiene el key y puede borrar el objeto
+    $(".delete-btn").click(deleteData)
 }
+
 
 // Imprimimos las cards
 printCars( getCars() )
 
-// ejecutamos la funcion deleteData a traves de cada boton delete
-$(".delete-btn").click(deleteData)
+// si llegamos a llamar la funcion deleteData() desde aqui, solo va a borrar una vez el objeto al que demos click a su boton delete
+// $(".delete-btn").click(deleteData)
+
+
+
+
 
 
 
