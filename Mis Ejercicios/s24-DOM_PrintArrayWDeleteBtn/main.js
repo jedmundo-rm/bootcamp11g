@@ -208,6 +208,7 @@ const printTable = () => {
 
         let mentorAverage = mentor.scores.reduce((accum, current) => accum += current.score, 0) / mentor.scores.length
 
+        // Preguntar como pasar lo anterior a una funcion normal
         //let sumScores = mentor.scores.reduce((accum, current) => {
             //let acumulador = (accum += current.score)
             //let scoreAvg = acumulador / mentor.scores.length

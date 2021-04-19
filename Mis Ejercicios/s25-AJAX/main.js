@@ -314,7 +314,10 @@ const printTable = (dataPrint) => {
 
 printTable( getKoders() )
 
-// si llegamos a llamar la funcion deleteData() desde aqui, solo va a borrar una vez el objeto al que demos click a su boton delete
+// si llegamos a llamar la funcion deleteData() desde aqui, solo va a borrar una vez el objeto al que demos click a su boton delete 
+// ya que el DOM solo lo estamos cargando una vez Ej. Si tenemos dos cards al cargar la pagina y creamos uno nuevo (una tercera card), esta tercera card no esta cargada en el DOM 
+// por lo tanto al dar click en el boton borrar no va a pasar nada. Pero si damos un refresh y damos click al boton ahora si lo va a borrar, esto pq despues del refresh esta tercera card ya existe en el DOM
+
 // let buttons = document.querySelectorAll(".delete-btn")
 
 // buttons.forEach(button => {

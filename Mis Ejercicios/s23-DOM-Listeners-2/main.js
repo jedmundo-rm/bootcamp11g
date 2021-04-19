@@ -50,15 +50,15 @@ const getKoderName = () => {
     console.log('koderName:', koderName)
 
     // Con esto metemos el valor del input en un Array
-    if(koderName === ""){
+    // if(koderName === ""){
 
     }else{
        koderList.push(koderName) 
        console.log('koderList:', koderList)
     }
 
-    // Preguntar como pasar esto a una sola linea
-    //koderName !== "" ?  koderList.push(koderName) 
+    // Lo anterior a una sola linea (operador ternario)
+    // koderName !== "" ?  koderList.push(koderName) : ""
     
     // con esto detectamos el ultimo elemento hijo dentro del UL y lo borramos
     // esto esta en DOM por lo tanto no afecta en el HTML

@@ -37,7 +37,7 @@ const getCarData = () => {
     })
 
 
-    // Depues creamos la funcion para mandar a la base de datos y aqui es onde la ejecutamos
+    // Despues creamos la funcion para mandar a la base de datos y aqui es onde la ejecutamos
     saveCar( carObject )
 }
 
@@ -117,7 +117,7 @@ const deleteData = key => {
             // GUARDADO EXITOSO
             // Volvemos a imprimir la tabla para mostrar el nuevo valor guardado
             // pq en la funcion en si la limpiamos 
-            printCars( getCars() )
+            //printCars( getCars() )
 
             console.log( response)
         },
@@ -197,7 +197,9 @@ const printCars = (carsCollection) => {
 // Imprimimos las cards
 printCars( getCars() )
 
-// si llegamos a llamar la funcion deleteData() desde aqui, solo va a borrar una vez el objeto al que demos click a su boton delete
+// si llegamos a llamar la funcion deleteData() desde aqui, solo va a borrar una vez el objeto al que demos click a su boton delete 
+// ya que el DOM solo lo estamos cargando una vez Ej. Si tenemos dos cards al cargar la pagina y creamos uno nuevo (una tercera card), esta tercera card no esta cargada en el DOM 
+// por lo tanto al dar click en el boton borrar no va a pasar nada. Pero si damos un refresh y damos click al boton ahora si lo va a borrar, esto pq despues del refresh esta tercera card ya existe en el DOM
 // $(".delete-btn").click(deleteData)
 
 

@@ -47,14 +47,14 @@ const addItem = (signature, note) => {
     liElem.appendChild(getArrName)
 
     // Esto es para cambiar el bg de los Li segun su puntaje
-    // if(note > 8){
-    //     liElem.classList.add("bg-success")
-    // }else{
-    //     liElem.classList.add("bg-warning")
-    // }
+    if(note >= 8){
+        liElem.classList.add("bg-success")
+    }else{
+        liElem.classList.add("bg-warning")
+    }
 
-    //metodo if reducido
-    note >= 8 ? liElem.classList.add("bg-success") : liElem.classList.add("bg-warning")
+    // Lo anterior a una sola linea (operador ternario)
+    //note >= 8 ? liElem.classList.add("bg-success") : liElem.classList.add("bg-warning")
 
     // Metemos el Li al Ul
     ulElem.appendChild(liElem)
