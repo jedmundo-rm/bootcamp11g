@@ -210,7 +210,7 @@ const filterByCategory = (array) => {
 
     let inputCategory = select.options[select.selectedIndex].value
 
-    //console.log('inputCategory:', inputCategory)
+    console.log('inputCategory:', inputCategory)
 
     let filterArray = {};
 
@@ -240,13 +240,13 @@ const filterByCategory = (array) => {
                 // console.log('objectItem:', objectItem)
                 
                 filterArray = {...filterArray, objectItem}
-                console.log('filterArray:', filterArray)
+                //console.log('filterArray:', filterArray)
             }
-        }
 
-        printCars(filterArray)
-        
-        console.log('filterArray:', filterArray)
+            printCars(filterArray)
+            console.log('filterArray:', filterArray)
+
+        }
     }
 }
 
