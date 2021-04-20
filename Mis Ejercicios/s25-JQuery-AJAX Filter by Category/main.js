@@ -150,7 +150,6 @@ const updateData = key => {
 }
 
 
-
 ////////// PRINT CAR /////////////
 
 // El parametro podemos llamarlo como sea, pero hace referencia a la coleccion guardada en el objeto creado en el GET (podemos llamarlo igual que el objeto)
@@ -203,9 +202,52 @@ printCars( getCars() )
 // $(".delete-btn").click(deleteData)
 
 
+////////// FILTRAR /////////////
 
+const filterByCategory = (array) => {
 
+    let select = document.getElementById("select-filter")
 
+    let inputCategory = select.options[select.selectedIndex].value
 
+    //console.log('inputCategory:', inputCategory)
+
+    let filterArray = {};
+
+    if(inputCategory === "todos"){
+
+        //console.log('inputCategory:', inputCategory)
+
+        printCars( array )
+    } else{
+        for (key in array){
+        
+            // Tenemos todo el array
+            //console.log('array:', array)
+
+            let {brand, model, trans} = array[key];
+
+            if(inputCategory === trans){
+
+                // si exporta los values
+                // console.log('inputCategory.value:', inputCategory)
+
+                // todos son de tipo string
+                // let type = inputCategory.value
+                // console.log(typeof type)
+
+                objectItem = array[key]
+                // console.log('objectItem:', objectItem)
+                
+                filterArray = {...filterArray, objectItem}
+                console.log('filterArray:', filterArray)
+            }
+        }
+
+        printCars(filterArray)
+        
+        console.log('filterArray:', filterArray)
+    }
+}
 
 

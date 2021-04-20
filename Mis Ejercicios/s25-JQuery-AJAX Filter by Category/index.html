@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJAX jQuery Mio</title>
+    <title>AJAX jQuery Filter By</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
 
@@ -42,7 +42,12 @@
             <div class="col-12">
                 <div class="row cars-wrapper">
 
-                    
+                    <select name="" id="select-filter" class="custom-select" onchange="filterByCategory( getCars() )">
+                        <option value="todos" selected>Todos los Productos</option>
+                        <option value="manual">Manual</option>
+                        <option value="automatic">Automatico</option>
+                    </select>
+
                 </div>
             </div>
         </div>
