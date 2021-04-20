@@ -101,12 +101,12 @@ const getCars = () => {
 ////////// DELETE CAR /////////////
 ////////// Se pone antes de la funcion print pq si no no puede inicializar /////////////
 
-const deleteData = key => {
+const deleteData = event => {
 
-    console.log(key.target)
+    console.log(event.target)
 
     // Recordar obetener el data del boton delete
-    let getCarKey = key.target.dataset.carkey
+    let getCarKey = event.target.dataset.carkey
     console.log('koderKey:', getCarKey)
 
     $.ajax({
@@ -127,27 +127,6 @@ const deleteData = key => {
     })
 }
 
-
-////////// EDIT CAR /////////////
-
-const updateData = key => {
-    $.ajax({
-        method:"PATCH",
-        url:`https://ajaxclass-1ca34.firebaseio.com/11g/jaime/cars/${key}.json`,
-        // data: JSON.stringify({
-        //     brand: "Nissan",
-        //     model: "March",
-        //     trans: "manual"
-        // }),
-        data: JSON.stringify(car),
-        success: response => {
-            console.log( response)
-        },
-        error: error => {
-            console.log( error )
-        }
-    })
-}
 
 
 ////////// PRINT CAR /////////////

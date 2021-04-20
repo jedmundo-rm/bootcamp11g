@@ -101,12 +101,12 @@ const getCars = () => {
 ////////// DELETE CAR /////////////
 ////////// Se pone antes de la funcion print pq si no no puede inicializar /////////////
 
-const deleteData = key => {
+const deleteData = event => {
 
-    console.log(key.target)
+    console.log(event.target)
 
     // Recordar obetener el data del boton delete
-    let getCarKey = key.target.dataset.carkey
+    let getCarKey = event.target.dataset.carkey
     console.log('koderKey:', getCarKey)
 
     $.ajax({
@@ -130,10 +130,22 @@ const deleteData = key => {
 
 ////////// EDIT CAR /////////////
 
-const updateData = key => {
+const updateData = event => {
+
+    // aqui obtenemos la key
+    let getCarKey = event.target.dataset.carkey
+    console.log('koderKey:', getCarKey)
+    
+    // asignamos la key al boton de Save Changes que esta en la ventana modal
+    // para editar el objeto que le corresponde
+    $("#save-changes").dataset.carKey = carKey
+
+    // mostramos la modal
+    $("#edition-modal").modal("show")
+
     $.ajax({
         method:"PATCH",
-        url:`https://ajaxclass-1ca34.firebaseio.com/11g/jaime/cars/${key}.json`,
+        url:`https://ajaxclass-1ca34.firebaseio.com/11g/jaime/cars/${getCarKey}.json`,
         // data: JSON.stringify({
         //     brand: "Nissan",
         //     model: "March",
@@ -148,6 +160,8 @@ const updateData = key => {
         }
     })
 }
+
+$(".edit-btn").click(updateData)
 
 
 
@@ -178,7 +192,7 @@ const printCars = (carsCollection) => {
                     <div class="card-text">Transmicion: ${trans}</div>
                     <div class="d-flex justify-content-between my-2">
                         <div class="btn btn-danger delete-btn" data-carkey="${key}">Eliminar</div>
-                        <div class="btn btn-warning">Editar</div>
+                        <div class="btn btn-warning edit-btn">Editar</div>
                     </div>
                 </div>
             </div>

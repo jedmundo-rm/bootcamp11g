@@ -1,3 +1,4 @@
+// Preguntar como pasar la linea 210 a una funcion normal
 
 var mentorsArray = [
     {
