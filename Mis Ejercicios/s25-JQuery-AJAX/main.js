@@ -137,89 +137,104 @@ const deleteData = event => {
 }
 
 
-////////// EDIT KODER /////////////
+////////// EDIT CAR /////////////
 
 const updateData = event => {
-    
+
     // aqui obtenemos la key
-    let getKoderKey = event.target.dataset.carkey
+    let getCarKey = $(event.target).data('carkey');
+    //console.log('getCarKey:', getCarKey)
     
     // asignamos la key al boton de Save Changes que esta en la ventana modal
     // para editar el objeto que le corresponde
-    document.getElementById("save-changes").dataset.getKoderKey = getKoderKey
-    
-    console.log('getKoderKey:', getKoderKey)
-    
+    // $("#save-changes").data("carkey") = getCarKey;
+    document.getElementById("save-changes").dataset.getCarKey = getCarKey
+
+    console.log('getCarKey:', getCarKey)
+
     // mostramos la modal
     $("#edition-modal").modal("show")
 
-    //  Creamos el llamado del GET para obtener los valores del objeto
-    let xhttp = new XMLHttpRequest();
+    /////////// JQUERY AJAX ////////////
 
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            // Typical action to be performed when the document is ready:
-            console.log(xhttp.response)
-            let koder = JSON.parse( xhttp.response )
-            
-            Object.keys( koder ).forEach( key => {
+    let dbData
+
+    $.ajax({
+        method:"GET",
+        url:`https://ajaxclass-1ca34.firebaseio.com/11g/jaime/cars/${getCarKey}.json`,
+        // data: JSON.stringify({
+        //     brand: "Nissan",
+        //     model: "March",
+        //     trans: "manual"
+        // }),
+        success: response => {
+            console.log( response)
+            dbData = response
+
+            Object.keys( dbData ).forEach( key => {
                 // trae la key del objeto: nombre, apellido, phone y age 
                 console.log('key:', key)
 
+                let objKey = key
+                console.log('objKey:', objKey)
+
                 // esto imprime los elementos input 
-                //console.log( document.querySelector(`#edition-modal input[name=${key}]`) )
-                document.querySelector(`#edition-modal input[name=${key}]`).value = koder[key]
+                document.querySelector(`#edition-modal input[name=${key}]`).value = dbData[key]
             }) 
 
-           //console.log( document.querySelector(`#edition-modal input[name="name"]`) )
-           // con esto comprobamos que si podamos ingresar a uno de los campos y cambiar el valor
-           //document.querySelector(`#edition-modal input[name="name"]`).value = "algun nombre"
-        }
-    }
+            // con esto comprobamos que si podamos ingresar a uno de los campos y cambiar el valor
+            //$('#edition-modal input[name="brand"]').val("algun nombre")
 
-    xhttp.open("GET", `https://ajaxclass-1ca34.firebaseio.com/11g/jaime/cars/${getKoderKey}.json`, false);
-    // Aqui queda vacio pq no estamos mandando nada, solo vamos a obtener datos
-    xhttp.send();
+        },
+        error: error => {
+            console.log( error )
+        },
+        async:false
+    })
 }
-
 
 const saveChanges = (event) => {
 
-    // Creamos la llave
-    let getKoderKey = event.target.dataset.getKoderKey
+    // Creamos la llave AQUI ES IMPORTANTE COLOCAR EN EL DATA SET LA VARIABLE getCarKey
+    // AQUI ES IMPORTANTE COLOCAR EN EL DATA SET LA VARIABLE getKoderKey !!!!!!!!!!!!!!  (No como en el updateData que declaramos el dataset)
+    let getCarKey = event.target.dataset.getCarKey
 
     let editedObject = {}
+    console.log('editedObject:', editedObject)
 
     document.querySelectorAll("#edition-modal input").forEach(input => {
         editedObject[input.name] = input.value
     })
 
-    //  Creamos el llamado del GET para obtener los valores del objeto
-    let xhttp = new XMLHttpRequest();
+    /////////// JQUERY AJAX ////////////
 
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-           // Typical action to be performed when the document is ready:
-           console.log(xhttp.response)
+    $.ajax({
+        method: "PATCH",
+        url: `https://ajaxclass-1ca34.firebaseio.com/11g/jaime/cars/${getCarKey}.json`,
+        // data: JSON.stringify({
+        //     brand: "Nissan",
+        //     model: "March",
+        //     trans: "manual"
+        // }),
+        data: JSON.stringify(editedObject),
+        success : response => {
 
-           let response = JSON.parse( xhttp.response )
-           console.log('response:', response)
-
-            // mandamos a imprimir de nuevo al tabla para mostrar el resultado sin el koder borrado
-            printTable(getCars())
-
+            // GUARDADO EXITOSO
+            // Volvemos a imprimir la tabla para mostrar el nuevo valor guardado
+            // pq en la funcion en si la limpiamos 
+            printCars( getCars() )
             // escondemos el modal
             $("#edition-modal").modal("hide")
-        }
-    }
 
-    xhttp.open("PUT", `https://ajaxclass-1ca34.firebaseio.com/11g/jaime/cars/${getKoderKey}.json`, false);
-    // Aqui queda vacio pq no estamos mandando nada, solo vamos a obtener datos
-    xhttp.send(JSON.stringify(editedObject));
+            console.log(response)
+        },
+        error : error => {
+            console.log(error)
+        },
+        async: false
+    })
+
 }
-
-document.getElementById("save-changes").addEventListener("click", saveChanges)
-
 
 
 ////////// PRINT CAR /////////////
