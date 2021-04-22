@@ -130,6 +130,104 @@ const deleteData = event => {
 }
 
 
+////////// EDIT CAR /////////////
+
+const updateData = event => {
+
+    // aqui obtenemos la key
+    let getCarKey = $(event.target).data('carkey');
+    //console.log('getCarKey:', getCarKey)
+    
+    // asignamos la key al boton de Save Changes que esta en la ventana modal
+    // para editar el objeto que le corresponde
+    // $("#save-changes").data("carkey") = getCarKey;
+    document.getElementById("save-changes").dataset.getCarKey = getCarKey
+
+    console.log('getCarKey:', getCarKey)
+
+    // mostramos la modal
+    $("#edition-modal").modal("show")
+
+    /////////// JQUERY AJAX ////////////
+
+    let dbData
+
+    $.ajax({
+        method:"GET",
+        url:`https://ajaxclass-1ca34.firebaseio.com/11g/jaime/cars/${getCarKey}.json`,
+        // data: JSON.stringify({
+        //     brand: "Nissan",
+        //     model: "March",
+        //     trans: "manual"
+        // }),
+        success: response => {
+            console.log( response)
+            dbData = response
+
+            Object.keys( dbData ).forEach( key => {
+                // trae la key del objeto: nombre, apellido, phone y age 
+                console.log('key:', key)
+
+                let objKey = key
+                console.log('objKey:', objKey)
+
+                // esto imprime los elementos input 
+                document.querySelector(`#edition-modal input[name=${key}]`).value = dbData[key]
+            }) 
+
+            // con esto comprobamos que si podamos ingresar a uno de los campos y cambiar el valor
+            //$('#edition-modal input[name="brand"]').val("algun nombre")
+
+        },
+        error: error => {
+            console.log( error )
+        },
+        async:false
+    })
+}
+
+const saveChanges = (event) => {
+
+    // Creamos la llave AQUI ES IMPORTANTE COLOCAR EN EL DATA SET LA VARIABLE getCarKey
+    // AQUI ES IMPORTANTE COLOCAR EN EL DATA SET LA VARIABLE getKoderKey !!!!!!!!!!!!!!  (No como en el updateData que declaramos el dataset)
+    let getCarKey = event.target.dataset.getCarKey
+
+    let editedObject = {}
+    console.log('editedObject:', editedObject)
+
+    document.querySelectorAll("#edition-modal input").forEach(input => {
+        editedObject[input.name] = input.value
+    })
+
+    /////////// JQUERY AJAX ////////////
+
+    $.ajax({
+        method: "PATCH",
+        url: `https://ajaxclass-1ca34.firebaseio.com/11g/jaime/cars/${getCarKey}.json`,
+        // data: JSON.stringify({
+        //     brand: "Nissan",
+        //     model: "March",
+        //     trans: "manual"
+        // }),
+        data: JSON.stringify(editedObject),
+        success : response => {
+
+            // GUARDADO EXITOSO
+            // Volvemos a imprimir la tabla para mostrar el nuevo valor guardado
+            // pq en la funcion en si la limpiamos 
+            printCars( getCars() )
+            // escondemos el modal
+            $("#edition-modal").modal("hide")
+
+            console.log(response)
+        },
+        error : error => {
+            console.log(error)
+        },
+        async: false
+    })
+
+}
 
 ////////// PRINT CAR /////////////
 
@@ -158,7 +256,7 @@ const printCars = (carsCollection) => {
                     <div class="card-text">Transmicion: ${trans}</div>
                     <div class="d-flex justify-content-between my-2">
                         <div class="btn btn-danger delete-btn" data-carkey="${key}">Eliminar</div>
-                        <div class="btn btn-warning">Editar</div>
+                        <div class="btn btn-warning edit-btn" data-carkey="${key}">Editar</div>
                     </div>
                 </div>
             </div>
@@ -171,6 +269,12 @@ const printCars = (carsCollection) => {
     // Seleccionamos todos los botones de delete y por cada uno mandamos a llamar la funcion de delete
     // la funcion PrintCars() obtiene sus valores al ejecutar getCars() por lo tanto al llegar al deleteData obtiene el key y puede borrar el objeto
     $(".delete-btn").click(deleteData)
+
+    // Mandamos a llamar la funcion de editar al boton
+    $(".edit-btn").click(updateData)
+
+    // Mandamos a llamar la funcion para guardar los datos editados
+    $("#save-changes").click(saveChanges)
 }
 
 
