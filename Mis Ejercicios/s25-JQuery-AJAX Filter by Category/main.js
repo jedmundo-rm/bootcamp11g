@@ -36,9 +36,11 @@ const getCarData = () => {
         console.log('carObject:', carObject)
     })
 
-
     // Despues creamos la funcion para mandar a la base de datos y aqui es onde la ejecutamos
     saveCar( carObject )
+
+    // Una vez guardado limpiamos los campos
+    $("form input").val(" ");
 }
 
 $('#guardar').click(getCarData)

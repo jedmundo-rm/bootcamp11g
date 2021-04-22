@@ -240,18 +240,18 @@ const deleteKoderPrinted = event => {
 ////////// EDIT KODER /////////////
 
 const editKoderPrinted = event => {
-
+    
     // aqui obtenemos la key
-  let koderKey = event.target.dataset.koderKey
-
-  // asignamos la key al boton de Save Changes que esta en la ventana modal
-  // para editar el objeto que le corresponde
-  document.getElementById("save-changes").dataset.koderKey = koderKey
-
-  console.log('koderKey:', koderKey)
-
-  // mostramos la modal
-  $("#edition-modal").modal("show")
+    let getKoderKey = event.target.dataset.koderKey
+    
+    // asignamos la key al boton de Save Changes que esta en la ventana modal
+    // para editar el objeto que le corresponde
+    document.getElementById("save-changes").dataset.getKoderKey = getKoderKey
+    
+    console.log('getKoderKey:', getKoderKey)
+    
+    // mostramos la modal
+    $("#edition-modal").modal("show")
 
     //  Creamos el llamado del GET para obtener los valores del objeto
     let xhttp = new XMLHttpRequest();
@@ -272,11 +272,12 @@ const editKoderPrinted = event => {
             }) 
 
            //console.log( document.querySelector(`#edition-modal input[name="name"]`) )
+           // con esto comprobamos que si podamos ingresar a uno de los campos y cambiar el valor
            //document.querySelector(`#edition-modal input[name="name"]`).value = "algun nombre"
         }
     }
 
-    xhttp.open("GET", `https://ajaxclass-1ca34.firebaseio.com/11g/jaime/koders/${koderKey}.json`, false);
+    xhttp.open("GET", `https://ajaxclass-1ca34.firebaseio.com/11g/jaime/koders/${getKoderKey}.json`, false);
     // Aqui queda vacio pq no estamos mandando nada, solo vamos a obtener datos
     xhttp.send();
 }
@@ -285,7 +286,7 @@ const editKoderPrinted = event => {
 const saveChanges = (event) => {
 
     // Creamos la llave
-    let koderKey = event.target.dataset.koderKey
+    let getKoderKey = event.target.dataset.getKoderKey
 
     let editedObject = {}
 
@@ -312,7 +313,7 @@ const saveChanges = (event) => {
         }
     }
 
-    xhttp.open("PUT", `https://ajaxclass-1ca34.firebaseio.com/11g/jaime/koders/${koderKey}.json`, false);
+    xhttp.open("PUT", `https://ajaxclass-1ca34.firebaseio.com/11g/jaime/koders/${getKoderKey}.json`, false);
     // Aqui queda vacio pq no estamos mandando nada, solo vamos a obtener datos
     xhttp.send(JSON.stringify(editedObject));
 }

@@ -1,3 +1,4 @@
+// PREGUNTAR COMO PASAR LA LINEA 149 A JQUERY
 
 /*Object.keys( objeto ) => devuelve un array con las llaves del objeto */
 /*Object.values( objeto ) => devuelve un array con los values de cada llave del objeto */
@@ -36,9 +37,11 @@ const getCarData = () => {
         console.log('carObject:', carObject)
     })
 
-
     // Despues creamos la funcion para mandar a la base de datos y aqui es onde la ejecutamos
     saveCar( carObject )
+
+    // Una vez guardado limpiamos los campos
+    $("form input").val(" ");
 }
 
 $('#guardar').click(getCarData)
@@ -48,6 +51,8 @@ $('#guardar').click(getCarData)
 // Creamos la funcion para mandar a la base de datos
 
 const saveCar = (car) => {
+
+    /////////// JQUERY AJAX ////////////
 
     $.ajax({
         method: "POST",
@@ -77,14 +82,16 @@ const saveCar = (car) => {
 
 const getCars = () => {
 
-    let carsCollection;
+    /////////// JQUERY AJAX ////////////
+
+    let dbData;
 
     $.ajax({
         method: "GET",
         url: "https://ajaxclass-1ca34.firebaseio.com/11g/jaime/cars.json",
         success: response => {
             console.log(response)
-            carsCollection = response
+            dbData = response
         },
         async: false,
         error: error => {
@@ -92,7 +99,7 @@ const getCars = () => {
         }
     })
 
-    return carsCollection;
+    return dbData;
 
 }
 
@@ -108,6 +115,8 @@ const deleteData = event => {
     // Recordar obetener el data del boton delete
     let getCarKey = event.target.dataset.carkey
     console.log('koderKey:', getCarKey)
+
+    /////////// JQUERY AJAX ////////////
 
     $.ajax({
         method:"DELETE",
@@ -128,40 +137,88 @@ const deleteData = event => {
 }
 
 
-////////// EDIT CAR /////////////
+////////// EDIT KODER /////////////
 
 const updateData = event => {
-
+    
     // aqui obtenemos la key
-    let getCarKey = event.target.dataset.carkey
-    console.log('koderKey:', getCarKey)
+    let getKoderKey = event.target.dataset.carkey
     
     // asignamos la key al boton de Save Changes que esta en la ventana modal
     // para editar el objeto que le corresponde
-    $("#save-changes").dataset.carKey = carKey
-
+    document.getElementById("save-changes").dataset.getKoderKey = getKoderKey
+    
+    console.log('getKoderKey:', getKoderKey)
+    
     // mostramos la modal
     $("#edition-modal").modal("show")
 
-    $.ajax({
-        method:"PATCH",
-        url:`https://ajaxclass-1ca34.firebaseio.com/11g/jaime/cars/${getCarKey}.json`,
-        // data: JSON.stringify({
-        //     brand: "Nissan",
-        //     model: "March",
-        //     trans: "manual"
-        // }),
-        data: JSON.stringify(car),
-        success: response => {
-            console.log( response)
-        },
-        error: error => {
-            console.log( error )
+    //  Creamos el llamado del GET para obtener los valores del objeto
+    let xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // Typical action to be performed when the document is ready:
+            console.log(xhttp.response)
+            let koder = JSON.parse( xhttp.response )
+            
+            Object.keys( koder ).forEach( key => {
+                // trae la key del objeto: nombre, apellido, phone y age 
+                console.log('key:', key)
+
+                // esto imprime los elementos input 
+                //console.log( document.querySelector(`#edition-modal input[name=${key}]`) )
+                document.querySelector(`#edition-modal input[name=${key}]`).value = koder[key]
+            }) 
+
+           //console.log( document.querySelector(`#edition-modal input[name="name"]`) )
+           // con esto comprobamos que si podamos ingresar a uno de los campos y cambiar el valor
+           //document.querySelector(`#edition-modal input[name="name"]`).value = "algun nombre"
         }
-    })
+    }
+
+    xhttp.open("GET", `https://ajaxclass-1ca34.firebaseio.com/11g/jaime/cars/${getKoderKey}.json`, false);
+    // Aqui queda vacio pq no estamos mandando nada, solo vamos a obtener datos
+    xhttp.send();
 }
 
-$(".edit-btn").click(updateData)
+
+const saveChanges = (event) => {
+
+    // Creamos la llave
+    let getKoderKey = event.target.dataset.getKoderKey
+
+    let editedObject = {}
+
+    document.querySelectorAll("#edition-modal input").forEach(input => {
+        editedObject[input.name] = input.value
+    })
+
+    //  Creamos el llamado del GET para obtener los valores del objeto
+    let xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+           // Typical action to be performed when the document is ready:
+           console.log(xhttp.response)
+
+           let response = JSON.parse( xhttp.response )
+           console.log('response:', response)
+
+            // mandamos a imprimir de nuevo al tabla para mostrar el resultado sin el koder borrado
+            printTable(getCars())
+
+            // escondemos el modal
+            $("#edition-modal").modal("hide")
+        }
+    }
+
+    xhttp.open("PUT", `https://ajaxclass-1ca34.firebaseio.com/11g/jaime/cars/${getKoderKey}.json`, false);
+    // Aqui queda vacio pq no estamos mandando nada, solo vamos a obtener datos
+    xhttp.send(JSON.stringify(editedObject));
+}
+
+document.getElementById("save-changes").addEventListener("click", saveChanges)
 
 
 
@@ -192,7 +249,7 @@ const printCars = (carsCollection) => {
                     <div class="card-text">Transmicion: ${trans}</div>
                     <div class="d-flex justify-content-between my-2">
                         <div class="btn btn-danger delete-btn" data-carkey="${key}">Eliminar</div>
-                        <div class="btn btn-warning edit-btn">Editar</div>
+                        <div class="btn btn-warning edit-btn" data-carkey="${key}">Editar</div>
                     </div>
                 </div>
             </div>
@@ -205,11 +262,19 @@ const printCars = (carsCollection) => {
     // Seleccionamos todos los botones de delete y por cada uno mandamos a llamar la funcion de delete
     // la funcion PrintCars() obtiene sus valores al ejecutar getCars() por lo tanto al llegar al deleteData obtiene el key y puede borrar el objeto
     $(".delete-btn").click(deleteData)
-}
 
+    // Mandamos a llamar la funcion de editar al boton
+    $(".edit-btn").click(updateData)
+
+    // Mandamos a llamar la funcion para guardar los datos editados
+    $("#save-changes").click(saveChanges)
+}
 
 // Imprimimos las cards
 printCars( getCars() )
+
+
+
 
 // si llegamos a llamar la funcion deleteData() desde aqui, solo va a borrar una vez el objeto al que demos click a su boton delete 
 // ya que el DOM solo lo estamos cargando una vez Ej. Si tenemos dos cards al cargar la pagina y creamos uno nuevo (una tercera card), esta tercera card no esta cargada en el DOM 

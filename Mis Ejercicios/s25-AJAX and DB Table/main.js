@@ -216,8 +216,8 @@ const deleteKoderPrinted = event => {
     console.log(event.target)
 
     // Recordar obetener el data del boton delete
-    let koderKey = event.target.dataset.koderKey
-    console.log('koderKey:', koderKey)
+    let getKoderKey = event.target.dataset.koderKey
+    console.log('getKoderKey:', getKoderKey)
 
     let xhttp = new XMLHttpRequest();
     
@@ -231,7 +231,7 @@ const deleteKoderPrinted = event => {
         }
     }
 
-    xhttp.open("DELETE", `https://ajaxclass-1ca34.firebaseio.com/11g/jaime/koders/${koderKey}.json`, true);
+    xhttp.open("DELETE", `https://ajaxclass-1ca34.firebaseio.com/11g/jaime/koders/${getKoderKey}.json`, true);
     xhttp.send( );
   }
 
