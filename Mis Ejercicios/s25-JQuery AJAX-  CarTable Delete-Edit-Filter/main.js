@@ -1,4 +1,3 @@
-// PREGUNTAR COMO PASAR LA LINEA 149 A JQUERY
 
 /*Object.keys( objeto ) => devuelve un array con las llaves del objeto */
 /*Object.values( objeto ) => devuelve un array con los values de cada llave del objeto */
@@ -29,11 +28,11 @@ const getCarData = () => {
         //console.log(carObject)
 
         let select = document.getElementById("trans")
-        let trans = select.options[select.selectedIndex].value
+        let transVal = select.options[select.selectedIndex].value
         //console.log('trans:', trans)
 
         //carObject.trans = trans
-        carObject = {...carObject, trans}
+        carObject = {...carObject, transVal}
         console.log('carObject:', carObject)
     })
 
@@ -51,8 +50,6 @@ $('#guardar').click(getCarData)
 // Creamos la funcion para mandar a la base de datos
 
 const saveCar = (car) => {
-
-    /////////// JQUERY AJAX ////////////
 
     $.ajax({
         method: "POST",
@@ -82,16 +79,14 @@ const saveCar = (car) => {
 
 const getCars = () => {
 
-    /////////// JQUERY AJAX ////////////
-
-    let dbData;
+    let carsCollection;
 
     $.ajax({
         method: "GET",
         url: "https://ajaxclass-1ca34.firebaseio.com/11g/jaime/cars.json",
         success: response => {
             console.log(response)
-            dbData = response
+            carsCollection = response
         },
         async: false,
         error: error => {
@@ -99,7 +94,7 @@ const getCars = () => {
         }
     })
 
-    return dbData;
+    return carsCollection;
 
 }
 
@@ -113,10 +108,8 @@ const deleteData = event => {
     console.log(event.target)
 
     // Recordar obetener el data del boton delete
-    let getCarKey = event.target.dataset.carkey
+    let getCarKey = $(event.target).data('carkey');
     console.log('koderKey:', getCarKey)
-
-    /////////// JQUERY AJAX ////////////
 
     $.ajax({
         method:"DELETE",
@@ -236,7 +229,6 @@ const saveChanges = (event) => {
 
 }
 
-
 ////////// PRINT CAR /////////////
 
 // El parametro podemos llamarlo como sea, pero hace referencia a la coleccion guardada en el objeto creado en el GET (podemos llamarlo igual que el objeto)
@@ -254,14 +246,15 @@ const printCars = (carsCollection) => {
 
     // for / llave (key en el database) / objeto (que es el parametro asignado)
     for( key in carsCollection){
-        let{ model, brand, trans } = carsCollection[key]
+        // Estos valores tienen relacion con los valores declarados en la primera funcion de Obtencion de Datos
+        let{ model, brand, transVal } = carsCollection[key]
         let cardHTML = `                    
         <div class="col-6">
             <div class=" card bg-dark text-white m-2">
                 <div class="card-body">
                     <div class="card-text">Marca: ${brand}</div>
                     <div class="card-text">Modelo: ${model}</div>
-                    <div class="card-text">Transmicion: ${trans}</div>
+                    <div class="card-text">Transmicion: ${transVal}</div>
                     <div class="d-flex justify-content-between my-2">
                         <div class="btn btn-danger delete-btn" data-carkey="${key}">Eliminar</div>
                         <div class="btn btn-warning edit-btn" data-carkey="${key}">Editar</div>
@@ -285,11 +278,9 @@ const printCars = (carsCollection) => {
     $("#save-changes").click(saveChanges)
 }
 
+
 // Imprimimos las cards
 printCars( getCars() )
-
-
-
 
 // si llegamos a llamar la funcion deleteData() desde aqui, solo va a borrar una vez el objeto al que demos click a su boton delete 
 // ya que el DOM solo lo estamos cargando una vez Ej. Si tenemos dos cards al cargar la pagina y creamos uno nuevo (una tercera card), esta tercera card no esta cargada en el DOM 
@@ -297,9 +288,52 @@ printCars( getCars() )
 // $(".delete-btn").click(deleteData)
 
 
+////////// FILTRAR /////////////
 
+const filterByCategory = (array) => {
 
+    let select = document.getElementById("select-filter")
 
+    let inputCategory = select.options[select.selectedIndex].value
 
+    console.log('inputCategory:', inputCategory)
+
+    let filterArray = {};
+
+    if(inputCategory === "todos"){
+
+        //console.log('inputCategory:', inputCategory)
+
+        printCars( array )
+    } else{
+        for (key in array){
+        
+            // Tenemos todo el array
+            //console.log('array:', array)
+
+            let {brand, model, trans} = array[key];
+
+            if(inputCategory === trans){
+
+                // si exporta los values
+                // console.log('inputCategory.value:', inputCategory)
+
+                // todos son de tipo string
+                // let type = inputCategory.value
+                // console.log(typeof type)
+
+                objectItem = array[key]
+                 //console.log('objectItem:', objectItem)
+                
+                filterArray = {...filterArray, objectItem}
+                //console.log('filterArray:', filterArray)
+            }
+
+            printCars(filterArray)
+            //console.log('filterArray:', filterArray)
+
+        }
+    }
+}
 
 

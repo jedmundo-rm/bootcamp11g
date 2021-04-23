@@ -1,5 +1,3 @@
-// PREGUNTAR COMO HACER EL SELECT LIST EDITABLE EN LA MODAL
-// PREGUNTAR COMO FCUNIONA EL WHILE
 
 // https://database-d9257-default-rtdb.firebaseio.com/11g/israel/mentors/.json
 // https://ajaxclass-1ca34.firebaseio.com/11g/jaime/mentors.json
@@ -111,11 +109,11 @@ const getKoderData = () => {
         //console.log(koderObject)
 
         let select = document.getElementById("gender")
-        let gender = select.options[select.selectedIndex].value
+        let genderVal = select.options[select.selectedIndex].value
         //console.log('gender:', gender)
 
         //koderObject.gender = gender
-        koderObject = {...koderObject, gender}
+        koderObject = {...koderObject, genderVal}
         console.log('koderObject:', koderObject)
     })
 
@@ -218,8 +216,8 @@ const deleteKoderPrinted = event => {
     console.log(event.target)
 
     // Recordar obetener el data del boton delete
-    let koderKey = event.target.dataset.koderKey
-    console.log('koderKey:', koderKey)
+    let getKoderKey = event.target.dataset.koderKey
+    console.log('getKoderKey:', getKoderKey)
 
     let xhttp = new XMLHttpRequest();
     
@@ -233,94 +231,9 @@ const deleteKoderPrinted = event => {
         }
     }
 
-    xhttp.open("DELETE", `https://ajaxclass-1ca34.firebaseio.com/11g/jaime/koders/${koderKey}.json`, true);
+    xhttp.open("DELETE", `https://ajaxclass-1ca34.firebaseio.com/11g/jaime/koders/${getKoderKey}.json`, true);
     xhttp.send( );
   }
-
-////////// EDIT KODER /////////////
-
-const editKoderPrinted = event => {
-    
-    // aqui obtenemos la key
-    let getKoderKey = event.target.dataset.koderKey
-    
-    // asignamos la key al boton de Save Changes que esta en la ventana modal
-    // para editar el objeto que le corresponde
-    document.getElementById("save-changes").dataset.getKoderKey = getKoderKey
-    
-    console.log('getKoderKey:', getKoderKey)
-    
-    // mostramos la modal
-    $("#edition-modal").modal("show")
-
-    //  Creamos el llamado del GET para obtener los valores del objeto
-    let xhttp = new XMLHttpRequest();
-
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            // Typical action to be performed when the document is ready:
-            console.log(xhttp.response)
-            let koder = JSON.parse( xhttp.response )
-            
-            Object.keys( koder ).forEach( key => {
-                // trae la key del objeto: nombre, apellido, phone y age 
-                console.log('key:', key)
-
-                // esto imprime los elementos input 
-                //console.log( document.querySelector(`#edition-modal input[name=${key}]`) )
-                document.querySelector(`#edition-modal input[name=${key}]`).value = koder[key]
-            }) 
-
-           //console.log( document.querySelector(`#edition-modal input[name="name"]`) )
-           // con esto comprobamos que si podamos ingresar a uno de los campos y cambiar el valor
-           //document.querySelector(`#edition-modal input[name="name"]`).value = "algun nombre"
-        }
-    }
-
-    xhttp.open("GET", `https://ajaxclass-1ca34.firebaseio.com/11g/jaime/koders/${getKoderKey}.json`, false);
-    // Aqui queda vacio pq no estamos mandando nada, solo vamos a obtener datos
-    xhttp.send();
-}
-
-
-const saveChanges = (event) => {
-
-    // Creamos la llave 
-    // AQUI ES IMPORTANTE COLOCAR EN EL DATA SET LA VARIABLE getKoderKey !!!!!!!!!!!!!!  (No como en el updateData que declaramos el dataset)
-    let getKoderKey = event.target.dataset.getKoderKey
-
-    let editedObject = {}
-
-    document.querySelectorAll("#edition-modal input").forEach(input => {
-        editedObject[input.name] = input.value
-    })
-
-    //  Creamos el llamado del GET para obtener los valores del objeto
-    let xhttp = new XMLHttpRequest();
-
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-           // Typical action to be performed when the document is ready:
-           console.log(xhttp.response)
-
-           let response = JSON.parse( xhttp.response )
-           console.log('response:', response)
-
-            // mandamos a imprimir de nuevo al tabla para mostrar el resultado sin el koder borrado
-            printTable(getKoders())
-
-            // escondemos el modal
-            $("#edition-modal").modal("hide")
-        }
-    }
-
-    xhttp.open("PUT", `https://ajaxclass-1ca34.firebaseio.com/11g/jaime/koders/${getKoderKey}.json`, false);
-    // Aqui queda vacio pq no estamos mandando nada, solo vamos a obtener datos
-    xhttp.send(JSON.stringify(editedObject));
-}
-
-document.getElementById("save-changes").addEventListener("click", saveChanges)
-
 
 
 ////////// PRINT KODER /////////////
@@ -353,31 +266,24 @@ const printTable = (dataPrint) => {
         let genderTd = document.createElement("td")
 
         let deleteTd = document.createElement("td")
-        let editTd = document.createElement("td")
 
         // En el input del apellido usamor last-name y aqui en la variable usamos lastName (esto no debe ser asi)
         // Deben ser iguales lastname en el name del input y en lastname en la variable
-        let {name, lastname, phone, age, gender} = dataPrint[key]
+        // Estos valores tienen relacion con los valores declarados en la primera funcion de Obtencion de Datos
+        let {name, lastname, phone, age, genderVal} = dataPrint[key]
         
         let indextext =  document.createTextNode(index)
         let nameText = document.createTextNode(name)
         let lastNameText = document.createTextNode(lastname)
         let phoneText = document.createTextNode(phone)
         let ageText = document.createTextNode(age)
-        let genderText = document.createTextNode(gender)
+        let genderText = document.createTextNode(genderVal)
 
         let deleteBtn = document.createElement("button")
         deleteBtn.classList = "btn btn-outline-danger delete-btn"
-        let deleteText = document.createTextNode("Delete")
-        deleteBtn.appendChild(deleteText)
+        let buttonText = document.createTextNode("Delete")
+        deleteBtn.appendChild(buttonText)
         deleteBtn.dataset.koderKey = key
-
-        let editBtn = document.createElement("button")
-        editBtn.classList = "btn btn-outline-primary edit-btn"
-        let editText = document.createTextNode("Edit")
-        editBtn.appendChild(editText)
-        editBtn.dataset.koderKey = key
-
 
         indexTd.appendChild(indextext)
         nameTd.appendChild(nameText)
@@ -386,7 +292,6 @@ const printTable = (dataPrint) => {
         ageTd.appendChild(ageText)
         genderTd.appendChild(genderText)
         deleteTd.appendChild(deleteBtn)
-        editTd.appendChild(editBtn)
 
         koderRow.appendChild(indexTd)
         koderRow.appendChild(nameTd)
@@ -395,25 +300,16 @@ const printTable = (dataPrint) => {
         koderRow.appendChild(ageTd)
         koderRow.appendChild(genderTd)
         koderRow.appendChild(deleteTd)
-        koderRow.appendChild(editTd)
 
         table.appendChild(koderRow)
         index++
     }
 
     // Seleccionamos todos los botones de delete y por cada uno mandamos a llamar la funcion de delete
-    let buttonsDel = document.querySelectorAll(".delete-btn")
+    let buttons = document.querySelectorAll(".delete-btn")
 
-    buttonsDel.forEach(button => {
+    buttons.forEach(button => {
         button.addEventListener("click", deleteKoderPrinted)
-    })
-
-
-    // Seleccionamos todos los botones de delete y por cada uno mandamos a llamar la funcion de delete
-    let buttonsEdit = document.querySelectorAll(".edit-btn")
-
-    buttonsEdit.forEach(button => {
-        button.addEventListener("click", editKoderPrinted)
     })
 }
 
