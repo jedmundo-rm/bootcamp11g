@@ -30,7 +30,6 @@ const getCarData = () => {
         
         //console.log(carObject)
 
-
         //Obtenemos el valor actual del selected
         let transVal = $("#trans option:selected").val();
         //console.log('transVal:', transVal)
@@ -181,10 +180,9 @@ const updateData = event => {
                 let objKey = key
                 console.log('objKey:', objKey)
 
-                // esto imprime los elementos input 
-                document.querySelector(`#edition-modal input[name=${key}]`).value = dbData[key]
-                // falta imprimir los elementos en el select list
+                // esto obtiene los valores de los elementos input 
                 //document.querySelector(`#edition-modal input[name=${key}]`).value = dbData[key]
+                $(`#edition-modal input[name=${key}]`).val(dbData[key])
             }) 
 
             // con esto comprobamos que si podamos ingresar a uno de los campos y cambiar el valor
@@ -202,11 +200,12 @@ const saveChanges = (event) => {
 
     // Creamos la llave AQUI ES IMPORTANTE COLOCAR EN EL DATA SET LA VARIABLE getCarKey
     // AQUI ES IMPORTANTE COLOCAR EN EL DATA SET LA VARIABLE getKoderKey !!!!!!!!!!!!!!  (No como en el updateData que declaramos el dataset)
-    let getCarKey = event.target.dataset.getCarKey
+    let getCarKey = $(event.target).data("getCarKey");
 
     let editedObject = {}
     console.log('editedObject:', editedObject)
 
+    // metemos en el objeto los nuevos valores de cada input
     document.querySelectorAll("#edition-modal input").forEach(input => {
         editedObject[input.name] = input.value
     })

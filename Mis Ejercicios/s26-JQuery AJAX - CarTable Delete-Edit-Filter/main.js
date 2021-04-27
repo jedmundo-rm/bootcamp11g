@@ -27,8 +27,7 @@ const getCarData = () => {
         
         //console.log(carObject)
 
-        let select = document.getElementById("trans")
-        let transVal = select.options[select.selectedIndex].value
+        let transVal = $("#trans option:selected").val();
         //console.log('trans:', trans)
 
         //carObject.trans = trans
@@ -171,8 +170,18 @@ const updateData = event => {
                 let objKey = key
                 console.log('objKey:', objKey)
 
-                // esto imprime los elementos input 
-                document.querySelector(`#edition-modal input[name=${key}]`).value = dbData[key]
+                // esto obtiene los valores de los elementos input 
+                //document.querySelector(`#edition-modal input[name=${key}]`).value = dbData[key]
+                $(`#edition-modal input[name=${key}]`).val(dbData[key])
+
+                // con esto cambiamos el select al valor actual de la propiedad transVal que ya tiene el objeto
+                $(`#transVal option[value="${dbData[key]}"]`).prop('selected', true)
+
+                // if(key === "transVal"){
+                //     $(`#transVal option[value="${dbData[key]}"]`).prop('selected', true)
+                // }else{
+                //     $(`#edition-modal input[name=${key}]`).val(dbData[key])
+                // }
             }) 
 
             // con esto comprobamos que si podamos ingresar a uno de los campos y cambiar el valor
@@ -190,14 +199,20 @@ const saveChanges = (event) => {
 
     // Creamos la llave AQUI ES IMPORTANTE COLOCAR EN EL DATA SET LA VARIABLE getCarKey
     // AQUI ES IMPORTANTE COLOCAR EN EL DATA SET LA VARIABLE getKoderKey !!!!!!!!!!!!!!  (No como en el updateData que declaramos el dataset)
-    let getCarKey = event.target.dataset.getCarKey
+    let getCarKey = $(event.target).data("getCarKey");
 
     let editedObject = {}
     console.log('editedObject:', editedObject)
 
+    // metemos en el objeto los nuevos valores de cada input
     document.querySelectorAll("#edition-modal input").forEach(input => {
         editedObject[input.name] = input.value
     })
+
+    // metemos en el objeto los nuevos valores del select
+    let transVal = $("#transVal option:selected").val();
+
+    editedObject["transVal"] = transVal
 
     /////////// JQUERY AJAX ////////////
 
@@ -303,8 +318,8 @@ const filterByCategory = (array) => {
     if(inputCategory === "todos"){
 
         //console.log('inputCategory:', inputCategory)
-
         printCars( array )
+
     } else{
         for (key in array){
         
@@ -314,7 +329,6 @@ const filterByCategory = (array) => {
             let {brand, model, transVal} = array[key];
 
             if(inputCategory === transVal){
-
                 // si exporta los values
                 // console.log('inputCategory.value:', inputCategory)
 
@@ -326,10 +340,8 @@ const filterByCategory = (array) => {
                  //console.log('objectItem:', objectItem)
                 
                 filterArray = {...filterArray, [key]:objectItem}
-
+                // Esto es lo mismo que lo de arriba
                 //filterArray[key] = array[key]
-                
-                //console.log('filterArray:', filterArray)
 
                 console.log('filterArray:', filterArray)
                 
