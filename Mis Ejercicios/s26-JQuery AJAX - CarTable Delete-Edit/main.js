@@ -1,4 +1,6 @@
 // PREGUNTAR COMO PASAR LA LINEA 149 A JQUERY
+// Preguntar pq en el get si funciona la obtencion del valor del selected
+// Preguntar si el document.querySelector hay uno para jquery?
 
 /*Object.keys( objeto ) => devuelve un array con las llaves del objeto */
 /*Object.values( objeto ) => devuelve un array con los values de cada llave del objeto */
@@ -28,9 +30,10 @@ const getCarData = () => {
         
         //console.log(carObject)
 
-        let select = document.getElementById("trans")
-        let transVal = select.options[select.selectedIndex].value
-        //console.log('trans:', trans)
+
+        //Obtenemos el valor actual del selected
+        let transVal = $("#trans option:selected").val();
+        //console.log('transVal:', transVal)
 
         //carObject.trans = trans
         carObject = {...carObject, transVal}
@@ -181,7 +184,7 @@ const updateData = event => {
                 // esto imprime los elementos input 
                 document.querySelector(`#edition-modal input[name=${key}]`).value = dbData[key]
                 // falta imprimir los elementos en el select list
-                document.querySelector(`#edition-modal input[name=${key}]`).value = dbData[key]
+                //document.querySelector(`#edition-modal input[name=${key}]`).value = dbData[key]
             }) 
 
             // con esto comprobamos que si podamos ingresar a uno de los campos y cambiar el valor
