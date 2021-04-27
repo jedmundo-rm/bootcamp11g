@@ -311,9 +311,9 @@ const filterByCategory = (array) => {
             // Tenemos todo el array
             //console.log('array:', array)
 
-            let {brand, model, trans} = array[key];
+            let {brand, model, transVal} = array[key];
 
-            if(inputCategory === trans){
+            if(inputCategory === transVal){
 
                 // si exporta los values
                 // console.log('inputCategory.value:', inputCategory)
@@ -327,6 +327,9 @@ const filterByCategory = (array) => {
                 
                 filterArray = {...filterArray, objectItem}
                 //console.log('filterArray:', filterArray)
+
+                console.log('filterArray:', filterArray)
+                
             }
 
             printCars(filterArray)

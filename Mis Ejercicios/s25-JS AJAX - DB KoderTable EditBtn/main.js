@@ -1,7 +1,4 @@
-// AUN NO FUNCIONA EL EDIT
-
 // PREGUNTAR COMO HACER EL SELECT LIST EDITABLE EN LA MODAL
-// PREGUNTAR COMO FCUNIONA EL WHILE
 
 // https://database-d9257-default-rtdb.firebaseio.com/11g/israel/mentors/.json
 // https://ajaxclass-1ca34.firebaseio.com/11g/jaime/mentors.json
