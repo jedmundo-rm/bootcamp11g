@@ -322,10 +322,13 @@ const filterByCategory = (array) => {
                 // let type = inputCategory.value
                 // console.log(typeof type)
 
-                objectItem = array[key]
+                let objectItem = array[key]
                  //console.log('objectItem:', objectItem)
                 
-                filterArray = {...filterArray, objectItem}
+                filterArray = {...filterArray, [key]:objectItem}
+
+                //filterArray[key] = array[key]
+                
                 //console.log('filterArray:', filterArray)
 
                 console.log('filterArray:', filterArray)
