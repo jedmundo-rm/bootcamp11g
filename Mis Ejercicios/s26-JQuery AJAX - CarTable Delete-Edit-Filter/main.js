@@ -31,6 +31,7 @@ const getCarData = () => {
         //console.log('trans:', trans)
 
         //carObject.trans = trans
+        // en la propagacion, lo que va despues de la "," es lo que se va a agregar 
         carObject = {...carObject, transVal}
         console.log('carObject:', carObject)
     })
@@ -337,8 +338,9 @@ const filterByCategory = (array) => {
                 // console.log(typeof type)
 
                 let objectItem = array[key]
-                 //console.log('objectItem:', objectItem)
+                //console.log('objectItem:', objectItem)
                 
+                 // en la propagacion, lo que va despues de la "," es lo que se va a agregar
                 filterArray = {...filterArray, [key]:objectItem}
                 // Esto es lo mismo que lo de arriba
                 //filterArray[key] = array[key]

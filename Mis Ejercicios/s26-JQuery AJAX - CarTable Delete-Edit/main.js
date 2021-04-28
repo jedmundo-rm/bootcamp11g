@@ -35,6 +35,7 @@ const getCarData = () => {
         //console.log('transVal:', transVal)
 
         //carObject.trans = trans
+        // en la propagacion, lo que va despues de la "," es lo que se va a agregar
         carObject = {...carObject, transVal}
         console.log('carObject:', carObject)
     })
