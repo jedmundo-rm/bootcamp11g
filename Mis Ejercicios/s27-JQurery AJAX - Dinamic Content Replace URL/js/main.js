@@ -24,7 +24,9 @@ $('.navbar-nav a').click( (event) => {
     let newUrl = new URL(event.target.href).pathname.replace('/Mis%20Ejercicios/s27-JQurery%20AJAX/', "")
     console.log('newUrl:', newUrl)
 
-    $('.content-wrapper').load(newUrl)
+    // Aqui es donde usamos el CallBack para llamar a la funcion getPets
+    // Lo malo de esto es que la funcion se cargara en todos los menus de navegacion
+    $('.content-wrapper').load(newUrl, getPets)
 
     // **** Esto es para ponerle la clase active al li que le demos click ****
 
@@ -42,7 +44,7 @@ $('.navbar-nav a').click( (event) => {
 const getPets = () => {
     $.ajax({
         method: "GET",
-        url: "https://ajaxclass-1ca34.firebaseio.com/11g/jaime/pets/.json",
+        url: "https://ajaxclass-1ca34.firebaseio.com/11g/jaime/cars/.json",
         success: response => {
             console.log( response )
         },
