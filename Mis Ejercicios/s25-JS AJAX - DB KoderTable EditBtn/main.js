@@ -147,7 +147,7 @@ const saveKoder = (koder) => {
            // GUARDADO EXITOSO
            // Volvemos a imprimir la tabla para mostrar el nuevo valor guardado
            // pq en la funcion en si la limpiamos 
-           printTable( getKoders() )
+           printTable( getAllKoders() )
         }
     };
 
@@ -179,9 +179,9 @@ const deleteKoderObj = () => {
 }
 
 
-////////// GET KODER IN DB FOR PRINT /////////////
+////////// GET KODERS IN DB FOR PRINT /////////////
 
-const getKoders = () => {
+const getAllKoders = () => {
 
     let kodersCollection;
 
@@ -228,7 +228,7 @@ const deleteKoderPrinted = event => {
             console.log( response  )
 
             // mandamos a imprimir de nuevo al tabla para mostrar el resultado sin el koder borrado
-           printTable(getKoders())
+           printTable(getAllKoders())
         }
     }
 
@@ -307,7 +307,7 @@ const saveChanges = (event) => {
            console.log('response:', response)
 
             // mandamos a imprimir de nuevo al tabla para mostrar el resultado sin el koder borrado
-            printTable(getKoders())
+            printTable(getAllKoders())
 
             // escondemos el modal
             $("#edition-modal").modal("hide")
@@ -418,7 +418,7 @@ const printTable = (dataPrint) => {
     })
 }
 
-printTable( getKoders() )
+printTable( getAllKoders() )
 
 // si llegamos a llamar la funcion deleteData() desde aqui, solo va a borrar una vez el objeto al que demos click a su boton delete 
 // ya que el DOM solo lo estamos cargando una vez Ej. Si tenemos dos cards al cargar la pagina y creamos uno nuevo (una tercera card), esta tercera card no esta cargada en el DOM 

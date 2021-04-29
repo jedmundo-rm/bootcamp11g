@@ -33,6 +33,7 @@ const loadView = (url, view) => {
         switch( view ){
         case "home":
             //alert("cargando home")
+            getAllPets()
             break
         case "pets":
             //alert("cargadno pets")
@@ -49,22 +50,9 @@ const loadView = (url, view) => {
 
 
 
-// FUNCION PARA OBTENER LA DB
-const getPets = () => {
-    $.ajax({
-        method: "GET",
-        url: "https://ajaxclass-1ca34.firebaseio.com/11g/jaime/pets/.json",
-        success: response => {
-            console.log( response )
-        },
-        error: error => {
-            console.log(error)
-        }
-    })
-}
+///////////////////////////////////////////////////////// OWNERS AND PETS GET DATA ///////////////////////////////////////////////////////
 
-
-// Funcion para obter la data del Usuario
+/* Funcion para obter la data del Usuario */
 
 const getUserData = () => {
 
@@ -97,7 +85,7 @@ $(".content-wrapper").on("click", ".save-user", () => {
     getUserData()
 })
 
-// Funcion para obter la data de la Mascota
+/* Funcion para obter la data de la Mascota */
 
 const getPetData = () => {
 
@@ -131,10 +119,9 @@ $(".content-wrapper").on("click", ".save-pet", () => {
 })
 
 
+//////////////////////////////////////////////////// OWNERS AND PETS CREATION in DB ////////////////////////////////////////
 
-////////// OWNERS AND PETS CREATION in DB /////////////
-
-// Creamos la funcion para mandar a la base de datos
+/* Creamos la funcion para mandar a la base de datos la data de User*/
 
 const saveOwner = (user) => {
     $.ajax({
@@ -156,6 +143,8 @@ const saveOwner = (user) => {
     })
 }
 
+/* Creamos la funcion para mandar a la base de datos la data de Pets*/
+
 const savePet = (pet) => {
     $.ajax({
         method: "POST",
@@ -176,7 +165,28 @@ const savePet = (pet) => {
     })
 }
 
-////////// DELETE OWNER /////////////
+
+//////////////////////////////////////////////////////////  GET PETS in DB FOR PRINT ////////////////////////////////////////////////////////
+
+
+const getAllPets = () => {
+    $.ajax({
+        method: "GET",
+        url: "https://ajaxclass-1ca34.firebaseio.com/11g/jaime/pets.json",
+        success : response => {
+            console.log(response)
+            printPets( response )
+        },
+        error : error => {
+            console.log(error)
+        }
+    })
+}
+
+
+
+////////////////////////////////////////////////////////// DELETE OWNER ////////////////////////////////////////////////////////
+
 ////////// Se pone antes de la funcion print pq si no no puede inicializar /////////////
 
 const deleteData = event => {
@@ -189,7 +199,7 @@ const deleteData = event => {
 
     $.ajax({
         method:"DELETE",
-        url:`https://ajaxclass-1ca34.firebaseio.com/11g/jaime/owners/.json`,
+        url:`https://ajaxclass-1ca34.firebaseio.com/11g/jaime/pets/.json`,
         success: response => {
 
             // GUARDADO EXITOSO
@@ -202,5 +212,32 @@ const deleteData = event => {
         error: error => {
             console.log( error )
         }
+    })
+}
+
+
+///////////////////////////////////////////////////////////// PRINT PETS /////////////////////////////////////////////////
+
+const printPets = ( petCollection ) => {
+console.log('petCollection:', petCollection)
+
+    $(".pets-wrapper").empty();
+
+    Object.keys( petCollection ).forEach(( pet ) => {
+        let {name, description, picture} = petCollection[ pet ]
+
+        let petCard = `        
+        <div class="col-12 col-md-6 d-flex align-items-stretch">
+            <div class="card">
+                <img src="${ picture }"/>
+                <div class="card-body">
+                    <h2 class="card-title">${ name }</h2>
+                    <p>${ description }</p>
+                </div>
+                <button data-pet-key=${ pet } type="button" class="btn btn-primary">Adoptame</button>
+            </div>            
+        </div>`
+
+        $(".pets-wrapper").append(petCard)
     })
 }

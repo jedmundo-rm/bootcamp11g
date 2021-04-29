@@ -71,7 +71,7 @@ const saveCar = (car) => {
             // GUARDADO EXITOSO
             // Volvemos a imprimir la tabla para mostrar el nuevo valor guardado
             // pq en la funcion en si la limpiamos 
-            printCars( getCars() )
+            printCars( getAllCars() )
 
             console.log(response)
         },
@@ -83,7 +83,7 @@ const saveCar = (car) => {
 
 ////////// GET CARS in DB FOR PRINT /////////////
 
-const getCars = () => {
+const getAllCars = () => {
 
     /////////// JQUERY AJAX ////////////
 
@@ -106,7 +106,7 @@ const getCars = () => {
 
 }
 
-//getCars()
+//getAllCars()
 
 ////////// DELETE CAR /////////////
 ////////// Se pone antes de la funcion print pq si no no puede inicializar /////////////
@@ -129,7 +129,7 @@ const deleteData = event => {
             // GUARDADO EXITOSO
             // Volvemos a imprimir la tabla para mostrar el nuevo valor guardado
             // pq en la funcion en si la limpiamos 
-            printCars( getCars() )
+            printCars( getAllCars() )
 
             console.log( response)
         },
@@ -227,7 +227,7 @@ const saveChanges = (event) => {
             // GUARDADO EXITOSO
             // Volvemos a imprimir la tabla para mostrar el nuevo valor guardado
             // pq en la funcion en si la limpiamos 
-            printCars( getCars() )
+            printCars( getAllCars() )
             // escondemos el modal
             $("#edition-modal").modal("hide")
 
@@ -281,7 +281,7 @@ const printCars = (carsCollection) => {
     }
 
     // Seleccionamos todos los botones de delete y por cada uno mandamos a llamar la funcion de delete
-    // la funcion PrintCars() obtiene sus valores al ejecutar getCars() por lo tanto al llegar al deleteData obtiene el key y puede borrar el objeto
+    // la funcion PrintCars() obtiene sus valores al ejecutar getAllCars() por lo tanto al llegar al deleteData obtiene el key y puede borrar el objeto
     $(".delete-btn").click(deleteData)
 
     // Mandamos a llamar la funcion de editar al boton
@@ -292,7 +292,7 @@ const printCars = (carsCollection) => {
 }
 
 // Imprimimos las cards
-printCars( getCars() )
+printCars( getAllCars() )
 
 
 
