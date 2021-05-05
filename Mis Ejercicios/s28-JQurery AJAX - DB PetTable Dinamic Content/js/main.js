@@ -219,25 +219,60 @@ const deleteData = event => {
 ///////////////////////////////////////////////////////////// PRINT PETS /////////////////////////////////////////////////
 
 const printPets = ( petCollection ) => {
-console.log('petCollection:', petCollection)
+
+    console.log("imprimiendo")
+    console.log('petCollection:', petCollection)
 
     $(".pets-wrapper").empty();
 
     Object.keys( petCollection ).forEach(( pet ) => {
-        let {name, description, picture} = petCollection[ pet ]
+        let {name, description, picture, owner} = petCollection[ pet ]
 
-        let petCard = `        
-        <div class="col-12 col-md-6 d-flex align-items-stretch">
-            <div class="card">
-                <img src="${ picture }"/>
-                <div class="card-body">
-                    <h2 class="card-title">${ name }</h2>
-                    <p>${ description }</p>
-                </div>
-                <button data-pet-key=${ pet } type="button" class="btn btn-primary">Adoptame</button>
-            </div>            
-        </div>`
+        if(!owner){
+            let petCard = `        
+            <div class="col-12 col-md-6 d-flex align-items-stretch">
+                <div class="card">
+                    <img src="${ picture }"/>
+                    <div class="card-body">
+                        <h2 class="card-title">${ name }</h2>
+                        <p>${ description }</p>
+                    </div>
+                    <button data-pet-key=${ pet } type="button" class="btn btn-primary adopt-pet">Adoptame</button>
+                </div>            
+            </div>`
 
-        $(".pets-wrapper").append(petCard)
+            $(".pets-wrapper").append(petCard)
+        } 
+
+        
     })
 }
+
+
+// FUNCION PARA ADOPTAR
+
+$(".content-wrapper").on("click", ".adopt-pet", () => {
+    adoptPet( event )
+})
+
+
+const adoptPet = (event) => {
+
+    //let petKey = event.target.dataset.petKey
+    let petKey = $(event.target).data('pet-key');
+
+    $.ajax({
+        method:"PATCH",
+        data: JSON.stringify({
+            owner: "54546468468468"
+        }),
+        url: `https://ajaxclass-1ca34.firebaseio.com/11g/jaime/pets/${petKey}/.json`,
+        success: response => {
+            console.log( response )
+        },
+        error: error => {
+            console.log( error )
+        }
+    })
+}
+
