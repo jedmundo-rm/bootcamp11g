@@ -3,13 +3,14 @@
 
 const fs = require('fs')
 
-fs.readFile('created.txt', (error) => {
-    if(error){
-        console.log('No se pueod leer el archivo: ', error)
-        return
-    }
-    console.log('Se leyo el archivo')
-})
+fs.promises.readFile('nuevo.txt')
+    .then( () => { 
+        console.log('todo cool')
+    })
+    .catch(( error ) => {
+        console.error(' algo salio mal:', error)
+    }) 
+
 
 
 // por cada funcion deberiamos tener un script ejecutable
@@ -18,3 +19,6 @@ fs.readFile('created.txt', (error) => {
 // appendFile
 // unlink
 // copyFile
+// mkdir
+// rmdir <- funciona solo con carpetas vacias
+// readdir
