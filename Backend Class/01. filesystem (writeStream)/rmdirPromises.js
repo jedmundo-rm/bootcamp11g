@@ -3,13 +3,14 @@
 
 const fs = require('fs')
 
-fs.rmdir('./nueva-carpeta', (error) => {
-    if(error){
-        console.log('No se pudo leer la ruta: ', error)
-        return
-    }
-    console.log('Se pudo leer la ruta')
-})
+fs.promises.rmdir('./nueva-carpeta')
+    .then( () => { 
+        console.log('todo cool')
+    })
+    .catch(( error ) => {
+        console.error(' algo salio mal:', error)
+    }) 
+
 
 
 
