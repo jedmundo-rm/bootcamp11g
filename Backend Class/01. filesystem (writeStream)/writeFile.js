@@ -5,7 +5,7 @@ const fs = require('fs')
 
 fs.writeFile('created.txt', 'hola desde file txt', 'utf8', (error) => {
     if(error){
-        Console.log('No se pueod crear el archivo: ', error)
+        console.log('No se pueod crear el archivo: ', error)
         return
     }
     console.log('Se escribio el archivo')

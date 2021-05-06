@@ -5,7 +5,7 @@ const fs = require('fs')
 
 fs.appendFile('created.txt', 'dfgsdgsdgrgrstgs', 'utf8', (error) => {
     if(error){
-        Console.log('No se pueod adjuntar el archivo: ', error)
+        console.log('No se pueod adjuntar el archivo: ', error)
         return
     }
     console.log('Se adjunto el archivo')

@@ -3,9 +3,9 @@
 
 const fs = require('fs')
 
-fs.copyFile('created.txt', './backups/created2.txt', (error) => {
+fs.copyFile('created.txt', 'copys-files/created2.txt', (error) => {
     if(error){
-        Console.log('No se pudo copiar el archivo: ', error)
+        console.log('No se pudo copiar el archivo: ', error)
         return
     }
     console.log('Se copio el archivo')

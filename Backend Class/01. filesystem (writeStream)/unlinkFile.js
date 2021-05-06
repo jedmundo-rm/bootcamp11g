@@ -5,7 +5,7 @@ const fs = require('fs')
 
 fs.unlink('created.txt', (error) => {
     if(error){
-        Console.log('No se pueod unlinkear el archivo: ', error)
+        console.log('No se pueod unlinkear el archivo: ', error)
         return
     }
     console.log('Se unlinkeo el archivo')

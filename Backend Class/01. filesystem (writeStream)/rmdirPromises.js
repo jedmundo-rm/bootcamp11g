@@ -1,15 +1,16 @@
 
-// 
+// ESTO RENOMBRA DIRECTORIO
 
 const fs = require('fs')
 
-fs.readFile('created.txt', (error) => {
+fs.rmdir('./nueva-carpeta', (error) => {
     if(error){
-        console.log('No se pueod leer el archivo: ', error)
+        console.log('No se pudo leer la ruta: ', error)
         return
     }
-    console.log('Se leyo el archivo')
+    console.log('Se pudo leer la ruta')
 })
+
 
 
 // por cada funcion deberiamos tener un script ejecutable
