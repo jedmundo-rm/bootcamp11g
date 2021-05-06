@@ -189,17 +189,11 @@ const getAllPets = () => {
 
 ////////// Se pone antes de la funcion print pq si no no puede inicializar /////////////
 
-const deleteData = event => {
-
-    console.log(event.target)
-
-    // Recordar obetener el data del boton delete
-    //let getOwnerKey = $(event.target).data('ownerkey');
-    //console.log('koderKey:', getOwnerKey)
+const deleteData = (getPetKey) => {
 
     $.ajax({
         method:"DELETE",
-        url:`https://ajaxclass-1ca34.firebaseio.com/11g/jaime/pets/.json`,
+        url:`https://ajaxclass-1ca34.firebaseio.com/11g/jaime/pets/${getPetKey}.json`,
         success: response => {
 
             // GUARDADO EXITOSO

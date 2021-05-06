@@ -116,8 +116,8 @@ const deleteData = event => {
     console.log(event.target)
 
     // Recordar obetener el data del boton delete
-    let getCarKey = event.target.dataset.carkey
-    console.log('koderKey:', getCarKey)
+    let getCarKey = $(event.target).data('carkey');
+    console.log('getCarKey:', getCarKey)
 
     /////////// JQUERY AJAX ////////////
 

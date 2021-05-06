@@ -5,8 +5,6 @@ const ejemploMuro = {
   }
 
 
-
-
   function construir (muro, cb) {
     setTimeout(() => {
       muro.construido = true
@@ -30,8 +28,6 @@ const ejemploMuro = {
 
       return muro
   }
-
-
 
 
 // primero definimos la fuincion y luego la pasamos
