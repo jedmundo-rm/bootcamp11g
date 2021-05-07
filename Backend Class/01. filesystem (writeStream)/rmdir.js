@@ -19,3 +19,6 @@ fs.rmdir('./nueva-carpeta', (error) => {
 // appendFile
 // unlink
 // copyFile
+// mkdir
+// rmdir <- funciona solo con carpetas vacias
+// readdir
