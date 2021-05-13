@@ -106,6 +106,39 @@ DELETE /koders/:id
 GET /koders/:id
 */
 
+
+server.get('/lista-koders/:id', async (request, response) => {
+    const id = request.params.id // string
+    const idNum = parseInt(id)  // lo pasamos a numero
+
+    const content = fs.readFileSync('koders.json','utf8')
+    const json = JSON.parse(content)
+
+    const koderFound = json.koders.find((koderActual) => {
+        const koderSelected = idNum === koderActual.id 
+        return koderSelected
+    })
+
+    console.log(koderFound)
+    response.json(koderFound)
+
+    // if (!koderFound){
+    //     response.status (404)
+    //     response.json({
+    //         success: false,
+    //         message: 'koder not found'
+    //     })
+    //     return
+    // }
+    // response.json({
+    //     success: true,
+    //     message: 'koder found',
+    //     data: {
+    //         koderFound
+    //     }
+    // })  
+})
+
 server.delete('/lista-koders/:id', (request, response) => {
 
     const id = request.params.id // string
@@ -115,14 +148,30 @@ server.delete('/lista-koders/:id', (request, response) => {
     const content = fs.readFileSync('koders.json', 'utf8')
     const json = JSON.parse(content)
 
-    const newKoder = json.koders.reduce((koders, koderActual) => {
-        if (idNum !== koderActual.id){
-            koders = [...koders, koderActual]
-        }
-        return koders
-    }, [])
+    // Con REDUCE
+    // const newKoders = json.koders.reduce((koders, koderActual) => {
+            /* 
+            Ponemos como negacion ya que queremos excluir el koder seleccionado
+            De lo contrario el nuevo objeto me regresaria solo el koder seleccionado
+            */
+    //     if (idNum !== koderActual.id){
+    //         koders = [...koders, koderActual]
+    //     }
+    //     return koders
+    // }, [])
 
-    json.koders = newKoder
+    // Con FILTER
+    const newKoders = json.koders.filter((koder) => {
+            /* 
+            Ponemos como negacion ya que queremos excluir el koder seleccionado
+            De lo contrario el nuevo objeto me regresaria solo el koder seleccionado
+            */            
+            const quitKoder = idNum !== koder.id
+            return quitKoder
+        }
+    )
+
+    json.koders = newKoders
 
     fs.writeFileSync('koders.json', JSON.stringify(json, null, 2), 'utf8')
 
