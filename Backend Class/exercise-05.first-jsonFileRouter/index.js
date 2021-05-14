@@ -5,6 +5,7 @@
 const express = require('express')
 const { request, response } = require('express')
 
+// esta es la ruta del js. Funciona sin ponerle la termiancion js
 const kodersRouter = require('./routers/koders')
 
 const server = express()
@@ -12,7 +13,7 @@ const server = express()
 
 // middleware
 server.use(express.json())
-server.use('/lista-koders', kodersRouter)
+server.use('/lista-koders', kodersRouter) // para tener la ruta URL
 
 
 server.get('/', (request, response) => {
@@ -27,38 +28,13 @@ server.listen(8080, () => {
 })
 
 
-// Endpoint
-// METODO y una RUTA
-// GET /koders
-// GET /koders/:id
-
-// Practica fs + express
 /*
-// GET /KODERS -> regresa un json con una lista de koders
-La lista de koders viene de un archivo
+Practica:
+Crear un router para mentores
+GET /mentores
+GET /mentores/:id
+POST /mentores
+PATCH /mentores/:id
+DELETE /mentores/:id
+
 */
-
-/*
-server.get('/lista-koders', (request, response) => {
-
-    fs.promises.readFile('koders.json','utf8')
-    // data es el json como tal
-    .then( (data) => { 
-        response.json(JSON.parse(data))
-        console.log('todo cool:', data)
-    })
-    .catch(( error ) => {
-        console.error(' algo salio mal:', error)
-    }) 
-
-    // const json = fs.readFileSync('koders.json', 'utf8')
-    // console.log('json:', json)
-
-    // const jsonParsed = JSON.parse(json)
-    // response.json(jsonParsed.koders)
-})
-*/
-
-
-
-

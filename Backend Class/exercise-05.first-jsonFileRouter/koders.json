@@ -45,5 +45,28 @@
       "name": "Taquito",
       "gender": "f"
     }
+  ],
+  "mentores": [
+    {
+      "id": 1,
+      "name": "Oso",
+      "module": "hello"
+    },
+    {
+      "id": 2,
+      "name": "Mel",
+      "module": "hello"
+    },
+    {
+      "id": 3,
+      "name": "Isra",
+      "module": "front"
+    }
+    ,
+    {
+      "id": 4,
+      "name": "Charles",
+      "module": "back"
+    }
   ]
 }
