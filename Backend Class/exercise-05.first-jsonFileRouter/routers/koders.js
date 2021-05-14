@@ -40,19 +40,17 @@ router.get('/', async (request, response) => {
     json.koders = kodersData || json.koders
 
     response.json(json.koders)
-
-    response.json({
-        sucess: true
-    })
 })
 
 
 
 router.post('/', (request, response) => {
+    // definimos os valores que vamos a pasar
+    const id = request.body.id
     const name = request.body.name
     const gender = request.body.gender
 
-    const newKoder = { name, gender }
+    const newKoder = {id, name, gender }
 
     // Parse Content
     const content = fs.readFileSync('koders.json', 'utf8')

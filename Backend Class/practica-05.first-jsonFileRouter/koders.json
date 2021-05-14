@@ -66,6 +66,11 @@
       "id": 4,
       "name": "Charles",
       "module": "back"
+    },
+    {
+      "id": 5,
+      "name": "Fernanda",
+      "module": "front"
     }
   ]
 }

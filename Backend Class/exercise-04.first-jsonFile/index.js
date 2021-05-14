@@ -3,7 +3,6 @@
 const fs = require('fs')
 
 const express = require('express')
-const { request, response } = require('express')
 
 const server = express()
 
@@ -50,10 +49,12 @@ server.get('/lista-koders', (request, response) => {
 
 
 server.post('/lista-koders', (request, response) => {
+    // definimos os valores que vamos a pasar
+    const id = request.body.id
     const name = request.body.name
     const gender = request.body.gender
 
-    const newKoder = { name, gender }
+    const newKoder = {id, name, gender }
 
     const content = fs.readFileSync('koders.json', 'utf8')
 
