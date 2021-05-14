@@ -1,9 +1,5 @@
 
-
-
-
 const express = require('express')
-const { request, response } = require('express')
 
 // esta es la ruta del js. Funciona sin ponerle la termiancion js
 const kodersRouter = require('./routers/koders')
