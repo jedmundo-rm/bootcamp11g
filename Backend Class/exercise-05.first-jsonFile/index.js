@@ -61,6 +61,7 @@ server.get('/lista-koders', async (request, response) => {
 
     let kodersData = null
 
+    // Filtro por genero
     if (genderFilter) {
         
         const kodersFilterByGender = json.koders.filter(koder => koder.gender === genderFilter)
@@ -68,17 +69,18 @@ server.get('/lista-koders', async (request, response) => {
         kodersData = kodersFilterByGender
     }
 
-    // if (nameFilter) {
-    //     const dataToFilter = kodersData || jsonParsed.koders
-    //     kodersData = dataToFilter.filter(koder => koder.name === nameFilter)
-    // }
+    // Filtro por nombre
+    if (nameFilter) {
+        const dataToFilter = kodersData || json.koders
+        kodersData = dataToFilter.filter(koder => koder.name === nameFilter)
+    }
 
 
-    // 
-    // if(countFilter){
-    //     const dataToFilter = kodersData || jsonParsed.koders
-    //     kodersData = dataToFilter.splice(0, countFilter)
-    // }
+    // Filtro para mostrar cierto numero de koders (count = 2)
+    if(countFilter){
+        const dataToFilter = kodersData || json.koders
+        kodersData = dataToFilter.splice(0, countFilter)
+    }
 
     json.koders = kodersData || json.koders
 
