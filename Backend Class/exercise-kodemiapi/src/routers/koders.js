@@ -13,6 +13,9 @@ const koders = require('../usecases/koders')
 
 const router = express.Router()
 
+// Esto es para el POST
+router.use(express.json())
+
 // GET
 router.get('/', async (request, response) => {
 
@@ -41,8 +44,28 @@ router.get('/', async (request, response) => {
 })
 
 // POST
-router.post('/', (request, response) => {
+router.post('/', async (request, response) => {
 
+    try{
+        const {name, lastName, age, gender } = request.body
+        await koders.newKoder(name, lastName, age, gender) 
+
+        response.json({
+            success: true,
+            message: 'Koder created',
+        })
+
+    } catch (error) {
+
+        response.status(400)
+
+        response.json({
+            success: false,
+            message: 'Error at get all koders',
+            error: error.message
+        })
+
+    }
 })
 
 module.exports = router
