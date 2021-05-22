@@ -48,7 +48,7 @@ router.post('/', async (request, response) => {
 
     try{
         const {name, lastName, age, gender } = request.body
-        await koders.newKoder(name, lastName, age, gender) 
+        await koders.postKoder(name, lastName, age, gender) 
 
         response.json({
             success: true,
@@ -65,6 +65,30 @@ router.post('/', async (request, response) => {
             error: error.message
         })
 
+    }
+})
+
+//DELETE
+router.delete('/:id', async (request, response) => {
+
+    try{
+        await koders.deleteKoder(request.params.id)
+
+        response.json({
+            success: true,
+            message: 'Deleted Koder',
+            data:{}
+        })
+
+    } catch(error){
+        response.status(400)
+        response.json({
+            success: false,
+            message: 'Error at delete koder',
+            data: {
+                error: error.message
+            }
+        })
     }
 })
 

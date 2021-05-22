@@ -14,13 +14,20 @@ function getAll() {
 }
 
 // Funcion para POSTEAR un koder
-function newKoder(name, lastName, age, gender) {
+function postKoder(name, lastName, age, gender) {
     // Deconstruccion o destructuring
     // const {name, lastName, age, gender} = koder
     return Koders.create( { name, lastName, age, gender } )
 }
 
+// Funcion para BORRAR un koder
+function deleteKoder(idKoder){
+    return Koders.findByIdAndDelete(idKoder)
+}
+
+
 module.exports = {
     getAll: getAll,
-    newKoder: newKoder
+    postKoder: postKoder,
+    deleteKoder:deleteKoder
 }
