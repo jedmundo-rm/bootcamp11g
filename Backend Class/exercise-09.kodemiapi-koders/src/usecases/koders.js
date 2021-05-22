@@ -25,9 +25,14 @@ function deleteKoder(idKoder){
     return Koders.findByIdAndDelete(idKoder)
 }
 
+// Funcion para actualizar un koder
+function updateById (id, dataToUpdate){
+    return Koders.findByIdAndUpdate(id, dataToUpdate)
+}
 
 module.exports = {
     getAll: getAll,
     postKoder: postKoder,
-    deleteKoder:deleteKoder
+    deleteKoder:deleteKoder,
+    updateById: updateById
 }
