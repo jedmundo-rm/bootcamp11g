@@ -34,7 +34,8 @@ const koderSchema = new mongoose.Schema({
     }
 })
 
-
+// el primer parametro es el nombre de la coleccion en la BD
+// y el segundo es el Schema
 const model = mongoose.model('koders', koderSchema)
 
 module.exports = model
