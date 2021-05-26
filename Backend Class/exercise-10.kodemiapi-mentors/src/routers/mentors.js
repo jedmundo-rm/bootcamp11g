@@ -14,6 +14,7 @@ const mentors = require('../usecases/mentors')
 const router = express.Router()
 
 // Esto es para el POST
+// Cada que levantemos una API que va a recibir objetos JSON hay que usar este middleware
 router.use(express.json())
 
 // GET

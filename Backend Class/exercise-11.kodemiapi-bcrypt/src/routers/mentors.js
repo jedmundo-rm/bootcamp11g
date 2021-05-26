@@ -5,7 +5,6 @@
 // ya tenemos el modelo en la carpeta models y el caso de uso en la carpeta usecases
 // y ahora estamos en el endpoint
 
-
 const express = require ('express')
 
 /// importamos nuestro caso de uso
@@ -14,6 +13,7 @@ const mentors = require('../usecases/mentors')
 const router = express.Router()
 
 // Esto es para el POST
+// Cada que levantemos una API que va a recibir objetos JSON hay que usar este middleware
 router.use(express.json())
 
 // GET

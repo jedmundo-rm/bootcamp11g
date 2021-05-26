@@ -8,6 +8,7 @@ const server = express()
 
 
 // middleware
+// Cada que levantemos una API que va a recibir objetos JSON hay que usar este middleware
 server.use(express.json())
 server.use('/lista-koders', kodersRouter) // para tener la ruta URL
 
