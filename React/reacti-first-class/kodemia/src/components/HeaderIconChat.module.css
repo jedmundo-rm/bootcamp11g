@@ -1,0 +1,13 @@
+
+
+.HeaderIconChat{
+    width: 42px;
+    margin: 0px 5px;
+    padding: 8px;
+}
+
+.HeaderIconChat:hover{
+    background-color: #afafaf;
+    border-radius: 50%;
+    cursor: pointer;
+}
