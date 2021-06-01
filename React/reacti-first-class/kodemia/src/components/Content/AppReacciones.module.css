@@ -1,0 +1,38 @@
+.reactions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+   /*margin: 0.5rem 0 0;
+   */
+   padding-left: 2.5rem;
+}
+.reactions .reactLeft {
+    display: flex;
+}
+.reactions .reactLeft a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin: auto 1.5rem auto -5px;
+    color: #4d5760;
+    padding: 5px;
+}
+.reactions .reactLeft a:hover {
+    background-color: #eef0f1;
+    border-radius: 2px;
+    color: #000;
+}
+
+.reactions button {
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    border: 0;
+    background-color: #d2d6db;
+    border-radius: 5px;
+    color: #4d5760;
+}
+.reactions button:hover {
+    background-color: #b5bdc4;
+    cursor: pointer;
+}
