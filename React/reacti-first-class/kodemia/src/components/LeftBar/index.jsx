@@ -10,7 +10,7 @@ import ico4 from '../../images/sidebar/ico4.png';
 import ico5 from '../../images/sidebar/ico5.png';
 import ico6 from '../../images/sidebar/ico6.png';
 
-class SideBar extends React.Component{
+class LeftBar extends React.Component{
     render(){
         return(
 
@@ -48,4 +48,4 @@ class SideBar extends React.Component{
 }
 
 
-export default SideBar
+export default LeftBar

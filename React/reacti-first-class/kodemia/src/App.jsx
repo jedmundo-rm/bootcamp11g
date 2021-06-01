@@ -3,9 +3,11 @@ import React from 'react';
 
 import Header from './components/Header/index'
 
-import SideBar from './components/SideBar/index'
+import LeftBar from './components/LeftBar/index'
 
 import Content from './components/Content/index'
+
+import RightBar from './components/RightBar/index'
 
 import Styles from './App.css'
 
@@ -27,12 +29,14 @@ class App extends React.Component {
            <div className="container">
               <div className="row">
                   <div className="col-md-2">
-                    <SideBar />
+                    <LeftBar />
                   </div>
                   <div className="col-md-7">
                     <Content/>
                   </div>
-                  <div className="col-md-3"></div>
+                  <div className="col-md-3">
+                    <RightBar />
+                  </div>
               </div>
           </div>              
           </div>
