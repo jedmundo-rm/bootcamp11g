@@ -1,0 +1,7 @@
+
+
+.btn-1{
+    color: var(--btn1-color) !important;
+    background-color: red;
+    text-decoration: underline;
+}

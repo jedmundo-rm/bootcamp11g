@@ -1,0 +1,53 @@
+:root{
+  --color: #343a40;
+  --color-links: #3b49df;
+  --bs-primary: #3b49df;
+  --header-background: white;
+  --content-background: #EEF0F1;
+  --btn1-color: #3b49df;
+  --card-background: white;
+
+  --loading-background-color:white;
+}
+
+
+body[theme="dark"]{
+  --color: white;
+  --color-links: #fff;
+  --bs-primary: red;
+  --header-background: gray;
+  --content-background: #212529;
+  --btn1-color: #fff;
+  --card-background: #343a40;
+
+  --loading-background-color:#212529;
+
+}
+
+body * {
+  color: var(--color);
+}
+
+body a {
+  color: var(--color-links);
+}
+
+.card{
+  background-color: var(--card-background) !important;
+}
+
+.list-group-item{
+  background-color: var(--card-background) !important;
+  color: var(--color) !important;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+

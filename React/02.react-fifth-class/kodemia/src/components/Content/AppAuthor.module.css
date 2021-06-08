@@ -1,0 +1,28 @@
+.autor {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    /*padding: 10px;}*/
+  }
+  .autor .profile {
+    width: 32px;
+    height: 32px;
+  }
+  .autor .autorName {
+    padding-left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .autor .autorName div:first-of-type {
+    font-weight: bold;
+    font-size: 0.875rem;
+    color: #6a6a6a;
+  }
+  .autor .autorName div:last-of-type {
+    font-size: 0.75rem;
+    color: #6a6a6a;
+  }
+  .autor .autorName div:hover {
+    color: #000;
+  }
