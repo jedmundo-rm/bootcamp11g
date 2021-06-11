@@ -7,7 +7,7 @@ import AppLoading from "../../components/AppLoading"
 
 
 
-export default function AddPost() {
+export default function PostCreation() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");

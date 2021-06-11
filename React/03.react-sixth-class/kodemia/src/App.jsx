@@ -6,7 +6,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./screens/Home";
 import Exercise from "./screens/Exercise";
 import RickAndMorty from "./screens/RickAndMorty";
-import AddPost from "./screens/AddPost";
+
+import PostCreation from "./screens/PostCreation";
 import PostDetail from "./screens/PostDetail";
 import PostsKoders from "./screens/PostsKoders";
 
@@ -26,19 +27,18 @@ class App extends React.Component {
               <RickAndMorty />
             </Route>
 
+            {/* .... Ejercicio de crear, lista y ver detalle de posts..... */}
 
-            {/* ......... */}
-
-
-            <Route exact path="/addPost">
-              <AddPost />
+            <Route exact path="/postCreation">
+              <PostCreation />
             </Route>
-            <Route exact path="/postKoders">
+            <Route exact path="/postsKoders">
               <PostsKoders />
             </Route>
             <Route exact path="/posts/:id">
               <PostDetail />
             </Route>
+
           </Switch>
         </div>
       </Router>
