@@ -11,8 +11,24 @@ export default function AppRickAndMorty(){
 
     // usamos un hook de efect
     // recupera la informacion una vez que el componente ya este cargado y solo una vez
+    // useEffect(() => {
+    //     console.log("holi")
+
+    //     fetch("https://rickandmortyapi.com/api/character")
+    //     .then((response) => response.json())
+    //     .then((json) => {
+    //         setCharacters(json.results);
+    //         setPrev(json.info.prev);
+    //         setNext(json.info.next);
+    //     })
+
+    //     console.log(characters)
+    // }, [])  // con el array vacio hacemos el Component Did Mount
+
+
+    // usamos un hook de efect
+    // recupera la informacion una vez que el componente ya este cargado y solo una vez
     useEffect(() => {
-        console.log("holi")
 
         fetch("https://rickandmortyapi.com/api/character")
         .then((response) => response.json())
@@ -23,6 +39,26 @@ export default function AppRickAndMorty(){
         })
 
         console.log(characters)
+
+
+        fetch("https://react-11g-default-rtdb.firebaseio.com/posts/-MbsYe-a6mu-23-9DiKb.json", {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/JSON"
+            },
+            body: JSON.stringify({
+                title: "Mi gato MODIFICADO",
+                description: "Este es mi gato MODIFICADO",
+                author: "James", 
+                image: "https://ichef.bbci.co.uk/news/640/cpsprodpb/10E9B/production/_109757296_gettyimages-1128004359.jpg"
+            }),
+        })
+        .then((response) => response.json())
+        .then((json) => {
+            console.log((json))
+        })
+
+
     }, [])  // con el array vacio hacemos el Component Did Mount
 
 

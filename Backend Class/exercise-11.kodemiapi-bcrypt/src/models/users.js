@@ -2,7 +2,7 @@
 // de afuera hacia adentro
 // endpoint -> caso de uso -> model
 
-// antes de los models y los usecases tenemos que crear el model
+// antes de los endpoint y los usecases tenemos que crear el model
 // ahora estamos en models
 
 const mongoose = require('mongoose')
@@ -27,7 +27,6 @@ const userSchema = new mongoose.Schema({
 
     }
 })
-
 
 // el primer parametro es el nombre de la coleccion en la BD
 // y el segundo es el Schema
