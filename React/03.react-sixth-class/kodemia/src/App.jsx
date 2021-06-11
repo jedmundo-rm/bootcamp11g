@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // Screens
 import Home from "./screens/Home";
 import Exercise from "./screens/Exercise";
+import RickAndMorty from "./screens/RickAndMorty";
 
 class App extends React.Component {
   render() {
@@ -17,6 +18,9 @@ class App extends React.Component {
             </Route>
             <Route exact path="/exercise">
               <Exercise />
+            </Route>
+            <Route exact path="/rickandmorty">
+              <RickAndMorty />
             </Route>
           </Switch>
         </div>

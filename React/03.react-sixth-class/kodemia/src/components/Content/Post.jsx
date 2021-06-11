@@ -53,12 +53,14 @@ const postsData = {
 };
 
 function Post() {
+
   const postsUI = Object.entries(postsData).map(([type, posts], index) => (
+
     <React.Fragment>
       {posts.map(
         ({title, articleImg, author, authorImg, date, reactions, comments, read}, index) => (
           
-          <div className={`card ${Styles.CardContainer}`} key={index}>
+          <li className={`card ${Styles.CardContainer}`} key={index}>
 
             {/* Imagen del Post */}
             <div className={`${Styles.ArticleImg}`}>
@@ -116,7 +118,7 @@ function Post() {
                 </div>
               </div> {/* End Reactions */}
             </div> {/* End Card Info */}
-          </div>
+          </li>
         )
       )}
     </React.Fragment>
