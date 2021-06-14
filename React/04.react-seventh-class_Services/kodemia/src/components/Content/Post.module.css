@@ -1,0 +1,134 @@
+.CardContainer {
+  margin-bottom: 20px;
+  padding: 0px;
+}
+
+.CardInfo{
+  padding: 15px;
+}
+
+.cardImg {
+  margin-bottom: 20px;
+}
+
+.cardTitle {
+  padding-left: 2.5rem;
+}
+
+.cardTitle a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+.cardTitle a:hover {
+  color: #323ebe;
+}
+
+.CardContainer:first-of-type img {
+  display: block;
+}
+
+.ArticleImg img {
+  width: 100%;
+  margin-bottom: 12px;
+  display: none;
+}
+
+/*************/
+
+.autor {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  /*padding: 10px;}*/
+}
+.autor .profile {
+  width: 32px;
+  height: 32px;
+}
+.autor .autorName {
+  padding-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.autor .autorName div:first-of-type {
+  font-weight: bold;
+  font-size: 0.875rem;
+  color: #6a6a6a;
+}
+.autor .autorName div:last-of-type {
+  font-size: 0.75rem;
+  color: #6a6a6a;
+}
+.autor .autorName div:hover {
+  color: #000;
+}
+
+/*/////////*/
+
+.tags {
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+  display: inline-block;
+  padding-left: 2.5rem;
+}
+.tags a:link,
+.tags a:visited,
+.tags a:active {
+  text-decoration: none;
+  color: #76808c;
+  line-height: 1.3;
+  border-radius: 5px;
+  padding: 0.5rem 0.3rem 0.5rem 0;
+}
+.tags a:link span,
+.tags a:visited span,
+.tags a:active span {
+  color: #d2d6db;
+}
+.tags a:hover {
+  color: #000;
+}
+
+/*/////////*/
+
+.reactions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  /*margin: 0.5rem 0 0;
+   */
+  padding-left: 2.5rem;
+}
+.reactions .reactLeft {
+  display: flex;
+}
+.reactions .reactLeft a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin: auto 1.5rem auto -5px;
+  color: #4d5760;
+  padding: 5px;
+}
+.reactions .reactLeft a:hover {
+  background-color: #eef0f1;
+  border-radius: 2px;
+  color: #000;
+}
+
+.reactions button {
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+  border: 0;
+  background-color: #d2d6db;
+  border-radius: 5px;
+  color: #4d5760;
+}
+.reactions button:hover {
+  background-color: #b5bdc4;
+  cursor: pointer;
+}

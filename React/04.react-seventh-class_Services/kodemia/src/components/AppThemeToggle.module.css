@@ -1,0 +1,24 @@
+.AppThemeToggle{
+    margin-left: 1rem;
+    padding: 0.5rem 0.75rem;
+    
+}
+
+
+.AppThemeToggleLight{
+    border-radius: 3px;
+    margin-left: 1rem;
+    padding: 0.5rem 0.75rem;
+    background-color: gray;
+    color: #fff;
+}
+
+
+
+.AppThemeToggleDark{
+    border-radius: 3px;
+    margin-left: 1rem;
+    padding: 0.5rem 0.75rem;
+    background-color: black;
+    color: #fff;
+}

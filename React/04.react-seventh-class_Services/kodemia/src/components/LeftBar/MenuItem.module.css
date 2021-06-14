@@ -1,0 +1,15 @@
+.MenuItem{
+   list-style: none ;
+   padding: 0;
+   width: 100%;
+   text-align: left;
+}
+
+
+.MenuItem:hover{
+    background-color: #E2E4E5;
+ }
+
+.MenuItem a{
+    text-decoration: none;
+ }

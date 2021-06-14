@@ -1,0 +1,12 @@
+.DebitCard {
+  background-color: #3c6aa8;
+}
+
+.DebitCard h3 {
+  color: #fff;
+}
+
+.DebitCard img {
+  width: 200px;
+  float: right;
+}
