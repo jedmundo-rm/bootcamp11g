@@ -1,0 +1,43 @@
+.header {
+    width: 100%;
+    font-size: 0.5rem;
+    padding: 1rem;
+    -webkit-box-shadow: 0 10px 5px #e0dede;
+    -moz-box-shadow: 0 10px 5px #e0dede;
+    box-shadow: var(--shadow-header);
+    background:  var(--header-background);
+}
+
+.header h1{
+    font-size: 21px;
+    margin: 0;
+    padding: 0.5rem;
+    background-color: black;
+    color: white;
+    border-radius: 0.4rem;
+}
+
+.header .btn.btn-link {
+    color: var(--bs-primary);
+    text-decoration: none;
+}
+
+.header .btn.btn-primary {
+    background-color: var(--bs-primary);
+    color: var(--bs-primary-color);
+}
+
+.avatar-img{
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    border-radius: 100%;
+}
+
+.btn-menu{
+    font-size: 14px;
+}
+
+.create_btn{
+    margin-right: 12px;
+}

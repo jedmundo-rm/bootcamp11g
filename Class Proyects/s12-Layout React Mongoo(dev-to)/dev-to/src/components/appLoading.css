@@ -1,0 +1,19 @@
+.loading {
+    display: none;
+
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    background-color: var(--loading-background-color);
+}
+
+.loading.active {
+    display: flex;
+}

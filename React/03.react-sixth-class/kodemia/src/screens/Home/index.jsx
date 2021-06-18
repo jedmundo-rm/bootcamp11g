@@ -26,10 +26,10 @@ export default function Home() {
       <div id="container" className="full-container">
         <div className="container">
           <div className="row">
-            <div className="d-none d-md-block col-md-4 col-lg-3">
+            <div className="d-none d-md-block col-md-4 col-lg-2">
               <LeftBar />
             </div>
-            <div className="col-12 col-md-8 col-lg-6">
+            <div className="col-12 col-md-8 col-lg-7">
               <Posts />
             </div>
             <div className="col-lg-3 d-none d-lg-block">

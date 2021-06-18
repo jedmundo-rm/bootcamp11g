@@ -1,0 +1,17 @@
+
+.Contenedor{
+  margin: 34px auto;
+}
+.BtnCreate {
+  padding: 8px;
+  background-color: #3b49df;
+}
+.RegistrationFooter {
+  text-align: center;
+  background-color: transparent;
+}
+label{
+  padding-left: 10px;
+  color: #202428 !important;
+  font-size: 14px;
+}

@@ -1,0 +1,133 @@
+
+.LeftSide .MenuInnerPost {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0 15px;
+}
+.LeftSide .MenuInnerPost li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    cursor: pointer;
+}
+.LeftSide .MenuInnerPost li > div {
+    border-radius: 50%;
+    padding: 6px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.LeftSide .MenuInnerPost li:hover:nth-child(1) div {
+    background-color: #eddadb;
+}
+.LeftSide .MenuInnerPost li:hover:nth-child(1) img {
+    filter: invert(27%) sepia(55%) saturate(2394%) hue-rotate(338deg) brightness(89%) contrast(120%);
+}
+.LeftSide .MenuInnerPost li:hover:nth-child(2) div {
+    background-color: #daeeee;
+}
+.LeftSide .MenuInnerPost li:hover:nth-child(2) img {
+    filter: invert(45%) sepia(75%) saturate(363%) hue-rotate(128deg) brightness(96%) contrast(91%);
+}
+.LeftSide .MenuInnerPost li:hover:nth-child(3) div {
+    background-color: #dcdff0;
+}
+.LeftSide .MenuInnerPost li:hover:nth-child(3) img {
+    filter: invert(21%) sepia(78%) saturate(2571%) hue-rotate(227deg) brightness(101%) contrast(87%);
+}
+.LeftSide .MenuInnerPost li:hover:nth-child(4) div {
+    background-color: #e6e8e9;
+}
+
+
+
+.AuthorWrapper{
+    border-top: 30px solid #922180;
+    padding-top: 12px; 
+}
+
+.AuthorHeader img{
+    margin-top: -31px;
+    height: 50px;
+    width: 50px;
+    margin-left: 11px; 
+}
+
+.AuthorHeader h4{
+    font-weight: bold;
+    font-size: 14pt;
+    padding-left: 4px;
+}
+
+.AuthorInfo span{
+    font-weight: bold;
+
+}
+
+
+.PostWrapper .Author{
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.PostWrapper .Creation{
+    font-size: 10pt;
+}
+
+
+.PostWrapper .Content img{
+    width: 100%;
+}
+
+.PostTags a{
+    margin-right: 14px;
+    font-size: 11pt;
+    color: #76808c !important;
+    text-decoration: none;
+}
+
+
+.MoreFrom .Title{
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    
+}
+
+.MoreFrom .Title h4{
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+.MoreFrom .Title a{
+    color: #323ebe !important;
+    text-decoration: none;
+}
+
+
+.MoreFrom .Article{
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    padding: 10px 0;
+}
+
+.MoreFrom a{
+    text-decoration: none;
+}
+
+.MoreFrom .Tags{
+    margin-top: 4px;
+    font-size: 11pt;
+}
+
+.MoreFrom .Tags span:first-of-type{
+    padding: 0px 0px;
+}
+
+.MoreFrom .Tags span{
+    padding: 0px 5px;
+    color: #76808c;
+}

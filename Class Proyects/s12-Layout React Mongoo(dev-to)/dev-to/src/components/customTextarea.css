@@ -1,0 +1,33 @@
+.new-post-title {
+  font-size: 2em;
+  font-weight: bold;
+  background: transparent;
+  border: 0px;
+}
+.new-post-title:focus {
+  border-color: #ced4da;
+  box-shadow: none;
+}
+.new-post-title:placeholder {
+  color: #acb2b9;
+}
+.new-post-content {
+  height: auto;
+  min-height: 10px;
+  overflow: auto;
+  word-break: break-word;
+}
+
+.input-add-post {
+  padding-left: 0;
+
+  background: transparent;
+  border: 0px;
+}
+.input-add-post:focus {
+  border-color: #ced4da;
+  box-shadow: none;
+}
+.input-add-post::placeholder {
+  color: #acb2b9;
+}

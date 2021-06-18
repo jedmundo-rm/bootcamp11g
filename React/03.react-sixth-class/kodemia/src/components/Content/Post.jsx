@@ -50,6 +50,18 @@ const postsData = {
       read: "15",
     },
   ],
+  post4: [
+    {
+      title: "test",
+      articleImg: imgArticleImg,
+      author: "sdfgdfgdfg",
+      authorImg: profile3,
+      date: "Jun 7",
+      reactions: "60",
+      comments: "7",
+      read: "15",
+    },
+  ],
 };
 
 function Post() {

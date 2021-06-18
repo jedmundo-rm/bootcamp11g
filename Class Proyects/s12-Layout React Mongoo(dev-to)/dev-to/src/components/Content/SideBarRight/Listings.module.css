@@ -1,0 +1,32 @@
+.CardRight {
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+
+.CardRight li:hover {
+    cursor: pointer;
+    color: #4749df;
+}
+.CardRight li h6 {
+    font-size: 14px;
+    color: #6f6f6f;
+    line-height: 24px;
+    font-weight: normal;
+}
+.CardRight .list-group-item {
+    margin-bottom: 1px;
+}
+
+
+.CardRight .CardTopHeader {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    align-items: baseline;
+    font-size: 18px;
+}
+.CardRight .CardTopHeader span {
+    color: #4749df;
+    font-size: 14px;
+    font-weight: normal;
+}

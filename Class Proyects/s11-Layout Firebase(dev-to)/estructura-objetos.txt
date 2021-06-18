@@ -1,3 +1,5 @@
+Abris con VS Code y dar click derecho en index.html y run to live server
+
 /*DOCUEMNTO DE BASE DE DATOS*/
 
 // ENDPOINT USERS

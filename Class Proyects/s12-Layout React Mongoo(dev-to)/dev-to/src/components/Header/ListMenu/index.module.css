@@ -1,0 +1,68 @@
+.MenuMobile{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(79, 79, 79, 0.8);
+    top: 75px;
+    right: 0;
+    z-index: 4;     
+}
+
+.MenuWrapper {
+    background-color: white;
+    height: 100%;
+    width: 50vw;
+    max-width: 300px;
+    margin: 0;
+    padding: 1rem;
+}
+.MenuWrapper .MenuTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 16px;
+}
+.MenuWrapper .MenuTitle h2 {
+    margin: 0;
+    font-size: 22px !important;
+}
+.MenuWrapper .MenuTitle .MenuCloseBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    font-weight: bold;
+    font-size: 22px;
+    display: flex;
+    border-radius: 50%;
+    border: 0px solid #3f3f3f;
+}
+.MenuWrapper .MenuTitle .MenuCloseBtn:hover {
+    background-color: #efefef;
+}
+.MenuWrapper ul {
+    padding: 1rem 0;
+    list-style: none;
+}
+.MenuWrapper ul li {
+    padding: 3px 0px;
+    font-size: 12pt;
+    width: 100%;
+}
+.MenuWrapper ul li:last-of-type {
+    padding: 8px 40px;
+}
+.MenuWrapper ul li:hover {
+    cursor: pointer;
+    background-color: #efefef;
+    border-radius: 4px;
+}
+.MenuWrapper ul li:hover a {
+    color: blue;
+}
+.MenuWrapper ul li a {
+    color: #acacac;
+    text-decoration: none;
+}

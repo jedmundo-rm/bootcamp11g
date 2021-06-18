@@ -1,0 +1,17 @@
+/* li.li-profile.active{
+    background-color: #EEF0F1;
+} */
+
+li{
+    padding: 5px 15px;
+}
+
+.li-profile:hover{
+    background-color: #EEF0F1;
+}
+
+.ulChallenge{
+    width: 6rem;
+    margin-left: auto;
+    position: relative;
+}

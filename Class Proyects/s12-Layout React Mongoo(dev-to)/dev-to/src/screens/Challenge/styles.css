@@ -1,0 +1,15 @@
+.active{
+    background-color: skyblue;
+}
+li{
+    padding: 5px 15px;
+}
+
+li.ulChallenge:hover{
+    border-left: solid 5px skyblue;
+    border-right: solid 5px skyblue;
+}
+
+.ulChallenge{
+    width: 6rem;
+}

@@ -1,0 +1,98 @@
+:root {
+  --color: #343a40;
+  --color-grey: #76808c;
+  --bs-primary: #3b49df;
+  --bs-primary-color: white;
+  --body-background: #eef0f1;
+  --header-background: white;
+  --card-background-color: white;
+  --loading-background-color: #eef0f1;
+  --btn-sidebar-hover: #d2d6db;
+  --shadow-header: 0 3px 5px #e0dede;
+  --footer-background: #d2d6db;
+}
+
+body[theme="dark"] {
+  --color: white;
+  --color-grey: #f2f2f2;
+  --bs-primary: white;
+  --bs-primary-color: #343a40;
+  --body-background: #212529;
+  --header-background: #343a40;
+  --card-background-color: #343a40;
+  --loading-background-color: #212529;
+  --btn-sidebar-hover: #000;
+  --shadow-header: 0 3px 5px #3a3a3a;
+  --footer-background: #343a40;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background: var(--body-background);
+}
+
+body * {
+  color: var(--color);
+}
+
+body a {
+  color: var(--color-links);
+}
+
+.card {
+  background-color: var(--card-background-color) !important;
+}
+
+.card div {
+  color: var(--color);
+}
+
+.card div a {
+  color: var(--color-grey);
+}
+
+.card h2 a {
+  color: var(--color);
+}
+
+.list-group-item {
+  background-color: var(--card-background-color) !important;
+  color: var(--color-grey);
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+.img-profile {
+  width: 40px;
+  height: 40px;
+}
+
+
+.btn-commit{
+  background-color: #323ebe;
+  color: white;
+}
+
+.area-commits{
+  width: 100%;
+  margin-left: 5px;
+}
+
+.area-commit{
+  border: solid 2px #EEF0F1;
+  height: 100px;
+}
