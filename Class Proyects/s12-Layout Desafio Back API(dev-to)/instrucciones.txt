@@ -1,0 +1,10 @@
+
+Correr el index del sitio en VS Code con el live serve
+
+En la api ejecutar:
+
+npm install
+
+el api correrlo con:
+
+npm start

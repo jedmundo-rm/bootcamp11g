@@ -42,7 +42,7 @@ class App extends React.Component {
             </Route>
 
             {/* .... Ejercicio de Login con input encapsulado */}
-            <Route exact path="/loginss">
+            <Route exact path="/login">
               <Login />
             </Route>
           </Switch>

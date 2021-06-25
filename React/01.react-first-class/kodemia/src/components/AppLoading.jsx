@@ -13,10 +13,12 @@ class AppLoading extends React.Component{
 
     render(){
 
-        const active = this.state.active ? 'active' : "";
+        //const active = this.state.active ? 'active' : "";
+
+        const active = this.state.active === true ? Styles.AppLoadingVisible : Styles.AppLoadingHidden
 
         return(
-            <div className={`${Styles.AppLoading} ${active} align-items-center justify-contents-center`}>
+            <div className={`${active} align-items-center justify-contents-center`}>
                 <div className="spinner-border" role="status">
                     <span className="visually-hidden">Loading...</span>
                 </div>
@@ -27,8 +29,8 @@ class AppLoading extends React.Component{
 
     componentDidMount() {
         setTimeout(() => {
-            this.setState = { active: false}
-        }, 2000) ;
+            this.setState({ active: false})
+        }, 500) ;
     }
 
 

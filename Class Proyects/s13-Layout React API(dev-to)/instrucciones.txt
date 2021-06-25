@@ -1,0 +1,7 @@
+ejecutar en ambas carpetas:
+
+npm install
+npm start
+
+ejecutar postman o insomnia en la url 
+localhost:8080/

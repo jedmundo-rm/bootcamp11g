@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { useHistory } from "react-router";
 
-//import CustomInput from "../components/CustomInput";
+import CustomInput from "../../components/CustomInput";
 
 
 export default function Login() {
@@ -11,14 +11,6 @@ export default function Login() {
 
   const history = useHistory();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(email, password);
-
-  };
-
-
-  const history = useHistory();
 
   const handleSubmit = async (event) => {
     event.preventDefault();

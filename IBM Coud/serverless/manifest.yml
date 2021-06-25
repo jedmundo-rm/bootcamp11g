@@ -1,0 +1,6 @@
+applications:
+- name: servless
+  memory: 256M
+  stack: cflinuxfs3
+  buildpack: staticfile_buildpack
+  # cloud foundry linux file system v3

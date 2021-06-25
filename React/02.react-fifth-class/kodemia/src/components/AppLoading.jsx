@@ -32,14 +32,19 @@ import Styles from "./AppLoading.module.css";
 // }
 
 function AppLoading() {
+
+
   const [isActive, setIsActive] = useState(true);
 
-  const active = isActive ? "active" : "";
+  //const active = isActive ? 'active' : "";
+
+  const active = isActive === true ? Styles.AppLoadingVisible : Styles.AppLoadingHidden
+
 
   useEffect(() => {
     setTimeout(() => {
       setIsActive(false);
-    }, 4000);
+    }, 500);
   }, []);
 
   return (

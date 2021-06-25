@@ -1,0 +1,8 @@
+applications:
+- name: devto-api
+  memory: 64M
+  buildpack: nodejs_buildpack
+  command: node server.js
+  env:
+     NODE_MODULES_CACHE: false
+  # cloud foundry linux file system v3
